@@ -56,8 +56,10 @@
 		E5B7F1EE267BC0E30077086C /* PetTrivia */ = {
 			isa = PBXGroup;
 			children = (
+				E5B7F205267BC4140077086C /* View */,
+				E5B7F204267BC40D0077086C /* Model */,
+				E5B7F203267BC4030077086C /* Controller */,
 				E5B7F1EF267BC0E30077086C /* PetTriviaApp.swift */,
-				E5B7F1F1267BC0E30077086C /* ContentView.swift */,
 				E5B7F1F3267BC0E50077086C /* Assets.xcassets */,
 				E5B7F1F8267BC0E50077086C /* Persistence.swift */,
 				E5B7F1FD267BC0E50077086C /* Info.plist */,
@@ -73,6 +75,28 @@
 				E5B7F1F6267BC0E50077086C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E5B7F203267BC4030077086C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E5B7F204267BC40D0077086C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E5B7F205267BC4140077086C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5B7F1F1267BC0E30077086C /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
