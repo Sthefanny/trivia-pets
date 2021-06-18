@@ -31,6 +31,7 @@ struct OptionView: View {
                             .stroke(Color.init(red: 83/255, green: 96/255, blue: 132/255), lineWidth: 1)
                     )
                 }
+                .foregroundColor(.black)
             }
         }
     }
@@ -43,10 +44,20 @@ struct CardView: View {
         VStack {
             VStack(alignment: .leading) {
                 Text("1.")
+                    .font(.custom("Helvetica Neue", size: 30))
+                    .padding([.bottom,.top])
                 Text(question.description)
+                    .font(.custom("Helvetica Neue", size: 24))
+                    .padding(.bottom)
             }
+            .frame(maxWidth: UIScreen.main.bounds.width * 0.75)
+            Spacer()
             OptionView(question: question)
         }
+        .frame(maxHeight: 500)
+        .padding()
+        .background(Color.white)
+        .cornerRadius(24)
     }
 }
 
