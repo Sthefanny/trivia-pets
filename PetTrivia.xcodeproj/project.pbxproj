@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B6E8EC9267D22AC0079A195 /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8EC8267D22AC0079A195 /* QuestionCard.swift */; };
-		5B6E8ECC267D25870079A195 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8ECB267D25870079A195 /* QuestionBank.swift */; };
+		E52DE831267D24B5001E6195 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52DE830267D24B5001E6195 /* HomeView.swift */; };
 		5B6E8ECF267D26C70079A195 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8ECE267D26C70079A195 /* CardView.swift */; };
+		5B6E8ECC267D25870079A195 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8ECB267D25870079A195 /* QuestionBank.swift */; };
+		5B6E8EC9267D22AC0079A195 /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8EC8267D22AC0079A195 /* QuestionCard.swift */; };
 		E5B7F1F0267BC0E30077086C /* PetTriviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7F1EF267BC0E30077086C /* PetTriviaApp.swift */; };
-		E5B7F1F2267BC0E30077086C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7F1F1267BC0E30077086C /* ContentView.swift */; };
 		E5B7F1F4267BC0E50077086C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B7F1F3267BC0E50077086C /* Assets.xcassets */; };
 		E5B7F1F7267BC0E50077086C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B7F1F6267BC0E50077086C /* Preview Assets.xcassets */; };
 		E5B7F1F9267BC0E50077086C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7F1F8267BC0E50077086C /* Persistence.swift */; };
@@ -19,12 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5B6E8EC8267D22AC0079A195 /* QuestionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCard.swift; sourceTree = "<group>"; };
-		5B6E8ECB267D25870079A195 /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
+		E52DE830267D24B5001E6195 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5B6E8ECE267D26C70079A195 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		5B6E8ECB267D25870079A195 /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
+		5B6E8EC8267D22AC0079A195 /* QuestionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCard.swift; sourceTree = "<group>"; };
 		E5B7F1EC267BC0E30077086C /* PetTrivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTrivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B7F1EF267BC0E30077086C /* PetTriviaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTriviaApp.swift; sourceTree = "<group>"; };
-		E5B7F1F1267BC0E30077086C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E5B7F1F3267BC0E50077086C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5B7F1F6267BC0E50077086C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E5B7F1F8267BC0E50077086C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -102,8 +102,9 @@
 		E5B7F205267BC4140077086C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E5B7F1F1267BC0E30077086C /* ContentView.swift */,
+				E52DE830267D24B5001E6195 /* HomeView.swift */,
 				5B6E8ECE267D26C70079A195 /* CardView.swift */,
+				E5B7F1F1267BC0E30077086C /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E52DE831267D24B5001E6195 /* HomeView.swift in Sources */,
 				5B6E8ECF267D26C70079A195 /* CardView.swift in Sources */,
 				E5B7F1F9267BC0E50077086C /* Persistence.swift in Sources */,
 				5B6E8EC9267D22AC0079A195 /* QuestionCard.swift in Sources */,
