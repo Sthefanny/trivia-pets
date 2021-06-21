@@ -14,6 +14,8 @@ struct GameView: View {
             .ignoresSafeArea(edges: .all)
             .overlay(
                 VStack {
+                    TimerView()
+                    ProgressionView(currentQuestion: 1)
                     Text(questions[0].category)
                         .font(.custom("Helvetica Neue", size: 34))
                         .fontWeight(.bold)
