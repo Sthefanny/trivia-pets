@@ -30,10 +30,17 @@ struct HomeView: View {
                 Text("logo do app bonitona")
                     .padding(.all)
                     .background(Color.gray)
+                    .frame(width: geometry.size.width)
                 Text("Olá, Fulano")
                     .font(Font.custom("HelveticaNeue", size: 28))
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Color("BlueTextColor"))
+                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                HStack {
+                    CardView(imageName: "PlayIcon", title: "Jogar", subtitle: "Coloque em prova o conhecimento adquirido jogando", bgColorName: "BlueCardColor")
+                    CardView(imageName: "AchievementIcon", title: "Suas conquistas", subtitle: "Biblioteca das informações conquistadas no jogo", bgColorName: "YellowCardColor")
+                }
+                .padding()
             }
             .frame(width: geometry.size.width)
         }
