@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CardView: View {
-    @State var imageName: String
+    @State var imageName: String?
     @State var title: String
     @State var subtitle: String
     @State var bgColorName: String
@@ -16,12 +16,14 @@ struct CardView: View {
     
     var body: some View {
             VStack {
-                HStack {
-                    Spacer()
-                    Image(imageName)
+                if imageName != nil {
+                    HStack {
+                        Spacer()
+                        Image(imageName!)
+                    }
+                    .padding(.trailing, 0)
+                    .padding(.top, -16)
                 }
-                .padding(.trailing, 0)
-                .padding(.top, -16)
 
                 HStack {
                     VStack(alignment: .leading) {
@@ -48,7 +50,6 @@ struct CardView: View {
                 print("Teste")
             }
             .padding(5)
-//            .frame(width: 200, height: 200, alignment: .center)
         }
 }
 

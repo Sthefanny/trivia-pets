@@ -41,6 +41,18 @@ struct HomeView: View {
                     CardView(imageName: "AchievementIcon", title: "Suas conquistas", subtitle: "Biblioteca das informações conquistadas no jogo", bgColorName: "YellowCardColor")
                 }
                 .padding()
+                CardView(imageName: nil, title: "Estudos", subtitle: "Para conhecer mais sobre as categorias de perguntas.", bgColorName: "YellowCardColor")
+                    .padding(.horizontal)
+                Text("Meu Pet")
+                    .font(Font.custom("HelveticaNeue", size: 24))
+                    .fontWeight(.medium)
+                    .foregroundColor(Color("BlueCardTextColor"))
+                    .padding([.horizontal, .top])
+                HStack {
+                    MiniCardView(imageName: "AccessoryIcon", bgColorName: "YellowCardColor", title: "Acessórios")
+                    MiniCardView(imageName: "AccessoryIcon", bgColorName: "YellowCardColor", title: "Acessórios")
+                }
+                .padding()
             }
             .frame(width: geometry.size.width)
         }
