@@ -23,6 +23,7 @@ struct TimerView: View {
                     )
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            .padding()
             Text(timeRemaining > 59 ? "1:00" : "0:\(timeRemaining)")
                 .font(.custom("Helvetica Neue", size: 36))
                 .bold()
