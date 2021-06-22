@@ -16,22 +16,6 @@ struct HorizontalCardView: View {
     
     var body: some View {
             ZStack {
-//                if imageName != nil {
-//                   // HStack {
-//                      //  Spacer()
-//                        Image(imageName!)
-//                            .resizable()
-//                            .scaledToFill()
-//                            .frame(width: 200, height: 200)
-//                          //  .aspectRatio(contentMode: .fit)
-//                            .clipped()
-//                            .layoutPriority(-1)
-//
-//                   // }
-//                    .padding(.trailing, 0)
-//                    .padding(.top, -16)
-//                }
-
                 HStack {
                     VStack(alignment: .leading) {
                         Text(title)
@@ -67,7 +51,6 @@ struct HorizontalCardView: View {
                 .scaledToFill()
                 .layoutPriority(-1)
                 .clipped()
-                //.imageScale(.small)
             
         }
     }
@@ -75,7 +58,6 @@ struct HorizontalCardView: View {
 
 struct HorizontalCardView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
         HorizontalCardView(imageName: "estudos-bg-teste", title: "Suas conquistas", subtitle: "Biblioteca das informações conquistadas no jogo", bgColorName: "BlueCardColor")
     }
 }
