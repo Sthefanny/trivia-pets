@@ -14,6 +14,8 @@
 		5B6E8ED3267D3A530079A195 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8ED2267D3A530079A195 /* GameView.swift */; };
 		5B8803322681071F003A45FA /* ProgressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8803312681071F003A45FA /* ProgressionView.swift */; };
 		5B8803352681116A003A45FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8803342681116A003A45FA /* TimerView.swift */; };
+		E5239CBA268259960018A48F /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5239CB8268259960018A48F /* QuestionCard.swift */; };
+		E5239CBB268259960018A48F /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5239CB9268259960018A48F /* QuestionBank.swift */; };
 		E52DE831267D24B5001E6195 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52DE830267D24B5001E6195 /* HomeView.swift */; };
 		E553D7F82680FA2100853A82 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E553D7F72680FA2100853A82 /* CardView.swift */; };
 		E553D7FB26812B8600853A82 /* MiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E553D7FA26812B8600853A82 /* MiniCardView.swift */; };
@@ -32,6 +34,8 @@
 		5B6E8ED2267D3A530079A195 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		5B8803312681071F003A45FA /* ProgressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionView.swift; sourceTree = "<group>"; };
 		5B8803342681116A003A45FA /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		E5239CB8268259960018A48F /* QuestionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionCard.swift; path = Model/QuestionCard.swift; sourceTree = "<group>"; };
+		E5239CB9268259960018A48F /* QuestionBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionBank.swift; path = Model/QuestionBank.swift; sourceTree = "<group>"; };
 		E52DE830267D24B5001E6195 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E553D7F72680FA2100853A82 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E553D7FA26812B8600853A82 /* MiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniCardView.swift; sourceTree = "<group>"; };
@@ -55,11 +59,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E5239CB7268259720018A48F /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				5B6E8EC8267D22AC0079A195 /* QuestionCard.swift */,
+				5B6E8ECB267D25870079A195 /* QuestionBank.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		E5B7F1E3267BC0E30077086C = {
 			isa = PBXGroup;
 			children = (
 				E5B7F1EE267BC0E30077086C /* PetTrivia */,
 				E5B7F1ED267BC0E30077086C /* Products */,
+				E5239CB7268259720018A48F /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +88,8 @@
 		E5B7F1EE267BC0E30077086C /* PetTrivia */ = {
 			isa = PBXGroup;
 			children = (
+				E5239CB9268259960018A48F /* QuestionBank.swift */,
+				E5239CB8268259960018A48F /* QuestionCard.swift */,
 				E5B7F205267BC4140077086C /* View */,
 				E5B7F1EF267BC0E30077086C /* PetTriviaApp.swift */,
 				E5B7F1F3267BC0E50077086C /* Assets.xcassets */,
@@ -91,22 +107,6 @@
 				E5B7F1F6267BC0E50077086C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		E5B7F203267BC4030077086C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		E5B7F204267BC40D0077086C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5B6E8EC8267D22AC0079A195 /* QuestionCard.swift */,
-				5B6E8ECB267D25870079A195 /* QuestionBank.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		E5B7F205267BC4140077086C /* View */ = {
@@ -201,9 +201,11 @@
 				11E1EF8926813AE900309519 /* HorizontalCardView.swift in Sources */,
 				5B6E8EC9267D22AC0079A195 /* QuestionCard.swift in Sources */,
 				E5B7F1FC267BC0E50077086C /* PetTrivia.xcdatamodeld in Sources */,
+				E5239CBB268259960018A48F /* QuestionBank.swift in Sources */,
 				E5B7F1F0267BC0E30077086C /* PetTriviaApp.swift in Sources */,
 				E553D7F82680FA2100853A82 /* CardView.swift in Sources */,
 				5B8803322681071F003A45FA /* ProgressionView.swift in Sources */,
+				E5239CBA268259960018A48F /* QuestionCard.swift in Sources */,
 				5B6E8ED3267D3A530079A195 /* GameView.swift in Sources */,
 				5B6E8ECC267D25870079A195 /* QuestionBank.swift in Sources */,
 			);
