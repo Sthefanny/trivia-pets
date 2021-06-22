@@ -11,6 +11,8 @@
 		E52DE831267D24B5001E6195 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52DE830267D24B5001E6195 /* HomeView.swift */; };
 		E553D7F82680FA2100853A82 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E553D7F72680FA2100853A82 /* CardView.swift */; };
 		E553D7FB26812B8600853A82 /* MiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E553D7FA26812B8600853A82 /* MiniCardView.swift */; };
+		E5766BE226825E400072F9C7 /* SortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5766BE126825E400072F9C7 /* SortView.swift */; };
+		E5766BE426826C750072F9C7 /* CategoryOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5766BE326826C750072F9C7 /* CategoryOptionView.swift */; };
 		E5B7F1F0267BC0E30077086C /* PetTriviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7F1EF267BC0E30077086C /* PetTriviaApp.swift */; };
 		E5B7F1F4267BC0E50077086C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B7F1F3267BC0E50077086C /* Assets.xcassets */; };
 		E5B7F1F7267BC0E50077086C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B7F1F6267BC0E50077086C /* Preview Assets.xcassets */; };
@@ -23,6 +25,8 @@
 		E52DE830267D24B5001E6195 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E553D7F72680FA2100853A82 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E553D7FA26812B8600853A82 /* MiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniCardView.swift; sourceTree = "<group>"; };
+		E5766BE126825E400072F9C7 /* SortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortView.swift; sourceTree = "<group>"; };
+		E5766BE326826C750072F9C7 /* CategoryOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryOptionView.swift; sourceTree = "<group>"; };
 		E5B7F1EC267BC0E30077086C /* PetTrivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTrivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B7F1EF267BC0E30077086C /* PetTriviaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTriviaApp.swift; sourceTree = "<group>"; };
 		E5B7F1F3267BC0E50077086C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E5766BE026825E2B0072F9C7 /* SortView */ = {
+			isa = PBXGroup;
+			children = (
+				E5766BE126825E400072F9C7 /* SortView.swift */,
+				E5766BE326826C750072F9C7 /* CategoryOptionView.swift */,
+			);
+			path = SortView;
+			sourceTree = "<group>";
+		};
 		E5B7F1E3267BC0E30077086C = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +97,7 @@
 		E5B7F205267BC4140077086C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E5766BE026825E2B0072F9C7 /* SortView */,
 				E52DE830267D24B5001E6195 /* HomeView.swift */,
 				E553D7F72680FA2100853A82 /* CardView.swift */,
 				E553D7FA26812B8600853A82 /* MiniCardView.swift */,
@@ -164,7 +178,9 @@
 				E52DE831267D24B5001E6195 /* HomeView.swift in Sources */,
 				E553D7FB26812B8600853A82 /* MiniCardView.swift in Sources */,
 				E5B7F1F9267BC0E50077086C /* Persistence.swift in Sources */,
+				E5766BE426826C750072F9C7 /* CategoryOptionView.swift in Sources */,
 				11E1EF8926813AE900309519 /* HorizontalCardView.swift in Sources */,
+				E5766BE226825E400072F9C7 /* SortView.swift in Sources */,
 				E5B7F1FC267BC0E50077086C /* PetTrivia.xcdatamodeld in Sources */,
 				E5B7F1F0267BC0E30077086C /* PetTriviaApp.swift in Sources */,
 				E553D7F82680FA2100853A82 /* CardView.swift in Sources */,
