@@ -24,7 +24,7 @@ struct TimerView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
-            Text(timeRemaining > 59 ? "1:00" : "0:\(timeRemaining)")
+            Text(timeRemaining > 59 ? "1:00" : timeRemaining >= 10 ? "0:\(timeRemaining)" : "0:0\(timeRemaining)")
                 .font(.custom("Helvetica Neue", size: 36))
                 .bold()
                 .foregroundColor(Color("LightBlack"))
