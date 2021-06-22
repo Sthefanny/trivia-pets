@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5B6E8EC9267D22AC0079A195 /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8EC8267D22AC0079A195 /* QuestionCard.swift */; };
 		5B6E8ECC267D25870079A195 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8ECB267D25870079A195 /* QuestionBank.swift */; };
-		5B6E8ECF267D26C70079A195 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8ECE267D26C70079A195 /* CardView.swift */; };
+		5B6E8ECF267D26C70079A195 /* QuestionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8ECE267D26C70079A195 /* QuestionCardView.swift */; };
 		5B6E8ED3267D3A530079A195 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8ED2267D3A530079A195 /* GameView.swift */; };
 		5B8803322681071F003A45FA /* ProgressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8803312681071F003A45FA /* ProgressionView.swift */; };
 		5B8803352681116A003A45FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8803342681116A003A45FA /* TimerView.swift */; };
@@ -24,7 +24,7 @@
 /* Begin PBXFileReference section */
 		5B6E8EC8267D22AC0079A195 /* QuestionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCard.swift; sourceTree = "<group>"; };
 		5B6E8ECB267D25870079A195 /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
-		5B6E8ECE267D26C70079A195 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		5B6E8ECE267D26C70079A195 /* QuestionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCardView.swift; sourceTree = "<group>"; };
 		5B6E8ED2267D3A530079A195 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		5B8803312681071F003A45FA /* ProgressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionView.swift; sourceTree = "<group>"; };
 		5B8803342681116A003A45FA /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				E52DE830267D24B5001E6195 /* HomeView.swift */,
-				5B6E8ECE267D26C70079A195 /* CardView.swift */,
+				5B6E8ECE267D26C70079A195 /* QuestionCardView.swift */,
 				5B6E8ED2267D3A530079A195 /* GameView.swift */,
 				5B8803312681071F003A45FA /* ProgressionView.swift */,
 				5B8803342681116A003A45FA /* TimerView.swift */,
@@ -188,7 +188,7 @@
 			files = (
 				5B8803352681116A003A45FA /* TimerView.swift in Sources */,
 				E52DE831267D24B5001E6195 /* HomeView.swift in Sources */,
-				5B6E8ECF267D26C70079A195 /* CardView.swift in Sources */,
+				5B6E8ECF267D26C70079A195 /* QuestionCardView.swift in Sources */,
 				E5B7F1F9267BC0E50077086C /* Persistence.swift in Sources */,
 				5B6E8EC9267D22AC0079A195 /* QuestionCard.swift in Sources */,
 				E5B7F1FC267BC0E50077086C /* PetTrivia.xcdatamodeld in Sources */,

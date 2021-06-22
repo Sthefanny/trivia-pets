@@ -21,7 +21,7 @@ struct GameView: View {
                         .fontWeight(.bold)
                         .padding()
                         .foregroundColor(Color("BlueTextColor"))
-                    CardView(question: questions[0])
+                    QuestionCardView(question: questions[0])
                 }
             )
     }
