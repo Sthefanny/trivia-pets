@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11E1EF8926813AE900309519 /* HorizontalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1EF8826813AE900309519 /* HorizontalCardView.swift */; };
+		E52DE831267D24B5001E6195 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52DE830267D24B5001E6195 /* HomeView.swift */; };
+		E553D7F82680FA2100853A82 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E553D7F72680FA2100853A82 /* CardView.swift */; };
+		E553D7FB26812B8600853A82 /* MiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E553D7FA26812B8600853A82 /* MiniCardView.swift */; };
 		E5B7F1F0267BC0E30077086C /* PetTriviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7F1EF267BC0E30077086C /* PetTriviaApp.swift */; };
-		E5B7F1F2267BC0E30077086C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7F1F1267BC0E30077086C /* ContentView.swift */; };
 		E5B7F1F4267BC0E50077086C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B7F1F3267BC0E50077086C /* Assets.xcassets */; };
 		E5B7F1F7267BC0E50077086C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B7F1F6267BC0E50077086C /* Preview Assets.xcassets */; };
 		E5B7F1F9267BC0E50077086C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7F1F8267BC0E50077086C /* Persistence.swift */; };
@@ -16,9 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11E1EF8826813AE900309519 /* HorizontalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCardView.swift; sourceTree = "<group>"; };
+		E52DE830267D24B5001E6195 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E553D7F72680FA2100853A82 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E553D7FA26812B8600853A82 /* MiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniCardView.swift; sourceTree = "<group>"; };
 		E5B7F1EC267BC0E30077086C /* PetTrivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTrivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B7F1EF267BC0E30077086C /* PetTriviaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTriviaApp.swift; sourceTree = "<group>"; };
-		E5B7F1F1267BC0E30077086C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E5B7F1F3267BC0E50077086C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5B7F1F6267BC0E50077086C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E5B7F1F8267BC0E50077086C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -57,8 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				E5B7F205267BC4140077086C /* View */,
-				E5B7F204267BC40D0077086C /* Model */,
-				E5B7F203267BC4030077086C /* Controller */,
 				E5B7F1EF267BC0E30077086C /* PetTriviaApp.swift */,
 				E5B7F1F3267BC0E50077086C /* Assets.xcassets */,
 				E5B7F1F8267BC0E50077086C /* Persistence.swift */,
@@ -77,24 +81,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		E5B7F203267BC4030077086C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		E5B7F204267BC40D0077086C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		E5B7F205267BC4140077086C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E5B7F1F1267BC0E30077086C /* ContentView.swift */,
+				E52DE830267D24B5001E6195 /* HomeView.swift */,
+				E553D7F72680FA2100853A82 /* CardView.swift */,
+				E553D7FA26812B8600853A82 /* MiniCardView.swift */,
+				11E1EF8826813AE900309519 /* HorizontalCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,10 +161,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E52DE831267D24B5001E6195 /* HomeView.swift in Sources */,
+				E553D7FB26812B8600853A82 /* MiniCardView.swift in Sources */,
 				E5B7F1F9267BC0E50077086C /* Persistence.swift in Sources */,
-				E5B7F1F2267BC0E30077086C /* ContentView.swift in Sources */,
+				11E1EF8926813AE900309519 /* HorizontalCardView.swift in Sources */,
 				E5B7F1FC267BC0E50077086C /* PetTrivia.xcdatamodeld in Sources */,
 				E5B7F1F0267BC0E30077086C /* PetTriviaApp.swift in Sources */,
+				E553D7F82680FA2100853A82 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
