@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct OptionView: View {
+    func find(_ search: Option, _ options: [Option]) -> Int {
+        for i in 1...options.count {
+            if search.id == options[i - 1].id {
+                return i
+            }
+        }
+        return 1
+    }
+    @Binding var currentPosition: Int
+    @Binding var selectedOptions: [Int]
     var question: QuestionCard
     var body: some View {
         VStack {
             ForEach(question.options) { option in
                 
                 Button(action: {
-                    
+                    selectedOptions.append(find(option, question.options))
+                    currentPosition += 1
                 }) {
                     
                     HStack {
@@ -39,11 +50,13 @@ struct OptionView: View {
 
 
 struct QuestionCardView: View {
+    @Binding var currentPosition: Int
+    @Binding var selectedOptions: [Int]
     var question: QuestionCard
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
-                Text("1.")
+                Text("\(currentPosition).")
                     .font(.custom("Helvetica Neue", size: 30))
                     .padding([.bottom,.top])
                 Text(question.description)
@@ -52,7 +65,7 @@ struct QuestionCardView: View {
             }
             .frame(maxWidth: UIScreen.main.bounds.width * 0.75)
             Spacer()
-            OptionView(question: question)
+            OptionView(currentPosition: $currentPosition, selectedOptions: $selectedOptions, question: question)
         }
         .frame(maxHeight: 500)
         .padding()
@@ -63,7 +76,7 @@ struct QuestionCardView: View {
 
 struct QuestionCardView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionCardView(question: QuestionCard(
+        QuestionCardView(currentPosition: .constant(1), selectedOptions: .constant([1,1,1,1]), question: QuestionCard(
                     category: "Alimentação Natural",
                     description: "Esse é um modelo de pergunta teste usado para o Question Bank",
                     options: ["Muito Legal","Legal","Pouco Legal","Nada Legal"],
