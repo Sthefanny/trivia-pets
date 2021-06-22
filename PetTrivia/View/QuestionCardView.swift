@@ -61,7 +61,7 @@ struct QuestionCardView: View {
     }
 }
 
-struct CardView_Previews: PreviewProvider {
+struct QuestionCardView_Previews: PreviewProvider {
     static var previews: some View {
         QuestionCardView(question: QuestionCard(
                     category: "Alimentação Natural",
