@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HorizontalCardView: View {
     @State var imageName: String?
+    @State var backgroundImageName: String?
     @State var title: String
     @State var subtitle: String
     @State var bgColorName: String
@@ -31,6 +32,18 @@ struct HorizontalCardView: View {
                     .layoutPriority(100)
      
                     Spacer()
+                    VStack(alignment: .trailing) {
+                        if imageName != nil {
+                            HStack {
+                                Spacer()
+                                Image(imageName!)
+                            }
+                        //    .padding(.trailing, 0)
+                            .padding(.top, -16)
+                            
+                        }
+                    }
+
                 }
                 .padding(20)
             }
@@ -46,8 +59,8 @@ struct HorizontalCardView: View {
     var background: some View{
         ZStack{
             Color(bgColorName)
-            Image(imageName!)
-                .resizable()
+            Image(backgroundImageName!)
+               // .resizable()
                 .scaledToFill()
                 .layoutPriority(-1)
                 .clipped()
@@ -58,7 +71,8 @@ struct HorizontalCardView: View {
 
 struct HorizontalCardView_Previews: PreviewProvider {
     static var previews: some View {
-        HorizontalCardView(imageName: "estudos-bg-teste", title: "Suas conquistas", subtitle: "Biblioteca das informações conquistadas no jogo", bgColorName: "BlueCardColor")
+        HomeView()
+        HorizontalCardView(imageName: nil, backgroundImageName: "StudiesBg", title: "Suas conquistas", subtitle: "Biblioteca das informações conquistadas no jogo", bgColorName: "BlueCardColor")
     }
 }
 

@@ -43,6 +43,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		113975D82682616400988F3E /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
 		E5B7F1E3267BC0E30077086C = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +95,7 @@
 				E553D7F72680FA2100853A82 /* CardView.swift */,
 				E553D7FA26812B8600853A82 /* MiniCardView.swift */,
 				11E1EF8826813AE900309519 /* HorizontalCardView.swift */,
+				113975D82682616400988F3E /* HomeView */,
 			);
 			path = View;
 			sourceTree = "<group>";

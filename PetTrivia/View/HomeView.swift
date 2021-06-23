@@ -37,11 +37,11 @@ struct HomeView: View {
                     .foregroundColor(Color("BlueTextColor"))
                     .padding(.all)
                 HStack {
-                    CardView(imageName: "PlayIcon", title: "Jogar", subtitle: "Coloque em prova seus conhecimentos e aprenda jogando.", bgColorName: "BlueCardColor")
-                    CardView(imageName: "AchievementIcon", title: "Suas\nconquistas", subtitle: "Biblioteca das informações conquistadas no jogo", bgColorName: "YellowCardColor")
+                    CardView(imageName: "PlayCardImageLarger", title: "Jogar", subtitle: "Coloque em prova seus conhecimentos e aprenda jogando.", bgColorName: "BlueCardColor")
+                    CardView(imageName: "AchievementsCardImageLarger", title: "Suas\nconquistas", subtitle: "Biblioteca das informações conquistadas no jogo", bgColorName: "YellowCardColor")
                 }
                 .padding(.horizontal)
-                HorizontalCardView(imageName: "estudos-bg-teste", title: "Estudos", subtitle: "Para conhecer mais sobre as categorias de perguntas.", bgColorName: "BlueCardColor")
+                HorizontalCardView(imageName: "StudyCardImage", backgroundImageName: "StudiesBgImage", title: "Estudos", subtitle: "Para conhecer mais sobre as categorias de perguntas.", bgColorName: "BlueCardColor")
                     .padding(.horizontal)
                 Text("Meu Pet")
                     .font(Font.custom("HelveticaNeue", size: 24))
@@ -49,8 +49,9 @@ struct HomeView: View {
                     .foregroundColor(Color("BlueCardTextColor"))
                     .padding([.horizontal, .top])
                 HStack {
-                    MiniCardView(imageName: "AccessoryIcon", bgColorName: "YellowCardColor", title: "Acessórios")
-                    MiniCardView(imageName: "AccessoryIcon", bgColorName: "YellowCardColor", title: "Acessórios")
+                    MiniCardView(imageName: "AcessoriesCardImage", backgroundImageName: "AcessoriesBgImage", bgColorName: "YellowCardColor", title: "Acessórios")
+                        .padding(.trailing)
+                    MiniCardView(imageName: "TreatsCardImage", backgroundImageName: "TreatsBgImage", bgColorName: "YellowCardColor", title: "Petiscos")
                 }
                 .padding()
             }

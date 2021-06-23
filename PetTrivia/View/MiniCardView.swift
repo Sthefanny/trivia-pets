@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MiniCardView: View {
     @State var imageName: String
+    @State var backgroundImageName: String
     @State var bgColorName: String
     @State var title: String
 
@@ -17,16 +18,17 @@ struct MiniCardView: View {
         VStack(alignment: .leading) {
             VStack {
                     HStack {
-                        Spacer()
                         Image(imageName)
+                            .resizable()
+                            .padding()
                     }
-                    .padding()
+                    .background(background)
+                    .clipped()
                 }
-                .background(Color(bgColorName))
-                .cornerRadius(10)
                 .onTapGesture {
                     print("Teste")
                 }
+            .cornerRadius(10)
             
             Text(title)
                 .font(Font.custom("HelveticaNeue", size: 16))
@@ -34,12 +36,27 @@ struct MiniCardView: View {
                 .foregroundColor(Color("BlueCardTextColor"))
                 .padding(.bottom, 1)
         }
-        .padding(5)
+        
+    }
+    
+    var background: some View {
+        ZStack{
+            Color(bgColorName)
+            Image(backgroundImageName)
+                .scaledToFill()
+                .layoutPriority(-1)
+                .clipped()
+            
+        }
+ 
     }
 }
 
+
 struct MiniCardView_Previews: PreviewProvider {
     static var previews: some View {
-        MiniCardView(imageName: "AccessoryIcon", bgColorName: "YellowCardColor", title: "Acessórios")
+        HomeView()
+        MiniCardView(imageName: "AccessoryIcon", backgroundImageName: "AcessoriesBgImage", bgColorName: "YellowCardColor", title: "Acessórios")
     }
 }
+
