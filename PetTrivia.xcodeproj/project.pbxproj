@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		11E1EF8926813AE900309519 /* HorizontalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1EF8826813AE900309519 /* HorizontalCardView.swift */; };
 		E52DE831267D24B5001E6195 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52DE830267D24B5001E6195 /* HomeView.swift */; };
+		E542F9AD2683C7B700D515BC /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542F9AC2683C7B700D515BC /* CountdownView.swift */; };
+		E542F9AF2683C83A00D515BC /* PulsatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542F9AE2683C83A00D515BC /* PulsatingView.swift */; };
 		E553D7F82680FA2100853A82 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E553D7F72680FA2100853A82 /* CardView.swift */; };
 		E553D7FB26812B8600853A82 /* MiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E553D7FA26812B8600853A82 /* MiniCardView.swift */; };
 		E5766BE226825E400072F9C7 /* SortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5766BE126825E400072F9C7 /* SortView.swift */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		11E1EF8826813AE900309519 /* HorizontalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCardView.swift; sourceTree = "<group>"; };
 		E52DE830267D24B5001E6195 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E542F9AC2683C7B700D515BC /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
+		E542F9AE2683C83A00D515BC /* PulsatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsatingView.swift; sourceTree = "<group>"; };
 		E553D7F72680FA2100853A82 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E553D7FA26812B8600853A82 /* MiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniCardView.swift; sourceTree = "<group>"; };
 		E5766BE126825E400072F9C7 /* SortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortView.swift; sourceTree = "<group>"; };
@@ -47,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E542F9AB2683C79A00D515BC /* CountdownView */ = {
+			isa = PBXGroup;
+			children = (
+				E542F9AC2683C7B700D515BC /* CountdownView.swift */,
+				E542F9AE2683C83A00D515BC /* PulsatingView.swift */,
+			);
+			path = CountdownView;
+			sourceTree = "<group>";
+		};
 		E5766BE026825E2B0072F9C7 /* SortView */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +110,7 @@
 		E5B7F205267BC4140077086C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E542F9AB2683C79A00D515BC /* CountdownView */,
 				E5766BE026825E2B0072F9C7 /* SortView */,
 				E52DE830267D24B5001E6195 /* HomeView.swift */,
 				E553D7F72680FA2100853A82 /* CardView.swift */,
@@ -177,10 +191,12 @@
 			files = (
 				E52DE831267D24B5001E6195 /* HomeView.swift in Sources */,
 				E553D7FB26812B8600853A82 /* MiniCardView.swift in Sources */,
+				E542F9AF2683C83A00D515BC /* PulsatingView.swift in Sources */,
 				E5B7F1F9267BC0E50077086C /* Persistence.swift in Sources */,
 				E5766BE426826C750072F9C7 /* CategoryOptionView.swift in Sources */,
 				11E1EF8926813AE900309519 /* HorizontalCardView.swift in Sources */,
 				E5766BE226825E400072F9C7 /* SortView.swift in Sources */,
+				E542F9AD2683C7B700D515BC /* CountdownView.swift in Sources */,
 				E5B7F1FC267BC0E50077086C /* PetTrivia.xcdatamodeld in Sources */,
 				E5B7F1F0267BC0E30077086C /* PetTriviaApp.swift in Sources */,
 				E553D7F82680FA2100853A82 /* CardView.swift in Sources */,

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CategoryOptionView: View {
     @State var text: String
+
     var radius = CGFloat(38)
     
     var body: some View {
@@ -28,6 +29,7 @@ struct CategoryOptionView: View {
         })
         .padding(.horizontal)
         .padding(.vertical, 10)
+        .animation(.easeOut(duration: 0.2), value: false)
     }
 }
 
