@@ -14,27 +14,18 @@ struct GameView: View {
     @State var disabledButton = false
     @State var guessedRight: [Int] = []
     
+    var currentCategory: String
+    
+    var questions: [QuestionCard] {
+        QuestionBank.instance.questionFilter(category: currentCategory, guessedRight: guessedRight)
+    }
+    
     func fetchData() {
         let data = UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? []
         self.guessedRight = data
     }
-    
-    func questionFilter(category: String, questions: [QuestionCard]) -> [QuestionCard] {
-        var actual: [QuestionCard] = []
-        for i in questions {
-            if i.category == category {
-                actual.append(i)
-            }
-        }
-        return actual
-    }
-    
-    var questions = QuestionBank.instance.questionList
-    let currentCategory: String
-    let actual = questionFilter()
 
     var body: some View {
-//        Color("BackgroundColor")
         Image("GameBackground")
             .resizable()
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
@@ -54,11 +45,6 @@ struct GameView: View {
             .onAppear {
                 self.fetchData()
             }
-    }
-    
-    init(currentCategory: String) {
-        self.currentCategory = currentCategory
-//        self.questions.filter { question in question.category == currentCategory && !guessedRight.contains(question.questionId)}
     }
 }
 

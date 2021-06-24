@@ -10,6 +10,18 @@ import Foundation
 class QuestionBank {
     static var instance = QuestionBank()
     var questionList = [QuestionCard]()
+
+    
+    func questionFilter(category: String, guessedRight: [Int]) -> [QuestionCard] {
+        var actual: [QuestionCard] = []
+        for i in questionList {
+            if i.category == category && !guessedRight.contains(i.questionId){
+                actual.append(i)
+            }
+        }
+        return actual
+    }
+    
     
     init() {
         questionList.append(QuestionCard(

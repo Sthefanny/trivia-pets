@@ -10,6 +10,7 @@
 		11E1EF8926813AE900309519 /* HorizontalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1EF8826813AE900309519 /* HorizontalCardView.swift */; };
 		5B3A60E6268262E900748B09 /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A60E4268262E900748B09 /* QuestionCard.swift */; };
 		5B3A60E7268262E900748B09 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A60E5268262E900748B09 /* QuestionBank.swift */; };
+		5B49D9F42685150B00D620B1 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B49D9F32685150B00D620B1 /* QuestionController.swift */; };
 		5B6E8ECF267D26C70079A195 /* QuestionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8ECE267D26C70079A195 /* QuestionCardView.swift */; };
 		5B6E8ED3267D3A530079A195 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8ED2267D3A530079A195 /* GameView.swift */; };
 		5B8803322681071F003A45FA /* ProgressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8803312681071F003A45FA /* ProgressionView.swift */; };
@@ -29,6 +30,7 @@
 		11E1EF8826813AE900309519 /* HorizontalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCardView.swift; sourceTree = "<group>"; };
 		5B3A60E4268262E900748B09 /* QuestionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCard.swift; sourceTree = "<group>"; };
 		5B3A60E5268262E900748B09 /* QuestionBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
+		5B49D9F32685150B00D620B1 /* QuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
 		5B6E8ECE267D26C70079A195 /* QuestionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCardView.swift; sourceTree = "<group>"; };
 		5B6E8ED2267D3A530079A195 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		5B8803312681071F003A45FA /* ProgressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5B49D9F2268514FC00D620B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5B49D9F32685150B00D620B1 /* QuestionController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		E5B7F1E3267BC0E30077086C = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 		E5B7F1EE267BC0E30077086C /* PetTrivia */ = {
 			isa = PBXGroup;
 			children = (
+				5B49D9F2268514FC00D620B1 /* Controller */,
 				5B3A60E3268262E900748B09 /* Model */,
 				E5B7F205267BC4140077086C /* View */,
 				E5B7F1EF267BC0E30077086C /* PetTriviaApp.swift */,
@@ -195,6 +206,7 @@
 				E553D7FB26812B8600853A82 /* MiniCardView.swift in Sources */,
 				5B6E8ECF267D26C70079A195 /* QuestionCardView.swift in Sources */,
 				E5B7F1F9267BC0E50077086C /* Persistence.swift in Sources */,
+				5B49D9F42685150B00D620B1 /* QuestionController.swift in Sources */,
 				11E1EF8926813AE900309519 /* HorizontalCardView.swift in Sources */,
 				E5B7F1FC267BC0E50077086C /* PetTrivia.xcdatamodeld in Sources */,
 				5B3A60E7268262E900748B09 /* QuestionBank.swift in Sources */,
