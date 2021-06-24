@@ -38,7 +38,11 @@ struct PulsatingView: View {
                         .foregroundColor(Color("BlueTextColor"))
                         .scaleEffect(self.animate ? 1 : 0)
                 }
-                .onAppear { self.animate = true }
+                .onAppear {
+                    DispatchQueue.main.async {
+                        self.animate = true
+                    }
+                }
                 .animation(animate ? Animation.easeInOut(duration: 1.5).repeatCount(5, autoreverses: true) : .default)
             }
             .onReceive(timer) { time in
