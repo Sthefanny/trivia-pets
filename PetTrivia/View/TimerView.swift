@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct TimerView: View {
-    @State private var timeRemaining = 60
+    @Binding var timeRemaining: Int
+    @Binding var disabledButton: Bool
     @State private var isActive = true
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some View {
@@ -33,7 +34,7 @@ struct TimerView: View {
         }
         .onReceive(timer) { time in
             guard self.isActive else {return}
-            if self.timeRemaining > 0 {
+            if self.timeRemaining > 0 && disabledButton == false {
                     self.timeRemaining -= 1
                 }
         }
@@ -48,6 +49,6 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView()
+        TimerView(timeRemaining: .constant(60), disabledButton: .constant(false))
     }
 }

@@ -16,32 +16,32 @@ class QuestionBank {
                                 category: "Alimentação Natural",
                                 description: "1Esse é um modelo de pergunta teste usado para o Question Bank",
                                 options: ["Muito Legal","Legal","Pouco Legal","Nada Legal"],
-                                correctOption: 1))
+                                correctOption: 1, questionId: 1))
         questionList.append(QuestionCard(
                                 category: "Alimentação Natural",
                                 description: "2Esse é um modelo de pergunta teste usado para o Question Bank",
                                 options: ["Muito Legal","Legal","Pouco Legal","Nada Legal"],
-                                correctOption: 1))
+                                correctOption: 1, questionId: 2))
         questionList.append(QuestionCard(
                                 category: "Alimentação Natural",
                                 description: "3Esse é um modelo de pergunta teste usado para o Question Bank",
                                 options: ["Muito Legal","Legal","Pouco Legal","Nada Legal"],
-                                correctOption: 1))
+                                correctOption: 1, questionId: 3))
         questionList.append(QuestionCard(
                                 category: "Alimentação Natural",
                                 description: "4Esse é um modelo de pergunta teste usado para o Question Bank",
                                 options: ["Muito Legal","Legal","Pouco Legal","Nada Legal"],
-                                correctOption: 1))
+                                correctOption: 1, questionId: 4))
         questionList.append(QuestionCard(
                                 category: "Alimentação Natural",
                                 description: "5Esse é um modelo de pergunta teste usado para o Question Bank",
                                 options: ["Muito Legal","Legal","Pouco Legal","Nada Legal"],
-                                correctOption: 1))
+                                correctOption: 1, questionId: 5))
         questionList.append(QuestionCard(
                                 category: "Alimentação Natural",
                                 description: "6Esse é um modelo de pergunta teste usado para o Question Bank",
                                 options: ["Muito Legal","Legal","Pouco Legal","Nada Legal"],
-                                correctOption: 1))
+                                correctOption: 1, questionId: 6))
     }
     
 }

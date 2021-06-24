@@ -14,6 +14,7 @@
 		5B6E8ED3267D3A530079A195 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8ED2267D3A530079A195 /* GameView.swift */; };
 		5B8803322681071F003A45FA /* ProgressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8803312681071F003A45FA /* ProgressionView.swift */; };
 		5B8803352681116A003A45FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8803342681116A003A45FA /* TimerView.swift */; };
+		5BA5D5C42683C463001B5911 /* UserDefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5D5C32683C463001B5911 /* UserDefaultWrapper.swift */; };
 		E52DE831267D24B5001E6195 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52DE830267D24B5001E6195 /* HomeView.swift */; };
 		E553D7F82680FA2100853A82 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E553D7F72680FA2100853A82 /* CardView.swift */; };
 		E553D7FB26812B8600853A82 /* MiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E553D7FA26812B8600853A82 /* MiniCardView.swift */; };
@@ -32,6 +33,7 @@
 		5B6E8ED2267D3A530079A195 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		5B8803312681071F003A45FA /* ProgressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionView.swift; sourceTree = "<group>"; };
 		5B8803342681116A003A45FA /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		5BA5D5C32683C463001B5911 /* UserDefaultWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultWrapper.swift; sourceTree = "<group>"; };
 		E52DE830267D24B5001E6195 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E553D7F72680FA2100853A82 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E553D7FA26812B8600853A82 /* MiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniCardView.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				5B3A60E4268262E900748B09 /* QuestionCard.swift */,
 				5B3A60E5268262E900748B09 /* QuestionBank.swift */,
+				5BA5D5C32683C463001B5911 /* UserDefaultWrapper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				5B3A60E7268262E900748B09 /* QuestionBank.swift in Sources */,
 				E5B7F1F0267BC0E30077086C /* PetTriviaApp.swift in Sources */,
 				E553D7F82680FA2100853A82 /* CardView.swift in Sources */,
+				5BA5D5C42683C463001B5911 /* UserDefaultWrapper.swift in Sources */,
 				5B8803322681071F003A45FA /* ProgressionView.swift in Sources */,
 				5B3A60E6268262E900748B09 /* QuestionCard.swift in Sources */,
 				5B6E8ED3267D3A530079A195 /* GameView.swift in Sources */,

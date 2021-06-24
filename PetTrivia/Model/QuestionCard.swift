@@ -21,9 +21,10 @@ class QuestionCard {
     let description: String
     let options: [Option]
     let correctOption: Int
+    let questionId: Int
     
     
-    init(category: String, description: String, options: [String], correctOption: Int) {
+    init(category: String, description: String, options: [String], correctOption: Int, questionId: Int) {
         self.category = category
         self.description = description
         self.options = [
@@ -33,5 +34,6 @@ class QuestionCard {
             Option(option: "D. \(options[3])"),
         ]
         self.correctOption = correctOption
+        self.questionId = questionId
     }
 }

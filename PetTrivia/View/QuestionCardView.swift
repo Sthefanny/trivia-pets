@@ -16,8 +16,43 @@ struct OptionView: View {
         }
         return 1
     }
+    
+    func revealAnswer(option: Option, question: QuestionCard) -> Bool {
+        let position = find(option, question.options)
+        if position == question.correctOption {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func isSelectedOption(option: Option, selectedOption: [Int], question: QuestionCard) -> Bool {
+        let position = find(option, question.options)
+        if position == selectedOptions.last {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func copyAnswers(selectedOptions: [Int], questions: [QuestionCard]) -> [Int]{
+        var guessedRight: [Int] = []
+        for i in 0..<selectedOptions.count {
+            if selectedOptions[i] == questions[i].correctOption {
+                guessedRight.append(questions[i].questionId)
+            }
+        }
+        return guessedRight
+    }
+    
     @Binding var currentPosition: Int
     @Binding var selectedOptions: [Int]
+    @Binding var timeRemaining: Int
+    @Binding var disableButton: Bool
+    @Binding var guessedRight: [Int]
+    @State var isCorrect = false
+    
+    var questions: [QuestionCard]
     var question: QuestionCard
     var body: some View {
         VStack {
@@ -25,9 +60,22 @@ struct OptionView: View {
                 
                 Button(action: {
                     selectedOptions.append(find(option, question.options))
-                    currentPosition += 1
+                    disableButton = true
+                    isCorrect = revealAnswer(option: option, question: question)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        currentPosition += 1
+                        disableButton = false
+                        timeRemaining = 60
+                        if selectedOptions.count >= 5 {
+                            let rightAnswers = copyAnswers(selectedOptions: selectedOptions, questions: questions)
+                            let userInfo = UserInfo(guessedRight: rightAnswers)
+                            UserDefaultsWrapper.setUserInfo(userInfo: userInfo)
+                            let dataAvailable = UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? []
+                            guessedRight = dataAvailable
+                            
+                        }
+                    }
                 }) {
-                    
                     HStack {
                         Text(option.option)
                             .font(.custom("Helvetica Neue", size: 20))
@@ -35,14 +83,15 @@ struct OptionView: View {
                         Spacer()
                     }
                     .frame(maxWidth: UIScreen.main.bounds.width * 0.75)
-                    .background(Color.init(red: 249/255, green: 241/255, blue: 232/255))
+                    .background(Color(disableButton && isSelectedOption(option: option, selectedOption: selectedOptions, question: question) ? (isCorrect ? "CorrectColor" : "WrongColor") : "BackgroundColor"))
                     .cornerRadius(40)
                     .overlay(
                         RoundedRectangle(cornerRadius: 40)
                             .stroke(Color.init(red: 83/255, green: 96/255, blue: 132/255), lineWidth: 1)
                     )
                 }
-                .foregroundColor(.black)
+                .disabled(disableButton)
+                .foregroundColor(disableButton && isSelectedOption(option: option, selectedOption: selectedOptions, question: question) ? .white : .black)
             }
         }
     }
@@ -52,12 +101,17 @@ struct OptionView: View {
 struct QuestionCardView: View {
     @Binding var currentPosition: Int
     @Binding var selectedOptions: [Int]
+    @Binding var timeRemaining: Int
+    @Binding var disabledButton: Bool
+    @Binding var guessedRight: [Int]
+    var questions: [QuestionCard]
     var question: QuestionCard
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
                 Text("\(currentPosition).")
                     .font(.custom("Helvetica Neue", size: 30))
+                    .bold()
                     .padding([.bottom,.top])
                 Text(question.description)
                     .font(.custom("Helvetica Neue", size: 24))
@@ -65,7 +119,7 @@ struct QuestionCardView: View {
             }
             .frame(maxWidth: UIScreen.main.bounds.width * 0.75)
             Spacer()
-            OptionView(currentPosition: $currentPosition, selectedOptions: $selectedOptions, question: question)
+            OptionView(currentPosition: $currentPosition, selectedOptions: $selectedOptions, timeRemaining: $timeRemaining, disableButton: $disabledButton, guessedRight: $guessedRight, questions: questions, question: question)
         }
         .frame(maxHeight: 500)
         .padding()
@@ -76,10 +130,14 @@ struct QuestionCardView: View {
 
 struct QuestionCardView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionCardView(currentPosition: .constant(1), selectedOptions: .constant([1,1,1,1]), question: QuestionCard(
+        QuestionCardView(currentPosition: .constant(1), selectedOptions: .constant([1,1,1,1]), timeRemaining: .constant(60), disabledButton: .constant(false), guessedRight: .constant([]), questions: [QuestionCard(
+                                                                                                                                                                            category: "Alimentação Natural",
+                                                                                                                                                                            description: "Esse é um modelo de pergunta teste usado para o Question Bank",
+                                                                                                                                                                            options: ["Muito Legal","Legal","Pouco Legal","Nada Legal"],
+                                                                                                                                                                                    correctOption: 1, questionId: 1)], question: QuestionCard(
                     category: "Alimentação Natural",
                     description: "Esse é um modelo de pergunta teste usado para o Question Bank",
                     options: ["Muito Legal","Legal","Pouco Legal","Nada Legal"],
-                    correctOption: 1))
+                            correctOption: 1, questionId: 1))
     }
 }

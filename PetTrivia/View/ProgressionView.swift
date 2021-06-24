@@ -15,7 +15,7 @@ struct ProgressionView: View {
         HStack {
             ForEach((1...5), id: \.self) {
                 Circle()
-                    .strokeBorder(Color("LightStroke"),lineWidth: 1)
+                    .strokeBorder(Color($0 < currentQuestion ? "" : "LightStroke"),lineWidth: 1)
                     .background($0 >= currentQuestion ? Circle().foregroundColor(.white) : Circle().foregroundColor(selectedOptions[$0 - 1] == correctOptions[$0 - 1] ? Color("CorrectColor").opacity(0.5) : Color("WrongColor").opacity(0.5)))
                     .frame(width: 38, height: 38)
                     .overlay(
