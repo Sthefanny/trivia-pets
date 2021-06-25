@@ -39,8 +39,12 @@
 //                        .foregroundColor(Color("BlueTextColor"))
 //                        .scaleEffect(self.animate ? 1 : 0)
 //                }
-//                .onAppear { self.animate = true }
-//                .animation(animate ? Animation.easeInOut(duration: 1.5).repeatCount(5, autoreverses: true) : .default)
+//                .onAppear {
+//                    DispatchQueue.main.async {
+//                        self.animate = true
+//                    }
+//                }
+//                .animation(animate ? Animation.easeInOut(duration: 1.5).repeatCount(5, autoreverses: true).delay(0.1) : .default)
 //            }
 //            .onReceive(timer) { time in
 //                if self.timeRemaining > 0 {

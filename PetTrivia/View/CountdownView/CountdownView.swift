@@ -20,7 +20,7 @@ struct PulsatingView: View {
     
     @State private var isScreenActive = false
     
-    let timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     
     var circleColor = Color("YellowCircleColor")
     
@@ -43,13 +43,15 @@ struct PulsatingView: View {
                         self.animate = true
                     }
                 }
-                .animation(animate ? Animation.easeInOut(duration: 1.5).repeatCount(5, autoreverses: true).delay(0.1) : .default)
+                .animation(animate ? Animation.easeInOut(duration: 1).repeatCount(5, autoreverses: true).delay(0.1) : .default)
             }
             .onReceive(timer) { time in
                 if self.timeRemaining > 0 {
                     self.timeRemaining -= 1
-                    if self.timeRemaining == 0 {
-                        self.isScreenActive = true
+                    if self.timeRemaining == 1 {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.95, execute: {
+                            self.isScreenActive = true
+                        })
                     }
                 }
         }

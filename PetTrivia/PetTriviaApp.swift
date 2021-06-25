@@ -13,7 +13,7 @@ struct PetTriviaApp: App {
 
     var body: some Scene {
         WindowGroup {
-            CountdownView()
+            SortView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
