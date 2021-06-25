@@ -8,54 +8,50 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var frame: CGSize = .zero
+    //@State var frame: CGSize = .zero
     
     var body: some View {
         ZStack {
             Color("BackgroundColor").edgesIgnoringSafeArea(.all)
-            HStack {
-                GeometryReader { (geometry) in
-                    self.makeView(geometry)
-                }
-            }
+   //         HStack {
+        //        GeometryReader { (geometry) in
+                    self.makeView()
+          //      }
+           // }
         }
     }
     
-    func makeView(_ geometry: GeometryProxy) -> some View {
-            print(geometry.size.width, geometry.size.height)
+    func makeView() -> some View {
+        //    print(geometry.size.width, geometry.size.height)
 
-            DispatchQueue.main.async { self.frame = geometry.size }
+      //      DispatchQueue.main.async { self.frame = geometry.size }
 
-            return VStack(alignment: .leading) {
-                Text("logo do app bonitona")
-                    .padding(.all)
-                    .background(Color.gray)
-                    .frame(width: geometry.size.width)
-                Text("Olá, Fulano")
-                    .font(Font.custom("HelveticaNeue", size: 28))
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("BlueTextColor"))
-                    .padding(.all)
+            return VStack(alignment: .center) {
+              //  Spacer()
+                Image("dogTitleImage")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    //.padding(.all)
+
+                   // .frame(width: geometry.size.width)
+            Spacer()
+            Spacer()
                 HStack {
-                    CardView(imageName: "PlayCardImageLarger", title: "Jogar", subtitle: "Coloque em prova seus conhecimentos e aprenda jogando.", bgColorName: "BlueCardColor")
-                    CardView(imageName: "AchievementsCardImageLarger", title: "Suas\nconquistas", subtitle: "Biblioteca das informações conquistadas no jogo", bgColorName: "YellowCardColor")
+                    CardView(imageName: "playCardImage", title: "Jogar", bgColorName: "YellowCardColor")
+                       
+                    CardView(imageName: "wikiPetCardImage", title: "WikiPet", bgColorName: "YellowCardColor")
                 }
-                .padding(.horizontal)
-                HorizontalCardView(imageName: "StudyCardImage", backgroundImageName: "StudiesBgImage", title: "Estudos", subtitle: "Para conhecer mais sobre as categorias de perguntas.", bgColorName: "BlueCardColor")
-                    .padding(.horizontal)
-                Text("Meu Pet")
-                    .font(Font.custom("HelveticaNeue", size: 24))
-                    .fontWeight(.medium)
-                    .foregroundColor(Color("BlueCardTextColor"))
-                    .padding([.horizontal, .top])
+                //.padding(.horizontal)
+                Spacer()
                 HStack {
-                    MiniCardView(imageName: "AcessoriesCardImage", backgroundImageName: "AcessoriesBgImage", bgColorName: "YellowCardColor", title: "Acessórios")
-                        .padding(.trailing)
-                    MiniCardView(imageName: "TreatsCardImage", backgroundImageName: "TreatsBgImage", bgColorName: "YellowCardColor", title: "Petiscos")
+                    CardView(imageName: "accessoriesCardImage", title: "Acessórios", bgColorName: "BlueCardColor")
+                    CardView(imageName: "snacksCardImage", title: "Petiscos", bgColorName: "BlueCardColor")
                 }
-                .padding()
+                Spacer()
+                //.padding(.horizontal)
             }
-            .frame(width: geometry.size.width)
+            .padding()
+            //.frame(width: geometry.size.width)
         }
 }
 
