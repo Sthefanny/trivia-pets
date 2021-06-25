@@ -44,8 +44,8 @@ struct HomeView: View {
                 //.padding(.horizontal)
                 Spacer()
                 HStack {
-                    CardView(imageName: "accessoriesCardImage", title: "Acessórios", bgColorName: "BlueCardColor")
-                    CardView(imageName: "snacksCardImage", title: "Petiscos", bgColorName: "BlueCardColor")
+                    CardView(imageName: "accessoriesCardImage", title: "Acessórios", bgColorName: "YellowCardColor", isEnabled: false)
+                    CardView(imageName: "snacksCardImage", title: "Petiscos", bgColorName: "YellowCardColor", isEnabled: false)
                 }
                 Spacer()
                 //.padding(.horizontal)
@@ -60,3 +60,4 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+

@@ -9,7 +9,35 @@ import SwiftUI
 
 struct TabBarView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            HomeView()
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            //PlayView()
+            Text("em construção")
+                .tabItem {
+                    Label("Jogar", systemImage: "gamecontroller")
+                }
+            //WikiPetView()
+            Text("aqui vai a wikipet")
+                .tabItem {
+                    Label("WikiPet", systemImage: "book")
+                }
+            Text("aqui vai a aba meu pet")
+                .tabItem {
+                    Label(
+                        title: { Text("Meu Pet") },
+                        icon: { Image("pawOutline")
+                            .renderingMode(.template)
+                            .foregroundColor(.blue)
+                        }
+                    )
+                }
+        }
+        .tabViewStyle(/*@START_MENU_TOKEN@*/DefaultTabViewStyle()/*@END_MENU_TOKEN@*/)
+        .accentColor(.orange)
+        
     }
 }
 
