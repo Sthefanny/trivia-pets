@@ -12,32 +12,57 @@ struct EndGameView: View {
     
     var body: some View {
         VStack {
-            Image(systemName: result >= 3 ? "checkmark.seal.fill" : "xmark.seal.fill")
-                .foregroundColor(Color(result >= 3 ? "CorrectColor" : "WrongColor"))
-            Text(result >= 3 ? "Mandou bem!" : "Faltou pouco..")
-            Text(result >= 3 ? "Você provou que conhece sobre esse assunto, parabéns! Continue progredindo!" : "Você ainda não está pronta(o) para ter um pet, continue estudando e não desista!")
+            Image(result >= 3 ? "correctDog" : "wrongDog")
+    
+            Text(result >= 3 ? "Parabéns!" : "Que pena!")
+                .font(.custom("Helvetica Neue", size: 24))
+                .bold()
             Text("\(result)/5")
-            Button(action: {
-                
-            }) {
-                Text("Quero continuar jogando!")
-                    .frame(width: UIScreen.main.bounds.width * 0.9, height: 50)
-                    .background(Color(.red))
-            }
-            .padding(.bottom)
-            Button(action: {
-                
-            }) {
-                Text("Ver progresso")
-                    .frame(width: UIScreen.main.bounds.width * 0.9, height: 50)
-                    .background(Color(.red))
-            }
+                .font(.custom("Helvetica Neue", size: 32))
+                .bold()
+                .foregroundColor(Color(result >= 3 ? "CorrectColor" : "WrongColor"))
+                .padding(.top)
+            Text(result >= 3 ? "Você sabe muito do assunto, mas que tal dar uma olhada na nossa Wikipet para aprender um pouco mais?" : "Parece que você precisa aprender um pouco mais... não desanime e use nossa Wikipet para aprender um pouco mais!")
+                .font(.custom("Helvetica Neue", size: 18))
+                .bold()
+                .padding()
+                .multilineTextAlignment(.center)
+                Button(action: {
+                    
+                }) {
+                    Text("Menu principal")
+                        .foregroundColor(Color("BlueCardTextColor"))
+                        .frame(width: UIScreen.main.bounds.width * 0.9, height: 50)
+                        .background(Color(.white))
+                        .cornerRadius(38)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 38)
+                                .stroke(Color("StrokeBege"))
+                        )
+                }
+                .padding(.vertical)
+                Button(action: {
+                    
+                }) {
+                    Text("Continuar jogando")
+                        .foregroundColor(Color("BlueCardTextColor"))
+                        .frame(width: UIScreen.main.bounds.width * 0.9, height: 50)
+                        .background(Color(.white))
+                        .cornerRadius(38)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 38)
+                                .stroke(Color("StrokeBege"))
+                        )
+                }
         }
+        .ignoresSafeArea(edges: .all)
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        .background(Color("BackgroundColor"))
     }
 }
 
 struct EndGameView_Previews: PreviewProvider {
     static var previews: some View {
-        EndGameView(result: 3)
+        EndGameView(result: 5)
     }
 }
