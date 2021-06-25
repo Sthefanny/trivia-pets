@@ -50,6 +50,7 @@ struct OptionView: View {
     @Binding var timeRemaining: Int
     @Binding var disableButton: Bool
     @Binding var guessedRight: [Int]
+    @Binding var didEnd: Bool
     @State var isCorrect = false
     
     var questions: [QuestionCard]
@@ -72,6 +73,7 @@ struct OptionView: View {
                             UserDefaultsWrapper.setUserInfo(userInfo: userInfo)
                             let dataAvailable = UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? []
                             guessedRight = dataAvailable
+                            didEnd.toggle()
                             
                         }
                     }
@@ -104,6 +106,7 @@ struct QuestionCardView: View {
     @Binding var timeRemaining: Int
     @Binding var disabledButton: Bool
     @Binding var guessedRight: [Int]
+    @Binding var didEnd: Bool
     var questions: [QuestionCard]
     var question: QuestionCard
     var body: some View {
@@ -119,7 +122,7 @@ struct QuestionCardView: View {
             }
             .frame(maxWidth: UIScreen.main.bounds.width * 0.75)
             Spacer()
-            OptionView(currentPosition: $currentPosition, selectedOptions: $selectedOptions, timeRemaining: $timeRemaining, disableButton: $disabledButton, guessedRight: $guessedRight, questions: questions, question: question)
+            OptionView(currentPosition: $currentPosition, selectedOptions: $selectedOptions, timeRemaining: $timeRemaining, disableButton: $disabledButton, guessedRight: $guessedRight, didEnd: $didEnd, questions: questions, question: question)
         }
         .frame(maxHeight: 500)
         .padding()
@@ -130,7 +133,7 @@ struct QuestionCardView: View {
 
 struct QuestionCardView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionCardView(currentPosition: .constant(1), selectedOptions: .constant([1,1,1,1]), timeRemaining: .constant(60), disabledButton: .constant(false), guessedRight: .constant([]), questions: [QuestionCard(
+        QuestionCardView(currentPosition: .constant(1), selectedOptions: .constant([1,1,1,1]), timeRemaining: .constant(60), disabledButton: .constant(false), guessedRight: .constant([]), didEnd: .constant(false), questions: [QuestionCard(
                                                                                                                                                                             category: "Alimentação Natural",
                                                                                                                                                                             description: "Esse é um modelo de pergunta teste usado para o Question Bank",
                                                                                                                                                                             options: ["Muito Legal","Legal","Pouco Legal","Nada Legal"],

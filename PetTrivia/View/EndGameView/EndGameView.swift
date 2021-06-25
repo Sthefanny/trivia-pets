@@ -12,6 +12,7 @@ struct EndGameView: View {
     
     var body: some View {
         VStack {
+            Spacer()
             Image(result >= 3 ? "correctDog" : "wrongDog")
     
             Text(result >= 3 ? "Parabéns!" : "Que pena!")
@@ -27,33 +28,48 @@ struct EndGameView: View {
                 .bold()
                 .padding()
                 .multilineTextAlignment(.center)
-                Button(action: {
-                    
-                }) {
-                    Text("Menu principal")
-                        .foregroundColor(Color("BlueCardTextColor"))
-                        .frame(width: UIScreen.main.bounds.width * 0.9, height: 50)
-                        .background(Color(.white))
-                        .cornerRadius(38)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 38)
-                                .stroke(Color("StrokeBege"))
-                        )
-                }
-                .padding(.vertical)
-                Button(action: {
-                    
-                }) {
-                    Text("Continuar jogando")
-                        .foregroundColor(Color("BlueCardTextColor"))
-                        .frame(width: UIScreen.main.bounds.width * 0.9, height: 50)
-                        .background(Color(.white))
-                        .cornerRadius(38)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 38)
-                                .stroke(Color("StrokeBege"))
-                        )
-                }
+            Button(action: {
+//                    NavigationLink(destination: )
+            }) {
+                Text("Wikipet")
+                    .foregroundColor(Color("BlueCardTextColor"))
+                    .frame(width: UIScreen.main.bounds.width * 0.9, height: 50)
+                    .background(Color(.white))
+                    .cornerRadius(38)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 38)
+                            .stroke(Color("StrokeBege"))
+                    )
+            }
+            .padding([.bottom,.top])
+            Button(action: {
+                
+            }) {
+                Text("Continuar jogando")
+                    .foregroundColor(Color("BlueCardTextColor"))
+                    .frame(width: UIScreen.main.bounds.width * 0.9, height: 50)
+                    .background(Color(.white))
+                    .cornerRadius(38)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 38)
+                            .stroke(Color("StrokeBege"))
+                    )
+            }
+            .padding(.bottom)
+            Button(action: {
+                
+            }) {
+                Text("Menu Principal")
+                    .foregroundColor(Color("BlueCardTextColor"))
+                    .frame(width: UIScreen.main.bounds.width * 0.9, height: 50)
+                    .background(Color(.white))
+                    .cornerRadius(38)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 38)
+                            .stroke(Color("StrokeBege"))
+                    )
+            }
+            Spacer()
         }
         .ignoresSafeArea(edges: .all)
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
