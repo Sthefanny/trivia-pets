@@ -15,6 +15,7 @@
 		5B6E8ED3267D3A530079A195 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8ED2267D3A530079A195 /* GameView.swift */; };
 		5B8803322681071F003A45FA /* ProgressionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8803312681071F003A45FA /* ProgressionView.swift */; };
 		5B8803352681116A003A45FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8803342681116A003A45FA /* TimerView.swift */; };
+		5B8B650426864C2500A7A656 /* EndGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B650326864C2500A7A656 /* EndGameView.swift */; };
 		5BA5D5C42683C463001B5911 /* UserDefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA5D5C32683C463001B5911 /* UserDefaultWrapper.swift */; };
 		E52DE831267D24B5001E6195 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52DE830267D24B5001E6195 /* HomeView.swift */; };
 		E553D7F82680FA2100853A82 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E553D7F72680FA2100853A82 /* CardView.swift */; };
@@ -35,6 +36,7 @@
 		5B6E8ED2267D3A530079A195 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		5B8803312681071F003A45FA /* ProgressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionView.swift; sourceTree = "<group>"; };
 		5B8803342681116A003A45FA /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		5B8B650326864C2500A7A656 /* EndGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameView.swift; sourceTree = "<group>"; };
 		5BA5D5C32683C463001B5911 /* UserDefaultWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultWrapper.swift; sourceTree = "<group>"; };
 		E52DE830267D24B5001E6195 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E553D7F72680FA2100853A82 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,25 @@
 				5B49D9F32685150B00D620B1 /* QuestionController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B8B650026864BE200A7A656 /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				5B8803342681116A003A45FA /* TimerView.swift */,
+				5B6E8ED2267D3A530079A195 /* GameView.swift */,
+				5B8803312681071F003A45FA /* ProgressionView.swift */,
+				5B6E8ECE267D26C70079A195 /* QuestionCardView.swift */,
+			);
+			path = GameView;
+			sourceTree = "<group>";
+		};
+		5B8B650226864C0300A7A656 /* EndGameView */ = {
+			isa = PBXGroup;
+			children = (
+				5B8B650326864C2500A7A656 /* EndGameView.swift */,
+			);
+			path = EndGameView;
 			sourceTree = "<group>";
 		};
 		E5B7F1E3267BC0E30077086C = {
@@ -120,14 +141,12 @@
 		E5B7F205267BC4140077086C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5B8B650226864C0300A7A656 /* EndGameView */,
+				5B8B650026864BE200A7A656 /* GameView */,
 				E52DE830267D24B5001E6195 /* HomeView.swift */,
 				E553D7F72680FA2100853A82 /* CardView.swift */,
 				E553D7FA26812B8600853A82 /* MiniCardView.swift */,
 				11E1EF8826813AE900309519 /* HorizontalCardView.swift */,
-				5B6E8ECE267D26C70079A195 /* QuestionCardView.swift */,
-				5B6E8ED2267D3A530079A195 /* GameView.swift */,
-				5B8803312681071F003A45FA /* ProgressionView.swift */,
-				5B8803342681116A003A45FA /* TimerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +228,7 @@
 				5B49D9F42685150B00D620B1 /* QuestionController.swift in Sources */,
 				11E1EF8926813AE900309519 /* HorizontalCardView.swift in Sources */,
 				E5B7F1FC267BC0E50077086C /* PetTrivia.xcdatamodeld in Sources */,
+				5B8B650426864C2500A7A656 /* EndGameView.swift in Sources */,
 				5B3A60E7268262E900748B09 /* QuestionBank.swift in Sources */,
 				E5B7F1F0267BC0E30077086C /* PetTriviaApp.swift in Sources */,
 				E553D7F82680FA2100853A82 /* CardView.swift in Sources */,
