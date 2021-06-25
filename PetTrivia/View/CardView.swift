@@ -57,7 +57,7 @@ struct CardView: View {
             print("Teste")
         }
         .padding(5)
-     //   .aspectRatio(3/4, contentMode: .fit)
+        .aspectRatio(3/4, contentMode: .fit)
 
     }
 }
