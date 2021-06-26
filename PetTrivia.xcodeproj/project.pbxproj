@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1140E0D526876CCF005649E9 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0D426876CCF005649E9 /* TabBarView.swift */; };
+		1140E0D826877832005649E9 /* WikiPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0D726877831005649E9 /* WikiPetView.swift */; };
 		11E1EF8926813AE900309519 /* HorizontalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1EF8826813AE900309519 /* HorizontalCardView.swift */; };
 		5B3A60E6268262E900748B09 /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A60E4268262E900748B09 /* QuestionCard.swift */; };
 		5B3A60E7268262E900748B09 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A60E5268262E900748B09 /* QuestionBank.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		1140E0D426876CCF005649E9 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		1140E0D726877831005649E9 /* WikiPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPetView.swift; sourceTree = "<group>"; };
 		11E1EF8826813AE900309519 /* HorizontalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCardView.swift; sourceTree = "<group>"; };
 		5B3A60E4268262E900748B09 /* QuestionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCard.swift; sourceTree = "<group>"; };
 		5B3A60E5268262E900748B09 /* QuestionBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 				11E1EF8826813AE900309519 /* HorizontalCardView.swift */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		1140E0D626877820005649E9 /* WikiPetView */ = {
+			isa = PBXGroup;
+			children = (
+				1140E0D726877831005649E9 /* WikiPetView.swift */,
+			);
+			path = WikiPetView;
 			sourceTree = "<group>";
 		};
 		5B3A60E3268262E900748B09 /* Model */ = {
@@ -179,6 +189,7 @@
 		E5B7F205267BC4140077086C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1140E0D626877820005649E9 /* WikiPetView */,
 				1140E0D426876CCF005649E9 /* TabBarView.swift */,
 				E542F9AB2683C79A00D515BC /* CountdownView */,
 				E5766BE026825E2B0072F9C7 /* SortView */,
@@ -277,6 +288,7 @@
 				E553D7F82680FA2100853A82 /* CardView.swift in Sources */,
 				1140E0D526876CCF005649E9 /* TabBarView.swift in Sources */,
 				5BA5D5C42683C463001B5911 /* UserDefaultWrapper.swift in Sources */,
+				1140E0D826877832005649E9 /* WikiPetView.swift in Sources */,
 				5B8803322681071F003A45FA /* ProgressionView.swift in Sources */,
 				5B3A60E6268262E900748B09 /* QuestionCard.swift in Sources */,
 				5B6E8ED3267D3A530079A195 /* GameView.swift in Sources */,

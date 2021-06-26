@@ -10,7 +10,7 @@ import SwiftUI
 struct GameView: View {
     @State var timeRemaining = 60
     @State var currentPosition = 1
-    @State var selectedOptions: [Int] = [2,2,2,2]
+    @State var selectedOptions: [Int] = []
     @State var disabledButton = false
     @State var guessedRight: [Int] = []
     @State var didEnd = false
