@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1140E0D526876CCF005649E9 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0D426876CCF005649E9 /* TabBarView.swift */; };
 		11E1EF8926813AE900309519 /* HorizontalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1EF8826813AE900309519 /* HorizontalCardView.swift */; };
 		5B3A60E6268262E900748B09 /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A60E4268262E900748B09 /* QuestionCard.swift */; };
 		5B3A60E7268262E900748B09 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A60E5268262E900748B09 /* QuestionBank.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1140E0D426876CCF005649E9 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		11E1EF8826813AE900309519 /* HorizontalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCardView.swift; sourceTree = "<group>"; };
 		5B3A60E4268262E900748B09 /* QuestionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCard.swift; sourceTree = "<group>"; };
 		5B3A60E5268262E900748B09 /* QuestionBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
@@ -69,22 +71,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E542F9AB2683C79A00D515BC /* CountdownView */ = {
+		1140E0D326876721005649E9 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				E542F9AC2683C7B700D515BC /* CountdownView.swift */,
-				E542F9AE2683C83A00D515BC /* PulsatingView.swift */,
+				E553D7FA26812B8600853A82 /* MiniCardView.swift */,
+				11E1EF8826813AE900309519 /* HorizontalCardView.swift */,
 			);
-			path = CountdownView;
-			sourceTree = "<group>";
-		};
-		E5766BE026825E2B0072F9C7 /* SortView */ = {
-			isa = PBXGroup;
-			children = (
-				E5766BE126825E400072F9C7 /* SortView.swift */,
-				E5766BE326826C750072F9C7 /* CategoryOptionView.swift */,
-			);
-			path = SortView;
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		5B3A60E3268262E900748B09 /* Model */ = {
@@ -124,11 +117,30 @@
 			path = EndGameView;
 			sourceTree = "<group>";
 		};
+		E542F9AB2683C79A00D515BC /* CountdownView */ = {
+			isa = PBXGroup;
+			children = (
+				E542F9AC2683C7B700D515BC /* CountdownView.swift */,
+				E542F9AE2683C83A00D515BC /* PulsatingView.swift */,
+			);
+			path = CountdownView;
+			sourceTree = "<group>";
+		};
+		E5766BE026825E2B0072F9C7 /* SortView */ = {
+			isa = PBXGroup;
+			children = (
+				E5766BE126825E400072F9C7 /* SortView.swift */,
+				E5766BE326826C750072F9C7 /* CategoryOptionView.swift */,
+			);
+			path = SortView;
+			sourceTree = "<group>";
+		};
 		E5B7F1E3267BC0E30077086C = {
 			isa = PBXGroup;
 			children = (
 				E5B7F1EE267BC0E30077086C /* PetTrivia */,
 				E5B7F1ED267BC0E30077086C /* Products */,
+				1140E0D326876721005649E9 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,15 +179,13 @@
 		E5B7F205267BC4140077086C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1140E0D426876CCF005649E9 /* TabBarView.swift */,
 				E542F9AB2683C79A00D515BC /* CountdownView */,
 				E5766BE026825E2B0072F9C7 /* SortView */,
 				5B8B650226864C0300A7A656 /* EndGameView */,
 				5B8B650026864BE200A7A656 /* GameView */,
 				E52DE830267D24B5001E6195 /* HomeView.swift */,
 				E553D7F72680FA2100853A82 /* CardView.swift */,
-				113975D82682616400988F3E /* HomeView */,
-				113975D926857E8200988F3E /* TabBarView.swift */,
-				11A6BAE5268693A60024C7A8 /* WikiPetView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -264,8 +274,8 @@
 				5B8B650426864C2500A7A656 /* EndGameView.swift in Sources */,
 				5B3A60E7268262E900748B09 /* QuestionBank.swift in Sources */,
 				E5B7F1F0267BC0E30077086C /* PetTriviaApp.swift in Sources */,
-				113975DA26857E8200988F3E /* TabBarView.swift in Sources */,
 				E553D7F82680FA2100853A82 /* CardView.swift in Sources */,
+				1140E0D526876CCF005649E9 /* TabBarView.swift in Sources */,
 				5BA5D5C42683C463001B5911 /* UserDefaultWrapper.swift in Sources */,
 				5B8803322681071F003A45FA /* ProgressionView.swift in Sources */,
 				5B3A60E6268262E900748B09 /* QuestionCard.swift in Sources */,
