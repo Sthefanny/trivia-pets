@@ -45,9 +45,6 @@ struct CardView: View {
                 .aspectRatio(contentMode: .fit)
             
             .opacity(isEnabled ? 1 : 0.2)
-                .onTapGesture {
-                    print("Teste")
-                }
             if !isEnabled {
                     Text("Disponível em breve")
                         .font(Font.custom("HelveticaNeue", size: 12))

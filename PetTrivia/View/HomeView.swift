@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @State var isGamePresented = false
+    
     var body: some View {
         ZStack {
             Color("BackgroundColor").edgesIgnoringSafeArea(.all)
@@ -27,7 +30,9 @@ struct HomeView: View {
             Spacer()
                 HStack {
                     CardView(imageName: "playCardImage", title: "Jogar", bgColorName: "YellowCardColor")
-                       
+                        .onTapGesture {
+                            isGamePresented = true
+                        }
                     CardView(imageName: "wikiPetCardImage", title: "WikiPet", bgColorName: "YellowCardColor")
                 }
                 Spacer()
@@ -38,6 +43,10 @@ struct HomeView: View {
                 Spacer()
             }
             .padding()
+            .fullScreenCover(
+                isPresented: $isGamePresented,
+                content: { SortView() }
+            )
         }
 }
 
