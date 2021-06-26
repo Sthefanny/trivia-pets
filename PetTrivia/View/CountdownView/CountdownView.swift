@@ -27,7 +27,7 @@ struct PulsatingView: View {
     var body: some View {
             VStack {
                 ZStack {
-                    NavigationLink(destination: HomeView()
+                    NavigationLink(destination: GameView(currentCategory: selectedCategory.text)
                                     .navigationBarHidden(true)
                                     .navigationBarBackButtonHidden(true), isActive: $isScreenActive){}
                     Circle().fill(circleColor.opacity(0.3)).frame(width: 266, height: 266).scaleEffect(self.animate ? 1 : 0)

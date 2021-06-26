@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+var selectedCategory: Category!
+
+struct Category: Identifiable {
+    let id: Int
+    let text: String
+}
+
 struct SortView: View {
     @State var frame: CGSize = .zero
     
@@ -17,6 +24,7 @@ struct SortView: View {
     @State private var timeRemaining = 4
     
     @State private var isScreenActive = false
+    @State private var currentSelectedCategory: Category!
     
     private var model = CategoryOptionViewModel()
     
@@ -41,6 +49,13 @@ struct SortView: View {
     func makeView(_ geometry: GeometryProxy) -> some View {
         print(geometry.size.width, geometry.size.height)
 
+        let categories = [
+            Category(id: 3, text: "Enriquecimento Ambiental"),
+            Category(id: 2, text: "Comidas Permitidas"),
+            Category(id: 1, text: "Alimentação Natural"),
+            Category(id: 0, text: "Um Pouco de Tudo")
+        ]
+        
         DispatchQueue.main.async { self.frame = geometry.size }
 
         return VStack {
@@ -62,10 +77,9 @@ struct SortView: View {
                             .padding(.bottom, 30)
                         
                         VStack {
-                            CategoryOptionView(viewModel: model, id: 3, text: "Enriquecimento Ambiental")
-                            CategoryOptionView(viewModel: model, id: 2, text: "Comidas Permitidas")
-                            CategoryOptionView(viewModel: model, id: 1, text: "Alimentação Natural")
-                            CategoryOptionView(viewModel: model, id: 0, text: "Um Pouco de Tudo")
+                            ForEach(categories) { category in
+                                CategoryOptionView(viewModel: model, id: category.id, text: category.text)
+                            }
                         }
                         .onAppear {
                             DispatchQueue.main.async {
@@ -84,6 +98,7 @@ struct SortView: View {
                                         if (self.stopCounter > self.stop) {
                                             self.model.selectedId = Int.random(in: 0...3)
                                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                                                selectedCategory = categories[self.model.selectedId!]
                                                 self.isScreenActive = true
                                             }
                                         }
