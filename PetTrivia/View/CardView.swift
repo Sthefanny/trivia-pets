@@ -24,8 +24,7 @@ struct CardView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     }
-                   // .padding(.trailing, 0)
-                  //  .padding(.top, -16)
+
                 }
                 VStack {
                     Spacer()
@@ -34,15 +33,12 @@ struct CardView: View {
                             .font(Font.custom("HelveticaNeue", size: 16))
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             .foregroundColor(Color("BlueCardTextColor"))
-                     //       .layoutPriority(1000)
                             .padding()
                         Spacer()
 
                     }
                 }
-//                if !isEnabled {
-//                    Color.white.opacity(0.5)
-//                }
+
             }
                 .background(Color(bgColorName))
                 .cornerRadius(10)
