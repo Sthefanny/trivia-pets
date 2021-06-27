@@ -11,6 +11,7 @@
 		1140E0D826877832005649E9 /* WikiPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0D726877831005649E9 /* WikiPetView.swift */; };
 		1140E0DA26877F77005649E9 /* WikiPetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0D926877F77005649E9 /* WikiPetCardView.swift */; };
 		1140E0DC2687D9A8005649E9 /* WikiPetProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0DB2687D9A8005649E9 /* WikiPetProgressBarView.swift */; };
+		1140E0DE26881DF5005649E9 /* dogBarking.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1140E0DD26881DF5005649E9 /* dogBarking.wav */; };
 		11E1EF8926813AE900309519 /* HorizontalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1EF8826813AE900309519 /* HorizontalCardView.swift */; };
 		5B3A60E6268262E900748B09 /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A60E4268262E900748B09 /* QuestionCard.swift */; };
 		5B3A60E7268262E900748B09 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A60E5268262E900748B09 /* QuestionBank.swift */; };
@@ -40,6 +41,7 @@
 		1140E0D726877831005649E9 /* WikiPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPetView.swift; sourceTree = "<group>"; };
 		1140E0D926877F77005649E9 /* WikiPetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPetCardView.swift; sourceTree = "<group>"; };
 		1140E0DB2687D9A8005649E9 /* WikiPetProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPetProgressBarView.swift; sourceTree = "<group>"; };
+		1140E0DD26881DF5005649E9 /* dogBarking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dogBarking.wav; sourceTree = "<group>"; };
 		11E1EF8826813AE900309519 /* HorizontalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCardView.swift; sourceTree = "<group>"; };
 		5B3A60E4268262E900748B09 /* QuestionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCard.swift; sourceTree = "<group>"; };
 		5B3A60E5268262E900748B09 /* QuestionBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		E5B7F1EE267BC0E30077086C /* PetTrivia */ = {
 			isa = PBXGroup;
 			children = (
+				1140E0DD26881DF5005649E9 /* dogBarking.wav */,
 				5B49D9F2268514FC00D620B1 /* Controller */,
 				5B3A60E3268262E900748B09 /* Model */,
 				E5B7F205267BC4140077086C /* View */,
@@ -266,6 +269,7 @@
 			files = (
 				E5B7F1F7267BC0E50077086C /* Preview Assets.xcassets in Resources */,
 				E5B7F1F4267BC0E50077086C /* Assets.xcassets in Resources */,
+				1140E0DE26881DF5005649E9 /* dogBarking.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,7 +433,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PetTrivia/Preview Content\"";
-				DEVELOPMENT_TEAM = 3L227M8784;
+				DEVELOPMENT_TEAM = UL74FQ825B;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PetTrivia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -437,7 +441,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.castelito.PetTrivia;
+				PRODUCT_BUNDLE_IDENTIFIER = com.castelito.PetTriviam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -451,7 +455,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PetTrivia/Preview Content\"";
-				DEVELOPMENT_TEAM = 3L227M8784;
+				DEVELOPMENT_TEAM = UL74FQ825B;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PetTrivia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -459,7 +463,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.castelito.PetTrivia;
+				PRODUCT_BUNDLE_IDENTIFIER = com.castelito.PetTriviam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

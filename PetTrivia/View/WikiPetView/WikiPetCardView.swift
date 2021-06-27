@@ -12,6 +12,8 @@ struct WikiPetCardView: View {
     @State var categoryTitle: String
     @State var bgColorName: String
     
+    let progress: Int
+    
     var body: some View {
         VStack (alignment: .leading) {
             HStack {
@@ -43,9 +45,9 @@ struct WikiPetCardView: View {
                     Spacer()
                     
                     VStack (alignment: .center) {
-                        WikiPetProgressBarView(progress: 0.2)
+                        WikiPetProgressBarView(progress: CGFloat(progress)/5)
             
-                        Text("1/5 perguntas acertadas!")
+                        Text("\(progress) / 5 perguntas acertadas!")
                             .font(Font.custom("HelveticaNeue", size: 14))
                             .foregroundColor(Color("BlueTextColor"))
                     }
@@ -67,6 +69,6 @@ struct WikiPetCardView: View {
 struct WikiPetCardView_Previews: PreviewProvider {
     static var previews: some View {
         WikiPetView()
-        WikiPetCardView(categoryImageName: "steakImage", categoryTitle: "Alimentação Natural", bgColorName: "YellowCardColor")
+        WikiPetCardView(categoryImageName: "steakImage", categoryTitle: "Alimentação Natural", bgColorName: "YellowCardColor", progress: Int(2))
     }
 }

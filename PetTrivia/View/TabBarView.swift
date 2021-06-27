@@ -14,8 +14,11 @@ struct TabBarView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
-            //PlayView()
-            Text("em construção")
+
+            ProgressView()
+                .fullScreenCover(isPresented: /*@START_MENU_TOKEN@*/.constant(true)/*@END_MENU_TOKEN@*/, content: {
+                    SortView()
+                })
                 .tabItem {
                     Label("Jogar", systemImage: "gamecontroller")
                 }
