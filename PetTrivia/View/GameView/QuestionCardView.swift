@@ -134,11 +134,11 @@ struct QuestionCardView: View {
 struct QuestionCardView_Previews: PreviewProvider {
     static var previews: some View {
         QuestionCardView(currentPosition: .constant(1), selectedOptions: .constant([1,1,1,1]), timeRemaining: .constant(60), disabledButton: .constant(false), guessedRight: .constant([]), didEnd: .constant(false), questions: [QuestionCard(
-                                                                                                                                                                            category: "Alimentação Natural",
+                                                                                                                                                                                                                                    category: .naturalDiet,
                                                                                                                                                                             description: "Esse é um modelo de pergunta teste usado para o Question Bank",
                                                                                                                                                                             options: ["Muito Legal","Legal","Pouco Legal","Nada Legal"],
                                                                                                                                                                                     correctOption: 1, questionId: 1)], question: QuestionCard(
-                    category: "Alimentação Natural",
+                    category: .naturalDiet,
                     description: "Esse é um modelo de pergunta teste usado para o Question Bank",
                     options: ["Muito Legal","Legal","Pouco Legal","Nada Legal"],
                             correctOption: 1, questionId: 1))

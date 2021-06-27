@@ -15,7 +15,7 @@ struct GameView: View {
     @State var guessedRight: [Int] = []
     @State var didEnd = false
     
-    var currentCategory: String
+    var currentCategory: QuestionCategory
     
     var questions: [QuestionCard] {
         QuestionBank.instance.questionFilter(category: currentCategory, guessedRight: guessedRight)
@@ -63,7 +63,7 @@ struct GameView: View {
                     VStack {
                         TimerView(timeRemaining: $timeRemaining, disabledButton: $disabledButton)
                         ProgressionView(currentQuestion: $currentPosition, selectedOptions: $selectedOptions, correctOptions: getCorrectAnswers(questions: questions))
-                        Text(currentCategory)
+                        Text(currentCategory.rawValue)
                             .font(.custom("Helvetica Neue", size: 34))
                             .fontWeight(.bold)
                             .padding()
@@ -80,6 +80,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(currentCategory: "Alimentação Natural")
+        GameView(currentCategory: .naturalDiet)
     }
 }

@@ -11,7 +11,7 @@ struct WikiPetView: View {
     
   //  @State var correctAnswers: [QuestionCard]
     
-    func loadCorrectAnswers(_ category: String) -> Int {
+    func loadCorrectAnswers(_ category: QuestionCategory) -> Int {
         let allQuestions = QuestionBank.instance.questionList
         let rightIDs = UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? []
         let rightQuestions = allQuestions.filter {
@@ -38,13 +38,13 @@ struct WikiPetView: View {
 
                 Spacer()
                
-                WikiPetCardView(categoryImageName: "steakImage", categoryTitle: "Alimentação Natural", bgColorName: "YellowCardColor", progress: loadCorrectAnswers("Alimentação Natural"))
+                WikiPetCardView(categoryImageName: "steakImage", categoryTitle: QuestionCategory.naturalDiet.rawValue, bgColorName: "YellowCardColor", progress: loadCorrectAnswers(.naturalDiet))
                     .padding(.bottom)
                 
-                WikiPetCardView(categoryImageName: "bananaImage", categoryTitle: "Comidas Permitidas", bgColorName: "YellowCardColor", progress: loadCorrectAnswers("Comidas Permitidas"))
+                WikiPetCardView(categoryImageName: "bananaImage", categoryTitle: QuestionCategory.allowedFood.rawValue, bgColorName: "YellowCardColor", progress: loadCorrectAnswers(.allowedFood))
                     .padding(.bottom)
 
-                WikiPetCardView(categoryImageName: "lavanderImage", categoryTitle: "Enriquecimento Ambiental", bgColorName: "YellowCardColor", progress: loadCorrectAnswers("Enriquecimento Ambiental"))
+                WikiPetCardView(categoryImageName: "lavanderImage", categoryTitle: QuestionCategory.environmentalEnrichment.rawValue, bgColorName: "YellowCardColor", progress: loadCorrectAnswers(.environmentalEnrichment))
                     .padding(.bottom)
                 Spacer()
                 

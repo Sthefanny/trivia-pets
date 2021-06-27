@@ -50,10 +50,10 @@ struct SortView: View {
         print(geometry.size.width, geometry.size.height)
 
         let categories = [
-            Category(id: 3, text: "Enriquecimento Ambiental"),
-            Category(id: 2, text: "Comidas Permitidas"),
-            Category(id: 1, text: "Alimentação Natural"),
-            Category(id: 0, text: "Um Pouco de Tudo")
+            Category(id: 3, text: QuestionCategory.environmentalEnrichment.rawValue),
+            Category(id: 2, text: QuestionCategory.allowedFood.rawValue),
+            Category(id: 1, text: QuestionCategory.naturalDiet.rawValue),
+            Category(id: 0, text: QuestionCategory.allOptions.rawValue)
         ]
         
         DispatchQueue.main.async { self.frame = geometry.size }
@@ -96,9 +96,9 @@ struct SortView: View {
                                     
                                     if (self.timeRemaining == 0) {
                                         if (self.stopCounter > self.stop) {
-                                            self.model.selectedId = Int.random(in: 0...3)
+                                            self.model.selectedId = 0
                                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-                                                selectedCategory = categories[self.model.selectedId!]
+                                                selectedCategory = categories.first(where: { $0.id == self.model.selectedId! })
                                                 self.isScreenActive = true
                                             }
                                         }

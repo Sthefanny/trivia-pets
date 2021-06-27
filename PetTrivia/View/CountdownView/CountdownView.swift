@@ -27,11 +27,11 @@ struct PulsatingView: View {
     var body: some View {
             VStack {
                 ZStack {
-                    NavigationLink(destination: GameView(currentCategory: selectedCategory.text)
+                    NavigationLink(destination: GameView(currentCategory: QuestionCategory(rawValue: selectedCategory.text)!)
                                     .navigationBarHidden(true)
                                     .navigationBarBackButtonHidden(true), isActive: $isScreenActive){}
-                    Circle().fill(circleColor.opacity(0.3)).frame(width: 266, height: 266).scaleEffect(self.animate ? 1 : 0)
-                    Circle().fill(circleColor.opacity(0.9)).frame(width: 214, height: 214).scaleEffect(self.animate ? 1 : 0)
+                    Circle().fill(circleColor.opacity(0.3)).frame(width: 200, height: 200).scaleEffect(self.animate ? 1 : 0)
+                    Circle().fill(circleColor.opacity(0.9)).frame(width: 148, height: 148).scaleEffect(self.animate ? 1 : 0)
                     Text("\(timeRemaining)")
                         .font(Font.custom("HelveticaNeue", size: 96))
                         .fontWeight(.medium)

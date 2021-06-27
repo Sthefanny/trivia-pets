@@ -17,14 +17,14 @@ struct Option: Identifiable {
 }
 
 class QuestionCard {
-    let category: String
+    let category: QuestionCategory
     let description: String
     let options: [Option]
     let correctOption: Int
     let questionId: Int
     
     
-    init(category: String, description: String, options: [String], correctOption: Int, questionId: Int) {
+    init(category: QuestionCategory, description: String, options: [String], correctOption: Int, questionId: Int) {
         self.category = category
         self.description = description
         self.options = [
@@ -36,4 +36,11 @@ class QuestionCard {
         self.correctOption = correctOption
         self.questionId = questionId
     }
+}
+
+enum QuestionCategory: String {
+    case naturalDiet = "Alimentação Natural"
+    case allowedFood = "Comidas Permitidas"
+    case environmentalEnrichment = "Enriquecimento Ambiental"
+    case allOptions = "Um Pouco de Tudo"
 }
