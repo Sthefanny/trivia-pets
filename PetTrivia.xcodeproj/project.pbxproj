@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1140E0D526876CCF005649E9 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0D426876CCF005649E9 /* TabBarView.swift */; };
 		1140E0D826877832005649E9 /* WikiPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0D726877831005649E9 /* WikiPetView.swift */; };
+		1140E0DA26877F77005649E9 /* WikiPetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0D926877F77005649E9 /* WikiPetCardView.swift */; };
+		1140E0DC2687D9A8005649E9 /* WikiPetProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0DB2687D9A8005649E9 /* WikiPetProgressBarView.swift */; };
 		11E1EF8926813AE900309519 /* HorizontalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1EF8826813AE900309519 /* HorizontalCardView.swift */; };
 		5B3A60E6268262E900748B09 /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A60E4268262E900748B09 /* QuestionCard.swift */; };
 		5B3A60E7268262E900748B09 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A60E5268262E900748B09 /* QuestionBank.swift */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		1140E0D426876CCF005649E9 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		1140E0D726877831005649E9 /* WikiPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPetView.swift; sourceTree = "<group>"; };
+		1140E0D926877F77005649E9 /* WikiPetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPetCardView.swift; sourceTree = "<group>"; };
+		1140E0DB2687D9A8005649E9 /* WikiPetProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPetProgressBarView.swift; sourceTree = "<group>"; };
 		11E1EF8826813AE900309519 /* HorizontalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCardView.swift; sourceTree = "<group>"; };
 		5B3A60E4268262E900748B09 /* QuestionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCard.swift; sourceTree = "<group>"; };
 		5B3A60E5268262E900748B09 /* QuestionBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				1140E0D726877831005649E9 /* WikiPetView.swift */,
+				1140E0D926877F77005649E9 /* WikiPetCardView.swift */,
+				1140E0DB2687D9A8005649E9 /* WikiPetProgressBarView.swift */,
 			);
 			path = WikiPetView;
 			sourceTree = "<group>";
@@ -280,8 +286,10 @@
 				5B49D9F42685150B00D620B1 /* QuestionController.swift in Sources */,
 				11E1EF8926813AE900309519 /* HorizontalCardView.swift in Sources */,
 				E5766BE226825E400072F9C7 /* SortView.swift in Sources */,
+				1140E0DC2687D9A8005649E9 /* WikiPetProgressBarView.swift in Sources */,
 				E542F9AD2683C7B700D515BC /* CountdownView.swift in Sources */,
 				E5B7F1FC267BC0E50077086C /* PetTrivia.xcdatamodeld in Sources */,
+				1140E0DA26877F77005649E9 /* WikiPetCardView.swift in Sources */,
 				5B8B650426864C2500A7A656 /* EndGameView.swift in Sources */,
 				5B3A60E7268262E900748B09 /* QuestionBank.swift in Sources */,
 				E5B7F1F0267BC0E30077086C /* PetTriviaApp.swift in Sources */,

@@ -11,12 +11,29 @@ struct WikiPetView: View {
     var body: some View {
         ZStack {
             Image("CountdownBg").resizable().edgesIgnoringSafeArea(.all)
-            HStack{
-                Image("PetizLogoPaw")
+            
+
+            VStack{
+                
+                Image("wikipetTitleImage")
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: .fit)
+                Spacer()
+                
+                Spacer()
+                WikiPetCardView(categoryImageName: "steakImage", categoryTitle: "Alimentação Natural", bgColorName: "YellowCardColor")
+                    .padding(.bottom)
+                
+                WikiPetCardView(categoryImageName: "bananaImage", categoryTitle: "Comidas Permitidas", bgColorName: "YellowCardColor")
+                    .padding(.bottom)
+
+                WikiPetCardView(categoryImageName: "lavanderImage", categoryTitle: "Enriquecimento Ambiental", bgColorName: "YellowCardColor")
+                Spacer()
+                
 
             }
+            .padding()
+         
         }
     }
 }

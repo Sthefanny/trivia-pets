@@ -24,7 +24,6 @@ struct CardView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     }
-
                 }
                 VStack {
                     Spacer()
@@ -56,7 +55,7 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        //HomeView()
         CardView(imageName: "playCardImage", title: "Jogar",  bgColorName: "BlueCardColor")
     }
 }

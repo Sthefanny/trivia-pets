@@ -19,8 +19,7 @@ struct TabBarView: View {
                 .tabItem {
                     Label("Jogar", systemImage: "gamecontroller")
                 }
-            //WikiPetView()
-            Text("aqui vai a wikipet")
+            WikiPetView()
                 .tabItem {
                     Label("WikiPet", systemImage: "book")
                 }
