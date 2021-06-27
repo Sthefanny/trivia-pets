@@ -13,14 +13,18 @@ class QuestionBank {
     var questionList = [QuestionCard]()
 
     
-    func questionFilter(category: QuestionCategory?, guessedRight: [Int]) -> [QuestionCard] {
-        var actual: [QuestionCard] = []
-        for i in questionList {
-            if (category == nil || i.category == category) && !guessedRight.contains(i.questionId){
-                actual.append(i)
+    func questionFilter(category: QuestionCategory, guessedRight: [Int]) -> [QuestionCard] {
+        var actual: [QuestionCard] = questionList.filter { i in
+            return !guessedRight.contains(i.questionId)
+        }
+        
+        if category != .allOptions {
+            actual = actual.filter { i in
+                return i.category == category
             }
         }
-        return actual
+        
+        return actual.shuffled()
     }
     
     
