@@ -14,6 +14,8 @@ struct HomeView: View {
     @State var player: AVAudioPlayer?
     @State var isAnimatingDog = false
     
+    let showWiki: () -> Void
+    
     var body: some View {
         ZStack {
             Color("BackgroundColor").edgesIgnoringSafeArea(.all)
@@ -70,6 +72,9 @@ struct HomeView: View {
                             isGamePresented = true
                         }
                     CardView(imageName: "wikiPetCardImage", title: "WikiPet", bgColorName: "YellowCardColor")
+                        .onTapGesture {
+                            showWiki()
+                        }
                 }
                 Spacer()
                 HStack {
@@ -88,7 +93,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView() {}
     }
 }
 

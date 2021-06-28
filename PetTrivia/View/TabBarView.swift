@@ -7,13 +7,23 @@
 
 import SwiftUI
 
+enum Tab {
+    case home, play, wiki, myPet
+}
+
 struct TabBarView: View {
+    
+    @State var currentTab: Tab = .home
+    
     var body: some View {
-        TabView {
-            HomeView()
-                .tabItem {
-                    Label("Home", systemImage: "house")
-                }
+        TabView(selection: $currentTab) {
+            HomeView() {
+                currentTab = .wiki
+            }
+            .tabItem {
+                Label("Home", systemImage: "house")
+            }
+            .tag(Tab.home)
 
             ProgressView()
                 .fullScreenCover(isPresented: /*@START_MENU_TOKEN@*/.constant(true)/*@END_MENU_TOKEN@*/, content: {
@@ -22,10 +32,12 @@ struct TabBarView: View {
                 .tabItem {
                     Label("Jogar", systemImage: "gamecontroller")
                 }
+                .tag(Tab.play)
             WikiPetView()
                 .tabItem {
                     Label("WikiPet", systemImage: "book")
                 }
+                .tag(Tab.wiki)
             Text("aqui vai a aba meu pet")
                 .tabItem {
                     Label(
@@ -36,6 +48,7 @@ struct TabBarView: View {
                         }
                     )
                 }
+                .tag(Tab.myPet)
         }
         .tabViewStyle(/*@START_MENU_TOKEN@*/DefaultTabViewStyle()/*@END_MENU_TOKEN@*/)
         .accentColor(.orange)

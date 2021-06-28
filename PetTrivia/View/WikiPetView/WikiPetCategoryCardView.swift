@@ -11,18 +11,33 @@ struct WikiPetCategoryCardView: View {
     
     @State var bgColorName: String
     
+    var question: String
+    var note: String
+    
+    
     var body: some View {
-        VStack{
+        VStack {
         //Spacer()
-           Text("A alimentação natural é uma dieta balanceada, composta por ingredientes naturais e minimamente processados que são preparados de forma caseira para suprir todas as necessidades do cão.")
-                .padding()
-                .font(Font.custom("HelveticaNeue", size: 17))
-                //.fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                .foregroundColor(Color("BlueCardTextColor"))
-           // Spacer()
+            ScrollView{
+                VStack (alignment: .leading) {
+                    Text(question)
+                        .font(Font.custom("HelveticaNeue", size: 20))
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color("BlueCardTextColor"))
+                    Spacer()
+                    
+                    Text(note)
+                        .font(Font.custom("HelveticaNeue", size: 17))
+                        .foregroundColor(Color("BlueCardTextColor"))
+                }               
+               
+            }
+            .padding()
+                
+            .opacity(1)
+            Spacer()
         }
-        .background(Color(bgColorName))
-        .opacity(0.6)
+        .background(Color(bgColorName).opacity(0.2))
         .cornerRadius(10)
         
     }
@@ -31,7 +46,7 @@ struct WikiPetCategoryCardView: View {
 
 struct WikiPetCategoryCardView_Previews: PreviewProvider {
     static var previews: some View {
-        WikiPetCategoryCardView(bgColorName: "BlueCardColor")
+        WikiPetCategoryCardView(bgColorName: "BlueCardColor", question: "Qual cardápio está correto para alimentar o seu cão?", note: .init(repeating: "a", count: 10000))
     }
 }
 

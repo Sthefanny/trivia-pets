@@ -137,10 +137,10 @@ struct QuestionCardView_Previews: PreviewProvider {
                                                                                                                                                                                                                                     category: .naturalDiet,
                                                                                                                                                                             description: "Esse é um modelo de pergunta teste usado para o Question Bank",
                                                                                                                                                                             options: ["Muito Legal","Legal","Pouco Legal","Nada Legal"],
-                                                                                                                                                                                    correctOption: 1, questionId: 1)], question: QuestionCard(
+                                                                                                                                                                                                                                    correctOption: 1, questionId: 1, note:nil)], question: QuestionCard(
                     category: .naturalDiet,
                     description: "Esse é um modelo de pergunta teste usado para o Question Bank",
                     options: ["Muito Legal","Legal","Pouco Legal","Nada Legal"],
-                            correctOption: 1, questionId: 1))
+                                                                                                                                                                                                                                        correctOption: 1, questionId: 1, note: nil))
     }
 }
