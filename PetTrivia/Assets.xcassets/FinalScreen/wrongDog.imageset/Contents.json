@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "correctDog.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "wrongDog.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
