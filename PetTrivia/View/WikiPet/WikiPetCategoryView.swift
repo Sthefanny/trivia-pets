@@ -27,12 +27,7 @@ struct WikiPetCategoryView: View {
                         .font(Font.custom("HelveticaNeue", size: 35))
                         .fontWeight(.medium)
                         .foregroundColor(Color("BlueTextColor"))
-                       // .padding(.bottom, 2)
-                    
-//                    Text(question)
-//                        .font(Font.custom("HelveticaNeue", size: 20))
-//                        .fontWeight(.thin)
-//                        .foregroundColor(Color("BlueTextColor"))
+                      
                 }
                 .padding(.bottom)
                 Spacer()

@@ -80,10 +80,11 @@ struct OptionView: View {
                 }) {
                     HStack {
                         Text(option.option)
-                            .font(.custom("Helvetica Neue", size: 20))
+                            .font(.custom("Helvetica Neue", size: 15))
                             .padding()
                         Spacer()
                     }
+                    
                     .frame(maxWidth: UIScreen.main.bounds.width * 0.75)
                     .background(Color(disableButton && isSelectedOption(option: option, selectedOption: selectedOptions, question: question) ? (isCorrect ? "CorrectColor" : "WrongColor") : "BackgroundColor"))
                     .cornerRadius(40)
@@ -123,16 +124,19 @@ struct QuestionCardView: View {
             .frame(maxWidth: UIScreen.main.bounds.width * 0.75)
             Spacer()
             OptionView(currentPosition: $currentPosition, selectedOptions: $selectedOptions, timeRemaining: $timeRemaining, disableButton: $disabledButton, guessedRight: $guessedRight, didEnd: $didEnd, questions: questions, question: question)
+            Spacer()
         }
+        
         .frame(maxHeight: 500)
         .padding()
         .background(Color.white)
-        .cornerRadius(24)
+        .cornerRadius(10)
     }
 }
 
 struct QuestionCardView_Previews: PreviewProvider {
     static var previews: some View {
+    
         QuestionCardView(currentPosition: .constant(1), selectedOptions: .constant([1,1,1,1]), timeRemaining: .constant(60), disabledButton: .constant(false), guessedRight: .constant([]), didEnd: .constant(false), questions: [QuestionCard(
                                                                                                                                                                                                                                     category: .naturalDiet,
                                                                                                                                                                             description: "Esse é um modelo de pergunta teste usado para o Question Bank",

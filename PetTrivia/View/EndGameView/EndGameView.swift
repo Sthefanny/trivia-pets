@@ -14,6 +14,8 @@ struct EndGameView: View {
         VStack {
             Spacer()
             Image(result >= 3 ? "correctDog" : "wrongDog")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
     
             Text(result >= 3 ? "Parabéns!" : "Que pena!")
                 .font(.custom("Helvetica Neue", size: 24))
