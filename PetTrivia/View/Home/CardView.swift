@@ -19,7 +19,7 @@ struct CardView: View {
             ZStack {
                 if imageName != nil {
                     HStack {
-                        Spacer()
+                        //Spacer()
                         Image(imageName!)
                             .resizable()
                             .aspectRatio(contentMode: .fit)

@@ -39,7 +39,7 @@ struct GameView: View {
     }
     
     func getCorrectAnswers() {
-        for i in 0...4 {
+        for i in 0..<4 {
             self.correctAnswers.append(self.questions[i].correctOption)
         }
     }

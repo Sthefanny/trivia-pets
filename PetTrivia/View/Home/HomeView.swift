@@ -46,7 +46,7 @@ struct HomeView: View {
     func makeView() -> some View {
 
             return VStack(alignment: .center) {
-              //  Spacer()
+                Spacer()
                 Button(action: {
                     isAnimatingDog = true
                     playSound()
@@ -64,24 +64,25 @@ struct HomeView: View {
                 })
                 
 
-            Spacer()
-            Spacer()
+//            Spacer()
+//            Spacer()
                 HStack {
                     CardView(imageName: "playCardImage", title: "Jogar", bgColorName: "YellowCardColor")
                         .onTapGesture {
                             isGamePresented = true
                         }
+                    
                     CardView(imageName: "wikiPetCardImage", title: "WikiPet", bgColorName: "YellowCardColor")
                         .onTapGesture {
                             showWiki()
                         }
                 }
-                Spacer()
+//                Spacer()
                 HStack {
                     CardView(imageName: "accessoriesCardImage", title: "Acessórios", bgColorName: "YellowCardColor", isEnabled: false)
                     CardView(imageName: "snacksCardImage", title: "Petiscos", bgColorName: "YellowCardColor", isEnabled: false)
                 }
-                Spacer()
+//                Spacer()
             }
             .padding()
             .fullScreenCover(
