@@ -71,7 +71,14 @@ struct GameView: View {
                                     .fontWeight(.bold)
                                     .padding()
                                     .foregroundColor(Color("BlueCardTextColor"))
-                                QuestionCardView(currentPosition: $currentPosition, selectedOptions: $selectedOptions, timeRemaining: $timeRemaining, disabledButton: $disabledButton, guessedRight: $guessedRight, didEnd: $didEnd, questions: questions, question: questions[currentPosition - 1])
+                                QuestionCardView(currentPosition: $currentPosition,
+                                                 selectedOptions: $selectedOptions,
+                                                 timeRemaining: $timeRemaining,
+                                                 disabledButton: $disabledButton,
+                                                 guessedRight: $guessedRight,
+                                                 didEnd: $didEnd,
+                                                 questions: questions,
+                                                 question: questions[currentPosition - 1])
                             }
                         )
                 }

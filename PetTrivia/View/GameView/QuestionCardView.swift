@@ -122,6 +122,7 @@ struct QuestionCardView: View {
                     .padding(.bottom)
             }
             .frame(maxWidth: UIScreen.main.bounds.width * 0.75)
+            
             Spacer()
             OptionView(currentPosition: $currentPosition, selectedOptions: $selectedOptions, timeRemaining: $timeRemaining, disableButton: $disabledButton, guessedRight: $guessedRight, didEnd: $didEnd, questions: questions, question: question)
             Spacer()
@@ -129,9 +130,10 @@ struct QuestionCardView: View {
         
         .frame(maxHeight: 500)
         .padding()
-        .background(Color.white)
+        .background(Color.white .opacity(0.7))
         .cornerRadius(10)
     }
+    
 }
 
 struct QuestionCardView_Previews: PreviewProvider {
