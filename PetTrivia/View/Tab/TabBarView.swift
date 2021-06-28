@@ -18,7 +18,7 @@ struct TabBarView: View {
     var body: some View {
         TabView(selection: $currentTab) {
             HomeView() {
-                currentTab = .wiki
+                currentTab = .home
             }
             .tabItem {
                 Label("Home", systemImage: "house")

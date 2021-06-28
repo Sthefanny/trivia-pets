@@ -25,52 +25,52 @@ struct WikiPetView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
+            ScrollView {
+                VStack {
+                    Image("wikipetTitleImage")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    Spacer()
+                    Text("WikiPet")
+                        .font(Font.custom("HelveticaNeue", size: 40))
+                        .fontWeight(.medium)
+                        .foregroundColor(Color("BlueTextColor"))
+
+                    Spacer()
+              
+                    NavigationLink(
+                        destination: WikiPetCategoryView(
+                            category: "Alimentação Natural",
+                            categoryImageName: "steakCategoryImage",
+                            question: "O que é alimentação natural para cães?",
+                            categoryQuestions: QuestionBank.instance.questionFilter(category: .naturalDiet, guessedRight: UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? [])
+                        ),
+                        label: {
+                            WikiPetCardView(categoryImageName: "steakImage", categoryTitle: QuestionCategory.naturalDiet.rawValue, bgColorName: "YellowCardColor", progress: loadCorrectAnswers(.naturalDiet))
+                        })
+                        .padding(.bottom)
+                    
+                    NavigationLink(
+                        destination: WikiPetCategoryView(category: "Comidas Permitidas", categoryImageName: "bananaCategoryImage", question: "O que é alimentação natural para cães?", categoryQuestions:  QuestionBank.instance.questionFilter(category: .allowedFood, guessedRight: UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? [])),
+                        label: {
+                            WikiPetCardView(categoryImageName: "bananaImage", categoryTitle: QuestionCategory.allowedFood.rawValue, bgColorName: "YellowCardColor", progress: loadCorrectAnswers(.allowedFood))
+                        })
+                        .padding(.bottom)
+                    
+                    NavigationLink(
+                        destination: WikiPetCategoryView(category: "Enriquecimento Ambiental", categoryImageName: "lavanderCategoryImage", question: "O que é alimentação natural para cães?", categoryQuestions:  QuestionBank.instance.questionFilter(category: .environmentalEnrichment, guessedRight: UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? [])),
+                        label: {
+                            WikiPetCardView(categoryImageName: "lavanderImage", categoryTitle: QuestionCategory.environmentalEnrichment.rawValue, bgColorName: "YellowCardColor", progress: loadCorrectAnswers(.environmentalEnrichment))
+
+                        })
+                }
+                .padding()
+            }
+            .background(
                 Image("CountdownBg")
                     .resizable()
-                
-                ScrollView {
-                    VStack {
-                        Image("wikipetTitleImage")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                        Spacer()
-                        Text("WikiPet")
-                            .font(Font.custom("HelveticaNeue", size: 40))
-                            .fontWeight(.medium)
-                            .foregroundColor(Color("BlueTextColor"))
-
-                        Spacer()
-                  
-                        NavigationLink(
-                            destination: WikiPetCategoryView(
-                                category: "Alimentação Natural",
-                                categoryImageName: "steakCategoryImage",
-                                question: "O que é alimentação natural para cães?",
-                                categoryQuestions: QuestionBank.instance.questionFilter(category: .naturalDiet, guessedRight: UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? [])
-                            ),
-                            label: {
-                                WikiPetCardView(categoryImageName: "steakImage", categoryTitle: QuestionCategory.naturalDiet.rawValue, bgColorName: "YellowCardColor", progress: loadCorrectAnswers(.naturalDiet))
-                            })
-                            .padding(.bottom)
-                        
-                        NavigationLink(
-                            destination: WikiPetCategoryView(category: "Comidas Permitidas", categoryImageName: "bananaCategoryImage", question: "O que é alimentação natural para cães?", categoryQuestions:  QuestionBank.instance.questionFilter(category: .allowedFood, guessedRight: UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? [])),
-                            label: {
-                                WikiPetCardView(categoryImageName: "bananaImage", categoryTitle: QuestionCategory.allowedFood.rawValue, bgColorName: "YellowCardColor", progress: loadCorrectAnswers(.allowedFood))
-                            })
-                            .padding(.bottom)
-                        
-                        NavigationLink(
-                            destination: WikiPetCategoryView(category: "Enriquecimento Ambiental", categoryImageName: "lavanderCategoryImage", question: "O que é alimentação natural para cães?", categoryQuestions:  QuestionBank.instance.questionFilter(category: .environmentalEnrichment, guessedRight: UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? [])),
-                            label: {
-                                WikiPetCardView(categoryImageName: "lavanderImage", categoryTitle: QuestionCategory.environmentalEnrichment.rawValue, bgColorName: "YellowCardColor", progress: loadCorrectAnswers(.environmentalEnrichment))
-
-                            })
-                    }
-                    .padding()
-                }
-            }
+                    .edgesIgnoringSafeArea(.all)
+            )
             .padding(.top, 32)
             .edgesIgnoringSafeArea([.top, .horizontal])
         }

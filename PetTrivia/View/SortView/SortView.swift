@@ -42,7 +42,7 @@ struct SortView: View {
                 Image("SortBg")
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
-        )
+            )
         }
     }
     
