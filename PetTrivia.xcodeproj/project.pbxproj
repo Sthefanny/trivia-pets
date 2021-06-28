@@ -83,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11389E7726896A0600E53586 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				1140E0D426876CCF005649E9 /* TabBarView.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		11389E7826896AA600E53586 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E52DE830267D24B5001E6195 /* HomeView.swift */,
+				E553D7F72680FA2100853A82 /* CardView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		1140E0D326876721005649E9 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,7 +109,7 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		1140E0D626877820005649E9 /* WikiPetView */ = {
+		1140E0D626877820005649E9 /* WikiPet */ = {
 			isa = PBXGroup;
 			children = (
 				1140E0D726877831005649E9 /* WikiPetView.swift */,
@@ -101,7 +118,7 @@
 				1140E0DB2687D9A8005649E9 /* WikiPetProgressBarView.swift */,
 				1153A2C7268904FD009AD3A8 /* WikiPetCategoryCardView.swift */,
 			);
-			path = WikiPetView;
+			path = WikiPet;
 			sourceTree = "<group>";
 		};
 		5B3A60E3268262E900748B09 /* Model */ = {
@@ -204,14 +221,13 @@
 		E5B7F205267BC4140077086C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1140E0D626877820005649E9 /* WikiPetView */,
-				1140E0D426876CCF005649E9 /* TabBarView.swift */,
+				11389E7826896AA600E53586 /* Home */,
+				11389E7726896A0600E53586 /* Tab */,
+				1140E0D626877820005649E9 /* WikiPet */,
 				E542F9AB2683C79A00D515BC /* CountdownView */,
 				E5766BE026825E2B0072F9C7 /* SortView */,
 				5B8B650226864C0300A7A656 /* EndGameView */,
 				5B8B650026864BE200A7A656 /* GameView */,
-				E52DE830267D24B5001E6195 /* HomeView.swift */,
-				E553D7F72680FA2100853A82 /* CardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
