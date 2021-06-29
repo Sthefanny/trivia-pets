@@ -17,6 +17,7 @@ struct GameView: View {
     @State var questions: [QuestionCard] = []
     @State var correctAnswers: [Int] = []
     @State var isLoaded = false
+    @State var backActive = false
 
     var currentCategory: QuestionCategory
     
@@ -62,7 +63,7 @@ struct GameView: View {
                         .ignoresSafeArea(edges: .all)
                         .overlay(
                             VStack {
-                                TimerView(timeRemaining: $timeRemaining, disabledButton: $disabledButton, selectedOptions: $selectedOptions, currentPosition: $currentPosition)
+                                TimerView(timeRemaining: $timeRemaining, disabledButton: $disabledButton, selectedOptions: $selectedOptions, currentPosition: $currentPosition, backActive: $backActive)
                                 ProgressionView(currentQuestion: $currentPosition, selectedOptions: $selectedOptions, correctOptions: self.correctAnswers)
                                 Text(questions[currentPosition - 1].category.rawValue)
                                     .font(.custom("Helvetica Neue", size: 34))
@@ -84,6 +85,9 @@ struct GameView: View {
                 ProgressView()
             }
         }
+        .fullScreenCover(isPresented: $backActive, content: {
+            TabBarView()
+        })
         .onAppear {
             self.fetchData()
         }
