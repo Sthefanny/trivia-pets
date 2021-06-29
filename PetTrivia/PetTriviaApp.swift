@@ -13,7 +13,7 @@ struct PetTriviaApp: App {
 
     var body: some Scene {
         WindowGroup {
-            SortView()
+            TabBarView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

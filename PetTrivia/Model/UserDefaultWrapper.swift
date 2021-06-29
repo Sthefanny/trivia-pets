@@ -13,6 +13,14 @@ struct UserInfo: Codable {
 }
 
 class UserDefaultsWrapper {
+    static func setLastSortedCategory(sorted: Int) {
+        UserDefaults.standard.set(sorted, forKey: "lastSortedCategory")
+    }
+    
+    static func fetchLastSortedCategory() -> Int? {
+        return UserDefaults.standard.integer(forKey: "lastSortedCategory")
+    }
+    
     static func setUserInfo(userInfo: UserInfo) {
         let data = try? JSONEncoder().encode(userInfo)
         UserDefaults.standard.set(data, forKey: "userInfo")
@@ -28,6 +36,8 @@ class UserDefaultsWrapper {
     }
     
     static func clearData(){
-        UserDefaults.standard.removeObject(forKey: "userInfo")
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.synchronize()
     }
 }

@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+var selectedCategory: Category!
+
+struct Category: Identifiable {
+    let id: Int
+    let text: String
+}
+
 struct SortView: View {
     @State var frame: CGSize = .zero
     
@@ -17,6 +24,7 @@ struct SortView: View {
     @State private var timeRemaining = 4
     
     @State private var isScreenActive = false
+    @State private var currentSelectedCategory: Category!
     
     private var model = CategoryOptionViewModel()
     
@@ -34,13 +42,20 @@ struct SortView: View {
                 Image("SortBg")
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
-        )
+            )
         }
     }
     
     func makeView(_ geometry: GeometryProxy) -> some View {
         print(geometry.size.width, geometry.size.height)
 
+        let categories = [
+            Category(id: 3, text: QuestionCategory.environmentalEnrichment.rawValue),
+            Category(id: 2, text: QuestionCategory.allowedFood.rawValue),
+            Category(id: 1, text: QuestionCategory.naturalDiet.rawValue),
+            Category(id: 0, text: QuestionCategory.allOptions.rawValue)
+        ]
+        
         DispatchQueue.main.async { self.frame = geometry.size }
 
         return VStack {
@@ -62,10 +77,9 @@ struct SortView: View {
                             .padding(.bottom, 30)
                         
                         VStack {
-                            CategoryOptionView(viewModel: model, id: 3, text: "Enriquecimento Ambiental")
-                            CategoryOptionView(viewModel: model, id: 2, text: "Comidas Permitidas")
-                            CategoryOptionView(viewModel: model, id: 1, text: "Alimentação Natural")
-                            CategoryOptionView(viewModel: model, id: 0, text: "Um Pouco de Tudo")
+                            ForEach(categories) { category in
+                                CategoryOptionView(viewModel: model, id: category.id, text: category.text)
+                            }
                         }
                         .onAppear {
                             DispatchQueue.main.async {
@@ -82,8 +96,9 @@ struct SortView: View {
                                     
                                     if (self.timeRemaining == 0) {
                                         if (self.stopCounter > self.stop) {
-                                            self.model.selectedId = Int.random(in: 0...3)
+                                            self.model.selectedId = getSortedCategory()
                                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                                                selectedCategory = categories.first(where: { $0.id == self.model.selectedId! })
                                                 self.isScreenActive = true
                                             }
                                         }
@@ -99,6 +114,19 @@ struct SortView: View {
             .padding(.vertical, 20)
             .padding(.horizontal, 30)
         }
+    }
+    
+    func getSortedCategory() -> Int {
+        var sorted = Int.random(in: 0...3)
+        let lastSorted = UserDefaultsWrapper.fetchLastSortedCategory()
+        
+        while sorted == lastSorted {
+            sorted = Int.random(in: 0...3)
+        }
+        
+        UserDefaultsWrapper.setLastSortedCategory(sorted: sorted)
+        
+        return sorted
     }
 }
 

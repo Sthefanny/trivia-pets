@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1140E0D526876CCF005649E9 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0D426876CCF005649E9 /* TabBarView.swift */; };
+		1140E0D826877832005649E9 /* WikiPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0D726877831005649E9 /* WikiPetView.swift */; };
+		1140E0DA26877F77005649E9 /* WikiPetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0D926877F77005649E9 /* WikiPetCardView.swift */; };
+		1140E0DC2687D9A8005649E9 /* WikiPetProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0DB2687D9A8005649E9 /* WikiPetProgressBarView.swift */; };
+		1140E0DE26881DF5005649E9 /* dogBarking.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1140E0DD26881DF5005649E9 /* dogBarking.wav */; };
+		1153A2C626890254009AD3A8 /* WikiPetCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153A2C526890254009AD3A8 /* WikiPetCategoryView.swift */; };
+		1153A2C8268904FD009AD3A8 /* WikiPetCategoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153A2C7268904FD009AD3A8 /* WikiPetCategoryCardView.swift */; };
 		11E1EF8926813AE900309519 /* HorizontalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1EF8826813AE900309519 /* HorizontalCardView.swift */; };
 		5B3A60E6268262E900748B09 /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A60E4268262E900748B09 /* QuestionCard.swift */; };
 		5B3A60E7268262E900748B09 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A60E5268262E900748B09 /* QuestionBank.swift */; };
@@ -32,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1140E0D426876CCF005649E9 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		1140E0D726877831005649E9 /* WikiPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPetView.swift; sourceTree = "<group>"; };
+		1140E0D926877F77005649E9 /* WikiPetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPetCardView.swift; sourceTree = "<group>"; };
+		1140E0DB2687D9A8005649E9 /* WikiPetProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPetProgressBarView.swift; sourceTree = "<group>"; };
+		1140E0DD26881DF5005649E9 /* dogBarking.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dogBarking.wav; sourceTree = "<group>"; };
+		1153A2C526890254009AD3A8 /* WikiPetCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPetCategoryView.swift; sourceTree = "<group>"; };
+		1153A2C7268904FD009AD3A8 /* WikiPetCategoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPetCategoryCardView.swift; sourceTree = "<group>"; };
 		11E1EF8826813AE900309519 /* HorizontalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCardView.swift; sourceTree = "<group>"; };
 		5B3A60E4268262E900748B09 /* QuestionCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCard.swift; sourceTree = "<group>"; };
 		5B3A60E5268262E900748B09 /* QuestionBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
@@ -69,22 +83,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E542F9AB2683C79A00D515BC /* CountdownView */ = {
+		11389E7726896A0600E53586 /* Tab */ = {
 			isa = PBXGroup;
 			children = (
-				E542F9AC2683C7B700D515BC /* CountdownView.swift */,
-				E542F9AE2683C83A00D515BC /* PulsatingView.swift */,
+				1140E0D426876CCF005649E9 /* TabBarView.swift */,
 			);
-			path = CountdownView;
+			path = Tab;
 			sourceTree = "<group>";
 		};
-		E5766BE026825E2B0072F9C7 /* SortView */ = {
+		11389E7826896AA600E53586 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				E5766BE126825E400072F9C7 /* SortView.swift */,
-				E5766BE326826C750072F9C7 /* CategoryOptionView.swift */,
+				E52DE830267D24B5001E6195 /* HomeView.swift */,
+				E553D7F72680FA2100853A82 /* CardView.swift */,
 			);
-			path = SortView;
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1140E0D326876721005649E9 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				E553D7FA26812B8600853A82 /* MiniCardView.swift */,
+				11E1EF8826813AE900309519 /* HorizontalCardView.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		1140E0D626877820005649E9 /* WikiPet */ = {
+			isa = PBXGroup;
+			children = (
+				1140E0D726877831005649E9 /* WikiPetView.swift */,
+				1153A2C526890254009AD3A8 /* WikiPetCategoryView.swift */,
+				1140E0D926877F77005649E9 /* WikiPetCardView.swift */,
+				1140E0DB2687D9A8005649E9 /* WikiPetProgressBarView.swift */,
+				1153A2C7268904FD009AD3A8 /* WikiPetCategoryCardView.swift */,
+			);
+			path = WikiPet;
 			sourceTree = "<group>";
 		};
 		5B3A60E3268262E900748B09 /* Model */ = {
@@ -124,11 +158,30 @@
 			path = EndGameView;
 			sourceTree = "<group>";
 		};
+		E542F9AB2683C79A00D515BC /* CountdownView */ = {
+			isa = PBXGroup;
+			children = (
+				E542F9AC2683C7B700D515BC /* CountdownView.swift */,
+				E542F9AE2683C83A00D515BC /* PulsatingView.swift */,
+			);
+			path = CountdownView;
+			sourceTree = "<group>";
+		};
+		E5766BE026825E2B0072F9C7 /* SortView */ = {
+			isa = PBXGroup;
+			children = (
+				E5766BE126825E400072F9C7 /* SortView.swift */,
+				E5766BE326826C750072F9C7 /* CategoryOptionView.swift */,
+			);
+			path = SortView;
+			sourceTree = "<group>";
+		};
 		E5B7F1E3267BC0E30077086C = {
 			isa = PBXGroup;
 			children = (
 				E5B7F1EE267BC0E30077086C /* PetTrivia */,
 				E5B7F1ED267BC0E30077086C /* Products */,
+				1140E0D326876721005649E9 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +196,7 @@
 		E5B7F1EE267BC0E30077086C /* PetTrivia */ = {
 			isa = PBXGroup;
 			children = (
+				1140E0DD26881DF5005649E9 /* dogBarking.wav */,
 				5B49D9F2268514FC00D620B1 /* Controller */,
 				5B3A60E3268262E900748B09 /* Model */,
 				E5B7F205267BC4140077086C /* View */,
@@ -167,14 +221,13 @@
 		E5B7F205267BC4140077086C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				11389E7826896AA600E53586 /* Home */,
+				11389E7726896A0600E53586 /* Tab */,
+				1140E0D626877820005649E9 /* WikiPet */,
 				E542F9AB2683C79A00D515BC /* CountdownView */,
 				E5766BE026825E2B0072F9C7 /* SortView */,
 				5B8B650226864C0300A7A656 /* EndGameView */,
 				5B8B650026864BE200A7A656 /* GameView */,
-				E52DE830267D24B5001E6195 /* HomeView.swift */,
-				E553D7F72680FA2100853A82 /* CardView.swift */,
-				E553D7FA26812B8600853A82 /* MiniCardView.swift */,
-				11E1EF8826813AE900309519 /* HorizontalCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,6 +291,7 @@
 			files = (
 				E5B7F1F7267BC0E50077086C /* Preview Assets.xcassets in Resources */,
 				E5B7F1F4267BC0E50077086C /* Assets.xcassets in Resources */,
+				1140E0DE26881DF5005649E9 /* dogBarking.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,13 +312,19 @@
 				5B49D9F42685150B00D620B1 /* QuestionController.swift in Sources */,
 				11E1EF8926813AE900309519 /* HorizontalCardView.swift in Sources */,
 				E5766BE226825E400072F9C7 /* SortView.swift in Sources */,
+				1140E0DC2687D9A8005649E9 /* WikiPetProgressBarView.swift in Sources */,
 				E542F9AD2683C7B700D515BC /* CountdownView.swift in Sources */,
 				E5B7F1FC267BC0E50077086C /* PetTrivia.xcdatamodeld in Sources */,
+				1140E0DA26877F77005649E9 /* WikiPetCardView.swift in Sources */,
 				5B8B650426864C2500A7A656 /* EndGameView.swift in Sources */,
 				5B3A60E7268262E900748B09 /* QuestionBank.swift in Sources */,
+				1153A2C8268904FD009AD3A8 /* WikiPetCategoryCardView.swift in Sources */,
 				E5B7F1F0267BC0E30077086C /* PetTriviaApp.swift in Sources */,
 				E553D7F82680FA2100853A82 /* CardView.swift in Sources */,
+				1153A2C626890254009AD3A8 /* WikiPetCategoryView.swift in Sources */,
+				1140E0D526876CCF005649E9 /* TabBarView.swift in Sources */,
 				5BA5D5C42683C463001B5911 /* UserDefaultWrapper.swift in Sources */,
+				1140E0D826877832005649E9 /* WikiPetView.swift in Sources */,
 				5B8803322681071F003A45FA /* ProgressionView.swift in Sources */,
 				5B3A60E6268262E900748B09 /* QuestionCard.swift in Sources */,
 				5B6E8ED3267D3A530079A195 /* GameView.swift in Sources */,
@@ -397,7 +457,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PetTrivia/Preview Content\"";
-				DEVELOPMENT_TEAM = 3L227M8784;
+				DEVELOPMENT_TEAM = UL74FQ825B;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PetTrivia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -405,7 +465,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.castelito.PetTrivia;
+				PRODUCT_BUNDLE_IDENTIFIER = com.castelito.PetTriviam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -419,7 +479,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PetTrivia/Preview Content\"";
-				DEVELOPMENT_TEAM = 3L227M8784;
+				DEVELOPMENT_TEAM = UL74FQ825B;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PetTrivia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -427,7 +487,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.castelito.PetTrivia;
+				PRODUCT_BUNDLE_IDENTIFIER = com.castelito.PetTriviam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
