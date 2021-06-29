@@ -21,7 +21,7 @@ struct PreGameView: View {
                 .font(.custom("Helvetica Neue", size: 24))
                 .bold()
             
-            Text("Após responder as 5 perguntas na categoria selecionada para esse round, aprenda m ais na seção WikiPet.")
+            Text("Após responder as 5 perguntas na categoria selecionada para esse round, aprenda mais na seção WikiPet.")
                 .font(.custom("Helvetica Neue", size: 18))
                 .bold()
                 .padding()
@@ -46,8 +46,13 @@ struct PreGameView: View {
         .fullScreenCover(isPresented: $isScreenActive, content: {
             SortView()
         })
-        
+        .background(
+            Image("CountdownBg")
+                .resizable()
+                .edgesIgnoringSafeArea(.all)
+        )
     }
+    
 }
 
 struct PreGameView_Previews: PreviewProvider {

@@ -64,8 +64,11 @@ struct WikiPetView: View {
                             WikiPetCardView(categoryImageName: "lavanderImage", categoryTitle: QuestionCategory.environmentalEnrichment.rawValue, bgColorName: "YellowCardColor", progress: loadCorrectAnswers(.environmentalEnrichment))
 
                         })
+                    Spacer()
                 }
+                
                 .padding()
+                
             }
             .background(
                 Image("CountdownBg")

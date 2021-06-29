@@ -32,7 +32,7 @@ struct WikiPetCardView: View {
                     VStack (alignment: .leading) {
                         Spacer()
                         Text(categoryTitle)
-                            .font(Font.custom("HelveticaNeue", size: 17))
+                            .font(Font.custom("HelveticaNeue", size: 16))
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             .foregroundColor(Color("BlueCardTextColor"))
                         
@@ -60,7 +60,7 @@ struct WikiPetCardView: View {
 
             .background(Color(bgColorName))
             .cornerRadius(10)
-            .aspectRatio(7/3, contentMode: .fit)
+            .aspectRatio(8/3, contentMode: .fit)
         }
     }
 }
