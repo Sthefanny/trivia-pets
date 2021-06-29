@@ -68,10 +68,10 @@ struct OptionView: View {
                         disableButton = false
                         timeRemaining = 60
                         if selectedOptions.count >= 5 {
-                            let rightAnswers = copyAnswers(selectedOptions: selectedOptions, questions: questions)
-                            let userInfo = UserInfo(guessedRight: rightAnswers)
-                            UserDefaultsWrapper.setUserInfo(userInfo: userInfo)
                             let dataAvailable = UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? []
+                            let rightAnswers = copyAnswers(selectedOptions: selectedOptions, questions: questions)
+                            let userInfo = UserInfo(guessedRight: rightAnswers + dataAvailable)
+                            UserDefaultsWrapper.setUserInfo(userInfo: userInfo)
                             guessedRight = dataAvailable
                             didEnd.toggle()
                             
