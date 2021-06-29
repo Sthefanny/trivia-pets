@@ -22,6 +22,7 @@ struct WikiPetCategoryView: View {
                 Image(categoryImageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .frame(maxHeight: 150)
                 VStack (alignment: .leading) {
                     Text(category)
                         .font(Font.custom("HelveticaNeue", size: 35))

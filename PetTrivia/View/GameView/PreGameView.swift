@@ -16,6 +16,7 @@ struct PreGameView: View {
             Image("preGameImage")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .padding()
             Spacer()
             Text("Antes de começar...")
                 .font(.custom("Helvetica Neue", size: 24))
