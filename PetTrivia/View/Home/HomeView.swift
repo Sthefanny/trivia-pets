@@ -62,7 +62,11 @@ struct HomeView: View {
                     }
                     .aspectRatio(contentMode: .fit)
                 })
-                
+                Button(action: {
+                    UserDefaultsWrapper.clearData()
+                }) {
+                    Text("Apagar dados")
+                }
 
 //            Spacer()
 //            Spacer()

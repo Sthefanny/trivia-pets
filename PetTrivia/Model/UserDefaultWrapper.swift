@@ -36,6 +36,8 @@ class UserDefaultsWrapper {
     }
     
     static func clearData(){
-        UserDefaults.standard.removeObject(forKey: "userInfo")
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.synchronize()
     }
 }

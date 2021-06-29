@@ -10,6 +10,7 @@ import SwiftUI
 struct TimerView: View {
     @Binding var timeRemaining: Int
     @Binding var disabledButton: Bool
+    @Binding var selectedOptions: [Int]
     @State private var isActive = true
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some View {
@@ -36,7 +37,9 @@ struct TimerView: View {
             guard self.isActive else {return}
             if self.timeRemaining > 0 && disabledButton == false {
                     self.timeRemaining -= 1
-                }
+            } else if self.timeRemaining <= 0 {
+                selectedOptions.append(0)
+            }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
             self.isActive = false
@@ -49,6 +52,6 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView(timeRemaining: .constant(60), disabledButton: .constant(false))
+        TimerView(timeRemaining: .constant(60), disabledButton: .constant(false), selectedOptions: .constant([]))
     }
 }
