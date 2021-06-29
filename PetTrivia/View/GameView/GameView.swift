@@ -21,7 +21,6 @@ struct GameView: View {
     var currentCategory: QuestionCategory
     
     func fetchData() {
-        UserDefaultsWrapper.clearData()
         let data = UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? []
         self.guessedRight = data
         self.questions = QuestionBank.instance.questionFilter(category: currentCategory, guessedRight: guessedRight)
