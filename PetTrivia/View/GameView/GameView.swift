@@ -66,7 +66,7 @@ struct GameView: View {
                             VStack {
                                 TimerView(timeRemaining: $timeRemaining, disabledButton: $disabledButton)
                                 ProgressionView(currentQuestion: $currentPosition, selectedOptions: $selectedOptions, correctOptions: self.correctAnswers)
-                                Text(currentCategory.rawValue)
+                                Text(questions[currentPosition - 1].category.rawValue)
                                     .font(.custom("Helvetica Neue", size: 34))
                                     .fontWeight(.bold)
                                     .padding()

@@ -96,7 +96,7 @@ struct SortView: View {
                                     
                                     if (self.timeRemaining == 0) {
                                         if (self.stopCounter > self.stop) {
-                                            self.model.selectedId = Int.random(in: 0...3)
+                                            self.model.selectedId = getSortedCategory()
                                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                                                 selectedCategory = categories.first(where: { $0.id == self.model.selectedId! })
                                                 self.isScreenActive = true
@@ -114,6 +114,19 @@ struct SortView: View {
             .padding(.vertical, 20)
             .padding(.horizontal, 30)
         }
+    }
+    
+    func getSortedCategory() -> Int {
+        var sorted = Int.random(in: 0...3)
+        let lastSorted = UserDefaultsWrapper.fetchLastSortedCategory()
+        
+        while sorted == lastSorted {
+            sorted = Int.random(in: 0...3)
+        }
+        
+        UserDefaultsWrapper.setLastSortedCategory(sorted: sorted)
+        
+        return sorted
     }
 }
 
