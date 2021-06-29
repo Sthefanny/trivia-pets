@@ -30,6 +30,7 @@ struct WikiPetView: View {
                     Image("wikipetTitleImage")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
+                        .padding()
                     Spacer()
                     Text("WikiPet")
                         .font(Font.custom("HelveticaNeue", size: 40))

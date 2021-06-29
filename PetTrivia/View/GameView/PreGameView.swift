@@ -8,8 +8,45 @@
 import SwiftUI
 
 struct PreGameView: View {
+    
+    @State var isScreenActive: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Image("preGameImage")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            Spacer()
+            Text("Antes de começar...")
+                .font(.custom("Helvetica Neue", size: 24))
+                .bold()
+            
+            Text("Após responder as 5 perguntas na categoria selecionada para esse round, aprenda m ais na seção WikiPet.")
+                .font(.custom("Helvetica Neue", size: 18))
+                .bold()
+                .padding()
+                .multilineTextAlignment(.center)
+            Spacer()
+            
+            Button(action: {
+                isScreenActive.toggle()
+            }){
+                Text("Iniciar Jogo")
+                    .foregroundColor(Color("BlueCardTextColor"))
+                    .frame(width: UIScreen.main.bounds.width * 0.9, height: 50)
+                    .background(Color(.white))
+                    .cornerRadius(38)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 38)
+                            .stroke(Color("StrokeBege"))
+                    )
+            }
+            Spacer()
+        }
+        .fullScreenCover(isPresented: $isScreenActive, content: {
+            SortView()
+        })
+        
     }
 }
 
