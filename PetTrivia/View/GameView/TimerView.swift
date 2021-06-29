@@ -12,17 +12,21 @@ struct TimerView: View {
     @Binding var disabledButton: Bool
     @Binding var selectedOptions: [Int]
     @Binding var currentPosition: Int
+  
     @State private var isActive = true
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some View {
         ZStack {
-            Group {
+            Button(action: {
+                
+            }) {
                 Circle()
                     .strokeBorder(Color("LightStroke"))
                     .frame(width: 55, height: 55)
                     .overlay(
                         Image(systemName: "arrow.backward")
                             .frame(width: 18.7,height: 18)
+                            .foregroundColor(Color("LightBlack"))
                     )
             }
             .frame(maxWidth: .infinity, alignment: .leading)

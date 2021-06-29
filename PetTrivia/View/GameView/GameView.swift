@@ -48,13 +48,11 @@ struct GameView: View {
         VStack {
             if isLoaded {
                 if didEnd {
-                    NavigationView {
                         Color("BackgroundColor")
                             .ignoresSafeArea(edges: .all)
                             .overlay(
                                 EndGameView(result: checkAnswers(selectedOptions: selectedOptions, questions: questions))
                             )
-                    }
         //            .navigationBarHidden(true)
         //            .navigationBarBackButtonHidden(true)
                 } else {
