@@ -50,7 +50,8 @@ struct OptionView: View {
     @Binding var timeRemaining: Int
     @Binding var disableButton: Bool
     @Binding var guessedRight: [Int]
-    @Binding var didEnd: Bool
+    @Binding var screenChange: Bool
+    @Binding var screenState: ScreenState
     @State var isCorrect = false
     
     var questions: [QuestionCard]
@@ -73,7 +74,8 @@ struct OptionView: View {
                             let userInfo = UserInfo(guessedRight: rightAnswers + dataAvailable)
                             UserDefaultsWrapper.setUserInfo(userInfo: userInfo)
                             guessedRight = dataAvailable
-                            didEnd.toggle()
+                            screenState = .end
+                            screenChange.toggle()
                             
                         }
                     }
@@ -107,7 +109,8 @@ struct QuestionCardView: View {
     @Binding var timeRemaining: Int
     @Binding var disabledButton: Bool
     @Binding var guessedRight: [Int]
-    @Binding var didEnd: Bool
+    @Binding var screenChange: Bool
+    @Binding var screenState: ScreenState
     var questions: [QuestionCard]
     var question: QuestionCard
     var body: some View {
@@ -124,7 +127,7 @@ struct QuestionCardView: View {
             .frame(maxWidth: UIScreen.main.bounds.width * 0.75)
             
             Spacer()
-            OptionView(currentPosition: $currentPosition, selectedOptions: $selectedOptions, timeRemaining: $timeRemaining, disableButton: $disabledButton, guessedRight: $guessedRight, didEnd: $didEnd, questions: questions, question: question)
+            OptionView(currentPosition: $currentPosition, selectedOptions: $selectedOptions, timeRemaining: $timeRemaining, disableButton: $disabledButton, guessedRight: $guessedRight, screenChange: $screenChange, screenState: $screenState, questions: questions, question: question)
             Spacer()
         }
         
@@ -139,7 +142,7 @@ struct QuestionCardView: View {
 struct QuestionCardView_Previews: PreviewProvider {
     static var previews: some View {
     
-        QuestionCardView(currentPosition: .constant(1), selectedOptions: .constant([1,1,1,1]), timeRemaining: .constant(60), disabledButton: .constant(false), guessedRight: .constant([]), didEnd: .constant(false), questions: [QuestionCard(
+        QuestionCardView(currentPosition: .constant(1), selectedOptions: .constant([1,1,1,1]), timeRemaining: .constant(60), disabledButton: .constant(false), guessedRight: .constant([]),screenChange: .constant(true), screenState: .constant(.end), questions: [QuestionCard(
                                                                                                                                                                                                                                     category: .naturalDiet,
                                                                                                                                                                             description: "Esse é um modelo de pergunta teste usado para o Question Bank",
                                                                                                                                                                             options: ["Muito Legal","Legal","Pouco Legal","Nada Legal"],
