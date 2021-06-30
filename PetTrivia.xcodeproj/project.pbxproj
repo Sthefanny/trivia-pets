@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11156CB7268BAB55007FFE66 /* PreGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11156CB6268BAB55007FFE66 /* PreGameView.swift */; };
 		1140E0D526876CCF005649E9 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0D426876CCF005649E9 /* TabBarView.swift */; };
 		1140E0D826877832005649E9 /* WikiPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0D726877831005649E9 /* WikiPetView.swift */; };
 		1140E0DA26877F77005649E9 /* WikiPetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140E0D926877F77005649E9 /* WikiPetCardView.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11156CB6268BAB55007FFE66 /* PreGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreGameView.swift; sourceTree = "<group>"; };
 		1140E0D426876CCF005649E9 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		1140E0D726877831005649E9 /* WikiPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPetView.swift; sourceTree = "<group>"; };
 		1140E0D926877F77005649E9 /* WikiPetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPetCardView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				5B6E8ED2267D3A530079A195 /* GameView.swift */,
 				5B8803312681071F003A45FA /* ProgressionView.swift */,
 				5B6E8ECE267D26C70079A195 /* QuestionCardView.swift */,
+				11156CB6268BAB55007FFE66 /* PreGameView.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				5B8B650426864C2500A7A656 /* EndGameView.swift in Sources */,
 				5B3A60E7268262E900748B09 /* QuestionBank.swift in Sources */,
 				1153A2C8268904FD009AD3A8 /* WikiPetCategoryCardView.swift in Sources */,
+				11156CB7268BAB55007FFE66 /* PreGameView.swift in Sources */,
 				E5B7F1F0267BC0E30077086C /* PetTriviaApp.swift in Sources */,
 				E553D7F82680FA2100853A82 /* CardView.swift in Sources */,
 				1153A2C626890254009AD3A8 /* WikiPetCategoryView.swift in Sources */,
