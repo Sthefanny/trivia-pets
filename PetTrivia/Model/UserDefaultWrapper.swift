@@ -13,12 +13,18 @@ struct UserInfo: Codable {
 }
 
 class UserDefaultsWrapper {
-    static func setLastSortedCategory(sorted: Int) {
-        UserDefaults.standard.set(sorted, forKey: "lastSortedCategory")
+    static func setPossibleCategories(categories: [Category]?) {
+        let data = try? JSONEncoder().encode(categories)
+        UserDefaults.standard.set(data, forKey: "possibleCategories")
     }
     
-    static func fetchLastSortedCategory() -> Int? {
-        return UserDefaults.standard.integer(forKey: "lastSortedCategory")
+    static func fetchPossibleCategories() -> [Category]? {
+        guard let data = UserDefaults.standard.data(forKey: "possibleCategories") else {
+            return nil
+        }
+        
+        let categories = try? JSONDecoder().decode([Category].self, from: data)
+        return categories
     }
     
     static func setUserInfo(userInfo: UserInfo) {
