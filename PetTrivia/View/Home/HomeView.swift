@@ -16,6 +16,8 @@ struct HomeView: View {
     
     let showWiki: () -> Void
     
+    let showPreGame: () -> Void
+    
     var body: some View {
         ZStack {
             Color("BackgroundColor").edgesIgnoringSafeArea(.all)
@@ -52,13 +54,8 @@ struct HomeView: View {
                     playSound()
                 }, label: {
                     Group{
-//                        if isAnimatingDog {
-//                        Image("TitleImage3")
-//                                .resizable()
-//                        } else {
-                            Image("TitleImage")
-                                .resizable()
-//                        }
+                        Image("TitleImage")
+                            .resizable()
                     }
                     .aspectRatio(contentMode: .fit)
                 })
@@ -68,12 +65,10 @@ struct HomeView: View {
                     Text("Apagar dados")
                 }
 
-//            Spacer()
-//            Spacer()
                 HStack {
                     CardView(imageName: "playCardImage", title: "Jogar", bgColorName: "YellowCardColor")
                         .onTapGesture {
-                            isGamePresented = true
+                            showPreGame()
                         }
                     
                     CardView(imageName: "wikiPetCardImage", title: "WikiPet", bgColorName: "YellowCardColor")
@@ -98,7 +93,12 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView() {}
+        HomeView {
+        
+        } showPreGame: {
+            
+        }
+
     }
 }
 
