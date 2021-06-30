@@ -30,6 +30,7 @@ struct WikiPetView: View {
                     Image("wikipetTitleImage")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
+                        .padding()
                     Spacer()
                     Text("WikiPet")
                         .font(Font.custom("HelveticaNeue", size: 40))
@@ -63,8 +64,11 @@ struct WikiPetView: View {
                             WikiPetCardView(categoryImageName: "lavanderImage", categoryTitle: QuestionCategory.environmentalEnrichment.rawValue, bgColorName: "YellowCardColor", progress: loadCorrectAnswers(.environmentalEnrichment))
 
                         })
+                    Spacer()
                 }
+                
                 .padding()
+                
             }
             .background(
                 Image("CountdownBg")

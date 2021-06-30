@@ -8,39 +8,36 @@
 import SwiftUI
 
 enum Tab {
-    case home, play, wiki, myPet
+    case home, preGame, wiki, myPet
 }
 
 struct TabBarView: View {
     
-    @State var currentTab: Tab = .home {
-        didSet {
-            presentSort = currentTab == .play
-        }
-    }
+    @State var currentTab: Tab = .home
+//        didSet() {
+//            presentSort = currentTab == .preGame
+//        }
+    
     @State var presentSort: Bool = false
     
     var body: some View {
         TabView(selection: $currentTab) {
             HomeView() {
                 currentTab = .wiki
+            } showPreGame: {
+                currentTab = .preGame
             }
+            
             .tabItem {
                 Label("Home", systemImage: "house")
             }
             .tag(Tab.home)
 
-            ProgressView()
-                .fullScreenCover(isPresented: $presentSort, content: {
-                    SortView()
-                })
+            PreGameView()
                 .tabItem {
                     Label("Jogar", systemImage: "gamecontroller")
-                        .onTapGesture {
-                            currentTab = .play
-                        }
                 }
-                .tag(Tab.play)
+                .tag(Tab.preGame)
             
             WikiPetView()
                 .tabItem {
