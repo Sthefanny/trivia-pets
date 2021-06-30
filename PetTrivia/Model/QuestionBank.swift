@@ -128,7 +128,8 @@ class QuestionBank {
                                 category: .environmentalEnrichment,
                                 description: "O que NÃO melhora as habilidades sociais do seu cachorro?",
                                 options: ["Levar ao parque.","Creche de cachorro.","Passeio coletivo.","Soltar na rua."],
-                                correctOption: 4, questionId: 15, note: nil))
+                                correctOption: 4, questionId: 15,
+                                note: "É muito importante integrar o cachorro em outros ambientes, como na natureza, e em contato com outros animais (inclusive de outras espécies) e pessoas. \n\nEsse é um estímulo que somente pode ser feito com supervisão do dono, seja em parques e praças, enquanto caminham, ou até mesmo ao receber visitas em casa.\nSoltar o cão na rua ou próximo a ela sem qguia pode ser muito perigoso para o pet, devido aos diferentes estímulos que ele vai encontrar. Como não podemos controlar a movimentação de pessoas, outros animais e até mesmo veículos, para evitar acidentes, o ideal é sempre fazer uso da guia, nos passeios com o pet, e nunca deixá-lo desacompanhado em locais públicos. \n\nSe você não tem certeza de como começar a socializar seu pet, uma opção é levar em locais especializados, como as creches e hotéis caninos, pois já são preparadas para esse tipo de situação."))
     }
     
 }
