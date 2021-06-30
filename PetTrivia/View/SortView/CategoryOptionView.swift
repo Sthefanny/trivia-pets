@@ -17,7 +17,8 @@ struct CategoryOptionView: View {
     
     @State var id: Int
     @State var text: String
-    
+    @State var isPossible: Bool
+
     @State private var isScreenActive = false
     
     var radius = CGFloat(38)
@@ -34,7 +35,7 @@ struct CategoryOptionView: View {
                         .foregroundColor(Color("BlueCardTextColor"))
                         .padding(.vertical, 20)
                         .frame(minWidth: 0, maxWidth: .infinity)
-                        .background(viewModel.selectedId == id ? Color("YellowCardColor") : Color.white)
+                        .background(isPossible ? viewModel.selectedId == id ? Color("YellowCardColor") : Color.white : Color.gray.opacity(0.5))
                         .opacity(0.8)
                         .cornerRadius(radius)
                         .overlay(

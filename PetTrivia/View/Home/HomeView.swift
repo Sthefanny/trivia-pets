@@ -18,10 +18,28 @@ struct HomeView: View {
     
     let showPreGame: () -> Void
     
+    
+    
+    func setInitialData() {
+        let possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
+        
+        if possibleCategories == nil {
+            UserDefaultsWrapper.setPossibleCategories(categories: [
+                Category(id: 3, text: QuestionCategory.environmentalEnrichment.rawValue),
+                Category(id: 2, text: QuestionCategory.allowedFood.rawValue),
+                Category(id: 1, text: QuestionCategory.naturalDiet.rawValue),
+                Category(id: 0, text: QuestionCategory.allOptions.rawValue)
+            ])
+        }
+    }
+    
     var body: some View {
         ZStack {
             Color("BackgroundColor").edgesIgnoringSafeArea(.all)
                 self.makeView()
+        }
+        .onAppear {
+            self.setInitialData()
         }
     }
     
@@ -49,15 +67,14 @@ struct HomeView: View {
 
             return VStack(alignment: .center) {
                 Spacer()
-                Button(action: {
+                Group{
+                    Image("TitleImage")
+                        .resizable()
+                }
+                .aspectRatio(contentMode: .fit)
+                .onTapGesture(count: 2, perform: {
                     isAnimatingDog = true
                     playSound()
-                }, label: {
-                    Group{
-                        Image("TitleImage")
-                            .resizable()
-                    }
-                    .aspectRatio(contentMode: .fit)
                 })
                 Button(action: {
                     UserDefaultsWrapper.clearData()
