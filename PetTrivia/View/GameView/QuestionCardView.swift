@@ -65,7 +65,9 @@ struct OptionView: View {
                     disableButton = true
                     isCorrect = revealAnswer(option: option, question: question)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        currentPosition += 1
+                        if selectedOptions.count < 5 {
+                            currentPosition += 1
+                        }
                         disableButton = false
                         timeRemaining = 60
                         if selectedOptions.count >= 5 {
