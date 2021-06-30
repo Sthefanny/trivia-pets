@@ -27,16 +27,19 @@ struct WikiPetView: View {
         NavigationView {
             ScrollView {
                 VStack {
-                    Image("wikipetTitleImage")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .padding()
-                    Spacer()
-                    Text("WikiPet")
-                        .font(Font.custom("HelveticaNeue", size: 40))
-                        .fontWeight(.medium)
-                        .foregroundColor(Color("BlueTextColor"))
-
+                    HStack {
+                        Image("wikipetTitleImage")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding()
+                            .frame(maxHeight: 150)
+                        Text("WikiPet")
+                            .font(Font.custom("HelveticaNeue", size: 40))
+                            .fontWeight(.medium)
+                            .foregroundColor(Color("BlueTextColor"))
+                    }
+                   
+                    
                     Spacer()
               
                     NavigationLink(

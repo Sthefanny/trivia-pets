@@ -20,11 +20,11 @@ struct WikiPetCategoryView: View {
             Image("CountdownBg").resizable().edgesIgnoringSafeArea(.all)
             
             VStack {
-                Image(categoryImageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxHeight: 150)
-                VStack (alignment: .leading) {
+                HStack {
+                    Image(categoryImageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxHeight: 100)
                     Text(category)
                         .font(Font.custom("HelveticaNeue", size: 35))
                         .fontWeight(.medium)
