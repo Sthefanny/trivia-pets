@@ -96,6 +96,11 @@ struct SortView: View {
                                     isFirst.toggle()
                                 }
                                 if self.timeRemaining > 0 {
+                                    let categoriesCount = getPossibleCategoriesCount()
+                                    if categoriesCount == 1 {
+                                        self.timeRemaining = 1
+                                    }
+                                    
                                     self.stopCounter += 1
                                     
                                     self.timeRemaining -= 1
@@ -123,13 +128,16 @@ struct SortView: View {
         }
     }
     
+    func getPossibleCategoriesCount() -> Int {
+        let possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
+        return possibleCategories?.count ?? 0
+    }
+    
     func getSortedCategory() -> Int? {
-        var possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
+        let possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
         let sorted = possibleCategories?.randomElement()
         
-        possibleCategories?.removeAll(where: {$0.id == sorted?.id})
-
-        UserDefaultsWrapper.setPossibleCategories(categories: possibleCategories ?? nil)
+        UserDefaultsWrapper.setActualCategory(category: sorted)
 
         return sorted?.id
     }
