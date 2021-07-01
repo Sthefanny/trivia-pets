@@ -36,7 +36,7 @@ struct PreGameView: View {
                 Text("Iniciar Jogo")
                     .foregroundColor(Color("BlueCardTextColor"))
                     .frame(width: UIScreen.main.bounds.width * 0.9, height: 50)
-                    .background(Color(.white))
+                    .background(Color("YellowCircleColor"))
                     .cornerRadius(38)
                     .overlay(
                         RoundedRectangle(cornerRadius: 38)
