@@ -84,18 +84,22 @@ struct OptionView: View {
                 }) {
                     HStack {
                         Text(option.option)
-                            .font(.custom("Helvetica Neue", size: 15))
-                            .padding()
+                            .layoutPriority(1000)
+                            .font(.custom("Helvetica Neue", size: 16))
+                            .padding(24)
+                            
                         Spacer()
                     }
                     
-                    .frame(maxWidth: UIScreen.main.bounds.width * 0.75)
+                 
                     .background(Color(disableButton && isSelectedOption(option: option, selectedOption: selectedOptions, question: question) ? (isCorrect ? "CorrectColor" : "WrongColor") : "BackgroundColor"))
                     .cornerRadius(40)
                     .overlay(
                         RoundedRectangle(cornerRadius: 40)
                             .stroke(Color.init(red: 83/255, green: 96/255, blue: 132/255), lineWidth: 1)
                     )
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
                 }
                 .disabled(disableButton)
                 .foregroundColor(disableButton && isSelectedOption(option: option, selectedOption: selectedOptions, question: question) ? .white : .black)
@@ -118,26 +122,27 @@ struct QuestionCardView: View {
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
-                Text("\(currentPosition).")
-                    .font(.custom("Helvetica Neue", size: 30))
-                    .bold()
-                    .padding([.bottom,.top])
+//
                 Text(question.description)
                     .font(.custom("Helvetica Neue", size: 24))
-                    .padding(.bottom)
+                    .bold()
+                    .padding(.vertical)
+                    //.padding()
+             
             }
-            .frame(maxWidth: UIScreen.main.bounds.width * 0.75)
+
             
             Spacer()
             OptionView(currentPosition: $currentPosition, selectedOptions: $selectedOptions, timeRemaining: $timeRemaining, disableButton: $disabledButton, guessedRight: $guessedRight, screenChange: $screenChange, screenState: $screenState, questions: questions, question: question)
             Spacer()
         }
         
-        .frame(maxHeight: 500)
+        .background(Color.white .opacity(0.8))
+        .cornerRadius(20)
         .padding()
-        .background(Color.white .opacity(0.7))
-        .cornerRadius(10)
+        
     }
+    
     
 }
 
@@ -151,7 +156,7 @@ struct QuestionCardView_Previews: PreviewProvider {
                                                                                                                                                                                                                                     correctOption: 1, questionId: 1, note:nil)], question: QuestionCard(
                     category: .naturalDiet,
                     description: "Esse é um modelo de pergunta teste usado para o Question Bank",
-                    options: ["Muito Legal","Legal","Pouco Legal","Nada Legal"],
+                    options: ["Muito Legaaaaaaaaaaaaaaaaaaaaaaaall dude","Legal","Pouco Legal","Nada Legal"],
                                                                                                                                                                                                                                         correctOption: 1, questionId: 1, note: nil))
     }
 }

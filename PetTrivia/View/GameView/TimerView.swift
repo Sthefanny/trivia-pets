@@ -28,10 +28,12 @@ struct TimerView: View {
                     .strokeBorder(Color("LightStroke"))
                     .frame(width: 55, height: 55)
                     .overlay(
-                        Image(systemName: "arrow.backward")
+                        Image(systemName: "xmark")
                             .frame(width: 18.7,height: 18)
                             .foregroundColor(Color("LightBlack"))
                     )
+                    .foregroundColor(.white)
+                    
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()

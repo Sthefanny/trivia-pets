@@ -109,6 +109,8 @@ struct GameView: View {
                                              screenState: $screenState,
                                              questions: questions,
                                              question: questions[currentPosition - 1])
+                                .padding(5)
+                                
                         }
                     )
             } else {
