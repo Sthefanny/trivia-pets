@@ -13,16 +13,17 @@ struct PreGameView: View {
     
     var body: some View {
         VStack{
+            Spacer()
             Image("preGameImage")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding()
             Spacer()
-            Text("Antes de começar...")
+            Text("Atenção!")
                 .font(.custom("Helvetica Neue", size: 24))
                 .bold()
             
-            Text("Após responder as 5 perguntas na categoria selecionada para esse round, aprenda mais na seção WikiPet.")
+            Text("Após o sorteio de categorias você deverá responder 5 questões, mas terá apenas 60 segundos para cada uma.")
                 .font(.custom("Helvetica Neue", size: 18))
                 .bold()
                 .padding()
@@ -33,15 +34,13 @@ struct PreGameView: View {
                 AudioHelper.playSound(audioName: "button.wav")
                 isScreenActive.toggle()
             }){
-                Text("Iniciar Jogo")
+                Text("Sortear")
+                    .font(.custom("Helvetica Neue", size: 20))
                     .foregroundColor(Color("BlueCardTextColor"))
-                    .frame(width: UIScreen.main.bounds.width * 0.9, height: 50)
+                    .bold()
+                    .frame(width: UIScreen.main.bounds.width * 0.9, height: 70)
                     .background(Color("YellowCircleColor"))
-                    .cornerRadius(38)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 38)
-                            .stroke(Color("StrokeBege"))
-                    )
+                    .cornerRadius(15)
             }
             Spacer()
         }
