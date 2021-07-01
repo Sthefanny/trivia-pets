@@ -82,7 +82,7 @@ struct EndGameView: View {
         .fullScreenCover(isPresented: $isScreenActive, content: {
             switch EndGameView.navigate {
             case 1:
-                WikiPetView()
+                TabBarView(currentTab: .wiki)
             case 2:
                 SortView()
             case 3:
