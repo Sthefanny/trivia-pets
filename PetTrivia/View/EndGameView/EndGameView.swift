@@ -29,7 +29,7 @@ struct EndGameView: View {
                 .bold()
                 .padding(.top)
             
-            Text(result >= 3 ? "Você sabe muito do assunto, mas que tal dar uma olhada na nossa Wikipet para aprender um pouco mais?" : "Parece que você precisa aprender um pouco mais... não desanime e use nossa Wikipet para aprender um pouco mais!")
+            Text(result >= 3 ? "Você sabe muito do assunto, mas que tal dar uma olhada na nossa Wikipet para aprender um pouco mais? :)" : "Que pena!\nParece que você ainda não domina esse assunto... mas não desanime! Use a Wikipet para aprender um pouco mais! :)")
                 .font(.custom("Helvetica Neue", size: 18))
                 .bold()
                 .padding()
