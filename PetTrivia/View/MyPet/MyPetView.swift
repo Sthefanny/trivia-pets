@@ -23,25 +23,33 @@ struct MyPetView: View {
     
     var body: some View {
         VStack {
-            ZStack{
-                //imagem de fundo
-                Image("\(dog.dogName)_\(dog.dogHat)")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                Image("\(dog.dogHat)_\(dog.dogName)")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+            Spacer()
+            VStack {
+                ZStack{
+                    //imagem de fundo
+                    Image("dogImageBackground")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                    Image("\(dog.dogName)_\(dog.dogHat)")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    Image("\(dog.dogHat)_\(dog.dogName)")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+                .padding(50)
             }
-            .padding(50)
+            .frame(maxHeight: 200)
+            Spacer()
             
             HStack{
                 Button(action: {buttonSelected = .doguitos}, label: {
                     Text("doguitos")
                         .padding(10)
                         .background(buttonSelected == .doguitos ? Color("YellowCardColor") : Color("BlueCardColor"))
-                        .overlay(
-                            Rectangle()
-                                .stroke(Color.yellow, lineWidth: 1))
+//                        .overlay(
+//                            Rectangle()
+//                                .stroke(Color.yellow, lineWidth: 1))
                 })
                 Button(action: {buttonSelected = .chapeuzitos}, label: {
                     Text("chapeuzitos")
@@ -141,6 +149,7 @@ struct MyPetView: View {
                 }
                 .padding()
             }
+            Spacer()
         }
         .onDisappear(){
             userDefaultsWrapper.setDog(Dog: dog)

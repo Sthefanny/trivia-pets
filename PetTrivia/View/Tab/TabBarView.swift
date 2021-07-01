@@ -58,7 +58,8 @@ struct TabBarView: View {
                 .tag(Tab.myPet)
         }
         .tabViewStyle(DefaultTabViewStyle())
-        .accentColor(.orange)
+        .accentColor(Color("TabBarSelectColor"))
+       
         
     }
 }
