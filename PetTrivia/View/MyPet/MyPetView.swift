@@ -10,7 +10,9 @@ import SwiftUI
 struct MyPetView: View {
     var body: some View {
         VStack {
-            ZStack{}
+            ZStack{
+                
+            }
         }
 }
 
