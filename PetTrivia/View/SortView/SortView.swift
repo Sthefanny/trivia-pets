@@ -30,21 +30,19 @@ struct SortView: View {
     private var model = CategoryOptionViewModel()
     
     var body: some View {
-        NavigationView {
-            HStack {
-                NavigationLink(destination: CountdownView()
-                                .navigationBarHidden(true)
-                                .navigationBarBackButtonHidden(true), isActive: $isScreenActive){}
-                GeometryReader { (geometry) in
-                    self.makeView(geometry)
-                }
+        HStack {
+            GeometryReader { (geometry) in
+                self.makeView(geometry)
             }
-            .background(
-                Image("SortBg")
-                    .resizable()
-                    .edgesIgnoringSafeArea(.all)
-            )
         }
+        .fullScreenCover(isPresented: $isScreenActive, content: {
+            CountdownView()
+        })
+        .background(
+            Image("SortBg")
+                .resizable()
+                .edgesIgnoringSafeArea(.all)
+        )
     }
     
     func makeView(_ geometry: GeometryProxy) -> some View {
