@@ -18,6 +18,7 @@ struct CategoryOptionView: View {
     @State var id: Int
     @State var text: String
     @State var isPossible: Bool
+    @State var isLast: Bool
 
     @State private var isScreenActive = false
     
@@ -45,11 +46,11 @@ struct CategoryOptionView: View {
                     .padding(.horizontal)
                     .padding(.vertical, 10)
                 }
-//                .onChange(of: viewModel.selectedId) { selectedId in
-//                    if selectedId == id {
-//                        AudioHelper.playSound(audioName: "sort.wav")
-//                    }
-//                }
+                .onChange(of: viewModel.selectedId) { selectedId in
+                    if selectedId == id {
+                        AudioHelper.playSound(audioName: isLast ? "sortFinal.wav" : "sort.wav")
+                    }
+                }
             }
     }
 }

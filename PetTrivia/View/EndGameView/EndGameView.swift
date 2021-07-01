@@ -93,6 +93,9 @@ struct EndGameView: View {
             .ignoresSafeArea(edges: .all)
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         }
+        .onAppear {
+            AudioHelper.playSound(audioName: result >= 3 ? "answerWin.wav" : "answerLose.wav")
+        }
     }
 }
 

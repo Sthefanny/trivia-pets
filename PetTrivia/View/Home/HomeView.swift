@@ -47,22 +47,6 @@ struct HomeView: View {
         }
     }
     
-
-    func playSound() {
-        guard let url = Bundle.main.url(forResource: "dogBarking", withExtension: "wav") else { return }
-
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-            try AVAudioSession.sharedInstance().setActive(true)
-            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
-            player?.play()
-
-        } catch let error {
-            print(error.localizedDescription)
-        }
-    }
-    
-    
     func makeView() -> some View {
 
             return VStack(alignment: .center) {
@@ -80,7 +64,7 @@ struct HomeView: View {
                 .aspectRatio(contentMode: .fit)
                 .onTapGesture(count: 2, perform: {
                     isAnimatingDog = true
-                    playSound()
+                    AudioHelper.playSound(audioName: "dogBarking.wav")
                 })
                 Button(action: {
                     UserDefaultsWrapper.clearData()
@@ -91,11 +75,13 @@ struct HomeView: View {
                 HStack {
                     CardView(imageName: "playCardImage", title: "Jogar", bgColorName: "YellowCardColor")
                         .onTapGesture {
+                            AudioHelper.playSound(audioName: "button.wav")
                             showPreGame()
                         }
                     
                     CardView(imageName: "wikiPetCardImage", title: "WikiPet", bgColorName: "YellowCardColor")
                         .onTapGesture {
+                            AudioHelper.playSound(audioName: "button.wav")
                             showWiki()
                         }
                 }
