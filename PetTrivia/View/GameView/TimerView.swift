@@ -47,9 +47,11 @@ struct TimerView: View {
             if self.timeRemaining > 0 && disabledButton == false {
                     self.timeRemaining -= 1
             } else if self.timeRemaining <= 0 {
-                selectedOptions.append(0)
-                currentPosition += 1
-                timeRemaining = 60
+                if selectedOptions.count < 5 {
+                    selectedOptions.append(0)
+                    currentPosition += 1
+                    timeRemaining = 60
+                }
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
