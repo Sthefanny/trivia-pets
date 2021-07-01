@@ -14,6 +14,8 @@ struct HomeView: View {
     @State var player: AVAudioPlayer?
     @State var isAnimatingDog = false
     
+    @EnvironmentObject var userDefaultsWrapper: UserDefaultsWrapper
+    
     let showWiki: () -> Void
     
     let showPreGame: () -> Void
@@ -21,6 +23,8 @@ struct HomeView: View {
     
     
     func setInitialData() {
+
+        
         let possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
         
         if possibleCategories == nil {
@@ -58,18 +62,20 @@ struct HomeView: View {
         }
     }
     
-    var animatedDog: some View {
-        ImageAnimated(
-            imageSize: UIImage(named: "TitleImage")!.size, imageNames: ["TitleImage", "TitleImage2", "TitleImage3"])
-    }
     
     func makeView() -> some View {
 
             return VStack(alignment: .center) {
                 Spacer()
-                Group{
-                    Image("TitleImage")
+                VStack{
+                    Image("petizLogoHorizontal")
                         .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxHeight: 50)
+                    Image("\(userDefaultsWrapper.dog.dogName)_\(userDefaultsWrapper.dog.dogHat)Hat")
+                        .resizable()
+                        .padding(.top, -20)
+                    
                 }
                 .aspectRatio(contentMode: .fit)
                 .onTapGesture(count: 2, perform: {
@@ -110,11 +116,13 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView {
-        
+        HomeView (){
+            
+            
         } showPreGame: {
             
         }
+    .environmentObject(UserDefaultsWrapper())
 
     }
 }
