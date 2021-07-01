@@ -22,7 +22,7 @@ struct TabBarView: View {
     
     var body: some View {
         TabView(selection: $currentTab) {
-            HomeView() {
+            HomeView(dog: (Dog.init(dogName: "pantufa", dogHat: "strawberry"))) {
                 currentTab = .wiki
             } showPreGame: {
                 currentTab = .preGame
@@ -45,7 +45,7 @@ struct TabBarView: View {
                 }
                 .tag(Tab.wiki)
             
-            Text("aqui vai a aba meu pet")
+            MyPetView(dog: UserDefaultsWrapper.fetchDog() ?? (Dog(dogName: "pantufa", dogHat: "strawberry")))
                 .tabItem {
                     Label(
                         title: { Text("Meu Pet") },
