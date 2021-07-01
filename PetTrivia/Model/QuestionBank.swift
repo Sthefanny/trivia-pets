@@ -11,7 +11,17 @@ import Foundation
 class QuestionBank {
     static var instance = QuestionBank()
     var questionList = [QuestionCard]()
-
+    
+    func loadCorrectAnswers(_ category: QuestionCategory) -> [QuestionCard] {
+        let allQuestions = QuestionBank.instance.questionList
+        let rightIDs = UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? []
+        let rightQuestions = allQuestions.filter {
+            rightIDs.contains($0.questionId) &&
+                $0.category == category
+        }
+        
+        return (rightQuestions)
+    }
     
     func questionFilter(category: QuestionCategory, guessedRight: [Int]) -> [QuestionCard] {
         // tudo que não foi guessedRight
