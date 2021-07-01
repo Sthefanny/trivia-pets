@@ -56,6 +56,7 @@ struct TabBarView: View {
                     )
                 }
                 .tag(Tab.myPet)
+                .edgesIgnoringSafeArea(.bottom)
         }
         .tabViewStyle(DefaultTabViewStyle())
         .accentColor(Color("TabBarSelectColor"))

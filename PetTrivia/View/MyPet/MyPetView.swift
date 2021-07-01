@@ -24,6 +24,7 @@ struct MyPetView: View {
         VStack {
             Spacer()
             VStack {
+
                 ZStack{
                     Image("dogImageBackgroundYellow")
                         .resizable()
