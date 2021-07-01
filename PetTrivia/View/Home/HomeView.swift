@@ -14,7 +14,7 @@ struct HomeView: View {
     @State var player: AVAudioPlayer?
     @State var isAnimatingDog = false
     
-    @State var dog: Dog
+    @EnvironmentObject var userDefaultsWrapper: UserDefaultsWrapper
     
     let showWiki: () -> Void
     
@@ -23,7 +23,7 @@ struct HomeView: View {
     
     
     func setInitialData() {
-        dog = UserDefaultsWrapper.fetchDog() ?? (Dog(dogName: "pantufa", dogHat: "strawberry"))
+
         
         let possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
         
@@ -72,7 +72,7 @@ struct HomeView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(maxHeight: 50)
-                    Image("\(dog.dogName)_\(dog.dogHat)Hat")
+                    Image("\(userDefaultsWrapper.dog.dogName)_\(userDefaultsWrapper.dog.dogHat)Hat")
                         .resizable()
                         .padding(.top, -20)
                     
@@ -116,11 +116,13 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView (dog: (Dog.init(dogName: "pantufa", dogHat: "strawberry"))){
-        
+        HomeView (){
+            
+            
         } showPreGame: {
             
         }
+    .environmentObject(UserDefaultsWrapper())
 
     }
 }

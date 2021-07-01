@@ -22,7 +22,7 @@ struct TabBarView: View {
     
     var body: some View {
         TabView(selection: $currentTab) {
-            HomeView(dog: (Dog.init(dogName: "pantufa", dogHat: "strawberry"))) {
+            HomeView() {
                 currentTab = .wiki
             } showPreGame: {
                 currentTab = .preGame
@@ -66,5 +66,6 @@ struct TabBarView: View {
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
         TabBarView()
+            .environmentObject(UserDefaultsWrapper())
     }
 }

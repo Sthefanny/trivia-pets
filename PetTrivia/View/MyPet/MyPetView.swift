@@ -13,6 +13,9 @@ struct MyPetView: View {
     
     @State var isHatButtonSelected: Bool = false
     
+    @EnvironmentObject var userDefaultsWrapper: UserDefaultsWrapper
+    
+    
     var body: some View {
         VStack {
             ZStack{
@@ -24,6 +27,7 @@ struct MyPetView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }
+            
             HStack{
                 Button(action: {isHatButtonSelected = false}, label: {
                     Text("doguitos")
@@ -122,13 +126,14 @@ struct MyPetView: View {
             }
         }
         .onDisappear(){
-            UserDefaultsWrapper.setDog(Dog: dog)
+            userDefaultsWrapper.setDog(Dog: dog)
         }
 }
 
 struct MyPetView_Previews: PreviewProvider {
     static var previews: some View {
         MyPetView(dog: (Dog.init(dogName: "pantufa", dogHat: "strawberry")))
+            .environmentObject(UserDefaultsWrapper())
     }
 }
 }
