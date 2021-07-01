@@ -41,6 +41,7 @@ struct PulsatingView: View {
                 .onAppear {
                     DispatchQueue.main.async {
                         self.animate = true
+                        AudioHelper.playSound(audioName: "countdown.wav")
                     }
                 }
                 .animation(animate ? Animation.easeInOut(duration: 1).repeatCount(5, autoreverses: true).delay(0.1) : .default)

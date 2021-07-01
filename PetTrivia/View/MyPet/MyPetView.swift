@@ -7,11 +7,16 @@
 
 import SwiftUI
 
+enum ButtonSelected {
+    case doguitos
+    case chapeuzitos
+}
+
 struct MyPetView: View {
     
     @State var dog: Dog
     
-    @State var isHatButtonSelected: Bool = false
+    @State var buttonSelected: ButtonSelected = .chapeuzitos
     
     @EnvironmentObject var userDefaultsWrapper: UserDefaultsWrapper
     
@@ -30,17 +35,27 @@ struct MyPetView: View {
             .padding(50)
             
             HStack{
-                Button(action: {isHatButtonSelected = false}, label: {
+                Button(action: {buttonSelected = .doguitos}, label: {
                     Text("doguitos")
+                        .padding(10)
+                        .background(buttonSelected == .doguitos ? Color("YellowCardColor") : Color("BlueCardColor"))
+                        .overlay(
+                            Rectangle()
+                                .stroke(Color.yellow, lineWidth: 1))
                 })
-                Button(action: {isHatButtonSelected = true}, label: {
+                Button(action: {buttonSelected = .chapeuzitos}, label: {
                     Text("chapeuzitos")
+                        .padding(10)
+                        .background(buttonSelected == .chapeuzitos ? Color("YellowCardColor") : Color("BlueCardColor"))
+                        .overlay(
+                            Rectangle()
+                                .stroke(Color.yellow, lineWidth: 1))
                 })
             }
             
             Spacer()
             
-            if isHatButtonSelected {
+            if buttonSelected == .chapeuzitos {
                 LazyVGrid(columns: Array<GridItem>(repeating: GridItem(.flexible()), count: 2)){
                     Button(action: {
                             dog.dogHat = "frog"

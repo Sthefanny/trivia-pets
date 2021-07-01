@@ -25,7 +25,8 @@ struct SortView: View {
     
     @State private var isScreenActive = false
     @State private var currentSelectedCategory: Category!
-    
+    @State private var isLast = false
+
     private var model = CategoryOptionViewModel()
     
     var body: some View {
@@ -80,7 +81,7 @@ struct SortView: View {
                             ForEach(categories) { category in
                                 let possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
                                 let isPossible = possibleCategories?.first(where: {$0.id == category.id})
-                                CategoryOptionView(viewModel: model, id: category.id, text: category.text, isPossible: (isPossible != nil))
+                                CategoryOptionView(viewModel: model, id: category.id, text: category.text, isPossible: (isPossible != nil), isLast: isLast)
                             }
                         }
                         .onAppear {
@@ -91,6 +92,11 @@ struct SortView: View {
                         .onReceive(timer) { time in
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                                 if self.timeRemaining > 0 {
+                                    let categoriesCount = getPossibleCategoriesCount()
+                                    if categoriesCount == 1 {
+                                        self.timeRemaining = 1
+                                    }
+                                    
                                     self.stopCounter += 1
                                     
                                     self.timeRemaining -= 1
@@ -98,6 +104,7 @@ struct SortView: View {
                                     
                                     if (self.timeRemaining == 0) {
                                         if (self.stopCounter > self.stop) {
+                                            self.isLast.toggle()
                                             self.model.selectedId = getSortedCategory()
                                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                                 selectedCategory = categories.first(where: { $0.id == self.model.selectedId! })
@@ -118,13 +125,16 @@ struct SortView: View {
         }
     }
     
+    func getPossibleCategoriesCount() -> Int {
+        let possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
+        return possibleCategories?.count ?? 0
+    }
+    
     func getSortedCategory() -> Int? {
-        var possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
+        let possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
         let sorted = possibleCategories?.randomElement()
         
-        possibleCategories?.removeAll(where: {$0.id == sorted?.id})
-
-        UserDefaultsWrapper.setPossibleCategories(categories: possibleCategories ?? nil)
+        UserDefaultsWrapper.setActualCategory(category: sorted)
 
         return sorted?.id
     }

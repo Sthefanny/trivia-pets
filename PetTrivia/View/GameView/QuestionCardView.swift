@@ -40,9 +40,19 @@ struct OptionView: View {
         for i in 0..<selectedOptions.count {
             if selectedOptions[i] == questions[i].correctOption {
                 guessedRight.append(questions[i].questionId)
+                
+                updateCategories()
             }
         }
         return guessedRight
+    }
+    
+    func updateCategories() {
+        let actualCategory = UserDefaultsWrapper.fetchActualCategory()
+        var possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
+        possibleCategories?.removeAll(where: {$0.id == actualCategory?.id})
+
+        UserDefaultsWrapper.setPossibleCategories(categories: possibleCategories ?? nil)
     }
     
     @Binding var currentPosition: Int
