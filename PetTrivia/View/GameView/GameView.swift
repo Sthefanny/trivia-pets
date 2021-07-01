@@ -94,6 +94,7 @@ struct GameView: View {
                     .overlay(
                         VStack {
                             TimerView(timeRemaining: $timeRemaining, disabledButton: $disabledButton, selectedOptions: $selectedOptions, currentPosition: $currentPosition, screenChange: $screenChange, backActive: $backActive, screenState: $screenState)
+                                .padding()
                             ProgressionView(currentQuestion: $currentPosition, selectedOptions: $selectedOptions, correctOptions: self.correctAnswers)
                             Text(questions[currentPosition - 1].category.rawValue)
                                 .font(.custom("Helvetica Neue", size: 34))

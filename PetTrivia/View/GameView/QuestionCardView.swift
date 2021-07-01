@@ -87,6 +87,8 @@ struct OptionView: View {
                             .layoutPriority(1000)
                             .font(.custom("Helvetica Neue", size: 16))
                             .padding(24)
+                            .fixedSize(horizontal: false, vertical: true)
+                          
                             
                         Spacer()
                     }
@@ -138,7 +140,7 @@ struct QuestionCardView: View {
         }
         
         .background(Color.white .opacity(0.8))
-        .cornerRadius(20)
+        .cornerRadius(15)
         .padding()
         
     }
