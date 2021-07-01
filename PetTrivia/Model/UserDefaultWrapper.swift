@@ -12,7 +12,19 @@ struct UserInfo: Codable {
     let guessedRight: [Int]
 }
 
-class UserDefaultsWrapper {
+struct Dog: Codable {
+    var dogName: String
+    var dogHat: String
+}
+
+class UserDefaultsWrapper: ObservableObject {
+    
+    @Published var dog: Dog
+    
+    init () {
+        dog = UserDefaultsWrapper.fetchDog() ?? (Dog(dogName: "pantufa", dogHat: "strawberry"))
+    }
+    
     static func setPossibleCategories(categories: [Category]?) {
         let data = try? JSONEncoder().encode(categories)
         UserDefaults.standard.set(data, forKey: "possibleCategories")
@@ -39,6 +51,20 @@ class UserDefaultsWrapper {
         
         let userInfo = try? JSONDecoder().decode(UserInfo.self, from: data)
         return userInfo
+    }
+    
+    func setDog(Dog: Dog) {
+        self.dog = Dog
+        let data = try? JSONEncoder().encode(Dog)
+        UserDefaults.standard.set(data, forKey: "customDog")
+    }
+    
+    static func fetchDog() -> Dog? {
+        guard let data = UserDefaults.standard.data(forKey: "customDog") else {
+            return nil
+        }
+        let customDog = try? JSONDecoder().decode(Dog.self, from: data)
+        return customDog
     }
     
     static func clearData(){

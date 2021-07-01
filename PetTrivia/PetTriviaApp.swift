@@ -11,9 +11,12 @@ import SwiftUI
 struct PetTriviaApp: App {
 //    let persistenceController = PersistenceController.shared
 
+    @StateObject var userDefaultsWrapper = UserDefaultsWrapper()
+    
     var body: some Scene {
         WindowGroup {
             TabBarView()
+                .environmentObject(userDefaultsWrapper)
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

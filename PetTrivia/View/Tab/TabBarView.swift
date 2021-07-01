@@ -45,7 +45,7 @@ struct TabBarView: View {
                 }
                 .tag(Tab.wiki)
             
-            Text("aqui vai a aba meu pet")
+            MyPetView(dog: UserDefaultsWrapper.fetchDog() ?? (Dog(dogName: "pantufa", dogHat: "strawberry")))
                 .tabItem {
                     Label(
                         title: { Text("Meu Pet") },
@@ -66,5 +66,6 @@ struct TabBarView: View {
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
         TabBarView()
+            .environmentObject(UserDefaultsWrapper())
     }
 }
