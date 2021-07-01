@@ -72,6 +72,7 @@ struct WikiPetView: View {
             )
             .padding(.top, 32)
             .edgesIgnoringSafeArea([.top, .horizontal])
+            
         }
     }
 }

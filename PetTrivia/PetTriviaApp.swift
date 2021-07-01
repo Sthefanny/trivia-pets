@@ -14,6 +14,10 @@ struct PetTriviaApp: App {
     var body: some Scene {
         WindowGroup {
             TabBarView()
+                .onAppear{
+                    UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(named: "BlueCardTextColor")
+                    UIPageControl.appearance().pageIndicatorTintColor = UIColor(named: "BlueCardColor")
+                }
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

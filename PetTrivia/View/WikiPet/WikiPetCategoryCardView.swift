@@ -33,6 +33,7 @@ struct WikiPetCategoryCardView: View {
                
             }
             .padding()
+            .padding(.bottom, 20)
                 
             .opacity(1)
             Spacer()
