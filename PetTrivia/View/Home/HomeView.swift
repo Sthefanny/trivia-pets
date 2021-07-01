@@ -86,6 +86,7 @@ struct HomeView: View {
                     CardView(imageName: "playCardImage", title: "Jogar", bgColorName: "YellowCardColor")
                         .onTapGesture {
                             showPreGame()
+                        
                         }
                     
                     CardView(imageName: "wikiPetCardImage", title: "WikiPet", bgColorName: "YellowCardColor")
@@ -93,7 +94,8 @@ struct HomeView: View {
                             showWiki()
                         }
                 }
-//                Spacer()
+                .padding(.bottom)
+                Spacer()
                 HStack {
                     CardView(imageName: "accessoriesCardImage", title: "Acessórios", bgColorName: "YellowCardColor", isEnabled: false)
                     CardView(imageName: "snacksCardImage", title: "Petiscos", bgColorName: "YellowCardColor", isEnabled: false)

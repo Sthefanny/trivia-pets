@@ -29,10 +29,11 @@ struct CardView: View {
                     Spacer()
                     HStack {
                         Text(title)
-                            .font(Font.custom("HelveticaNeue", size: 16))
+                            .font(Font.custom("HelveticaNeue", size: 21))
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             .foregroundColor(Color("BlueCardTextColor"))
                             .padding()
+                        
                         Spacer()
 
                     }
