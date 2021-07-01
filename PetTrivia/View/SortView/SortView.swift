@@ -25,7 +25,8 @@ struct SortView: View {
     
     @State private var isScreenActive = false
     @State private var currentSelectedCategory: Category!
-    
+    @State private var isFirst = true
+
     private var model = CategoryOptionViewModel()
     
     var body: some View {
@@ -89,6 +90,11 @@ struct SortView: View {
                         .onReceive(timer) { time in
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                                 if self.timeRemaining > 0 {
+                                    let categoriesCount = getPossibleCategoriesCount()
+                                    if categoriesCount == 1 {
+                                        self.timeRemaining = 1
+                                    }
+                                    
                                     self.stopCounter += 1
                                     
                                     self.timeRemaining -= 1
@@ -113,16 +119,27 @@ struct SortView: View {
                 }
             .padding(.vertical, 20)
             .padding(.horizontal, 30)
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                    if self.isFirst {
+                        AudioHelper.playSound(audioName: "sort.wav")
+                        self.isFirst.toggle()
+                    }
+                }
+            }
         }
     }
     
+    func getPossibleCategoriesCount() -> Int {
+        let possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
+        return possibleCategories?.count ?? 0
+    }
+    
     func getSortedCategory() -> Int? {
-        var possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
+        let possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
         let sorted = possibleCategories?.randomElement()
         
-        possibleCategories?.removeAll(where: {$0.id == sorted?.id})
-
-        UserDefaultsWrapper.setPossibleCategories(categories: possibleCategories ?? nil)
+        UserDefaultsWrapper.setActualCategory(category: sorted)
 
         return sorted?.id
     }

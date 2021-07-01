@@ -17,7 +17,8 @@ struct PulsatingView: View {
     
     @State var animate = false
     @State private var timeRemaining = 3
-    
+    @State private var countdownText = 3
+
     @State private var isScreenActive = false
     
     let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
@@ -29,7 +30,7 @@ struct PulsatingView: View {
                 ZStack {
                     Circle().fill(circleColor.opacity(0.3)).frame(width: 200, height: 200).scaleEffect(self.animate ? 1 : 0.1)
                     Circle().fill(circleColor.opacity(0.9)).frame(width: 148, height: 148).scaleEffect(self.animate ? 1 : 0.1)
-                    Text("\(timeRemaining)")
+                    Text("\(countdownText)")
                         .font(Font.custom("HelveticaNeue", size: 96))
                         .fontWeight(.medium)
                         .foregroundColor(Color("BlueTextColor"))
@@ -48,13 +49,19 @@ struct PulsatingView: View {
             .onReceive(timer) { time in
                 if self.timeRemaining > 0 {
                     self.timeRemaining -= 1
+                    if countdownText > 1 {
+                        countdownText -= 1
+                    }
                     if self.timeRemaining == 1 {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.95, execute: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.8, execute: {
                             self.isScreenActive = true
                         })
                     }
                 }
-        }
+            }
+            .onAppear {
+                AudioHelper.playSound(audioName: "countdown.wav")
+            }
     }
 }
 

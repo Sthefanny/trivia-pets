@@ -33,6 +33,7 @@ struct EndGameView: View {
                 .padding()
                 .multilineTextAlignment(.center)
             Button(action: {
+                AudioHelper.playSound(audioName: "button.wav")
                 EndGameView.navigate = 1
                 isScreenActive.toggle()
             }) {
@@ -49,6 +50,7 @@ struct EndGameView: View {
             }
             .padding([.bottom,.top])
             Button(action: {
+                AudioHelper.playSound(audioName: "button.wav")
                 EndGameView.navigate = 2
                 isScreenActive.toggle()
             }) {
@@ -64,6 +66,7 @@ struct EndGameView: View {
             }
             .padding(.bottom)
             Button(action: {
+                AudioHelper.playSound(audioName: "button.wav")
                 EndGameView.navigate = 3
                 isScreenActive.toggle()
             }) {
@@ -93,6 +96,9 @@ struct EndGameView: View {
         .background(Color("BackgroundColor"))
         .ignoresSafeArea(edges: .all)
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        .onAppear {
+            AudioHelper.playSound(audioName: result >= 3 ? "answerWin.wav" : "answerLose.wav")
+        }
     }
 
 }

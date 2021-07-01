@@ -40,9 +40,19 @@ struct OptionView: View {
         for i in 0..<selectedOptions.count {
             if selectedOptions[i] == questions[i].correctOption {
                 guessedRight.append(questions[i].questionId)
+                
+                updateCategories()
             }
         }
         return guessedRight
+    }
+    
+    func updateCategories() {
+        let actualCategory = UserDefaultsWrapper.fetchActualCategory()
+        var possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
+        possibleCategories?.removeAll(where: {$0.id == actualCategory?.id})
+
+        UserDefaultsWrapper.setPossibleCategories(categories: possibleCategories ?? nil)
     }
     
     @Binding var currentPosition: Int
@@ -61,6 +71,7 @@ struct OptionView: View {
             ForEach(question.options) { option in
                 
                 Button(action: {
+                    AudioHelper.playSound(audioName: "button.wav")
                     selectedOptions.append(find(option, question.options))
                     disableButton = true
                     isCorrect = revealAnswer(option: option, question: question)

@@ -25,6 +25,20 @@ class UserDefaultsWrapper: ObservableObject {
         dog = UserDefaultsWrapper.fetchDog() ?? (Dog(dogName: "pantufa", dogHat: "strawberry"))
     }
     
+    static func setActualCategory(category: Category?) {
+        let data = try? JSONEncoder().encode(category)
+        UserDefaults.standard.set(data, forKey: "actualCategory")
+    }
+    
+    static func fetchActualCategory() -> Category? {
+        guard let data = UserDefaults.standard.data(forKey: "actualCategory") else {
+            return nil
+        }
+        
+        let category = try? JSONDecoder().decode(Category.self, from: data)
+        return category
+    }
+    
     static func setPossibleCategories(categories: [Category]?) {
         let data = try? JSONEncoder().encode(categories)
         UserDefaults.standard.set(data, forKey: "possibleCategories")

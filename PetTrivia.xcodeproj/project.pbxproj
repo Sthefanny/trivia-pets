@@ -33,6 +33,12 @@
 		E553D7FB26812B8600853A82 /* MiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E553D7FA26812B8600853A82 /* MiniCardView.swift */; };
 		E5766BE226825E400072F9C7 /* SortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5766BE126825E400072F9C7 /* SortView.swift */; };
 		E5766BE426826C750072F9C7 /* CategoryOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5766BE326826C750072F9C7 /* CategoryOptionView.swift */; };
+		E579C045268D3A1900B5516C /* AudioHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E579C044268D3A1900B5516C /* AudioHelper.swift */; };
+		E579C04C268D412200B5516C /* answerWin.wav in Resources */ = {isa = PBXBuildFile; fileRef = E579C047268D412100B5516C /* answerWin.wav */; };
+		E579C04D268D412200B5516C /* answerLose.wav in Resources */ = {isa = PBXBuildFile; fileRef = E579C048268D412100B5516C /* answerLose.wav */; };
+		E579C050268D412200B5516C /* button.wav in Resources */ = {isa = PBXBuildFile; fileRef = E579C04B268D412200B5516C /* button.wav */; };
+		E597B065268E45B500FACB5B /* sort.wav in Resources */ = {isa = PBXBuildFile; fileRef = E597B064268E45B500FACB5B /* sort.wav */; };
+		E597B06B268E479C00FACB5B /* countdown.wav in Resources */ = {isa = PBXBuildFile; fileRef = E597B06A268E479C00FACB5B /* countdown.wav */; };
 		E5B7F1F0267BC0E30077086C /* PetTriviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7F1EF267BC0E30077086C /* PetTriviaApp.swift */; };
 		E5B7F1F4267BC0E50077086C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B7F1F3267BC0E50077086C /* Assets.xcassets */; };
 		E5B7F1F7267BC0E50077086C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B7F1F6267BC0E50077086C /* Preview Assets.xcassets */; };
@@ -67,6 +73,12 @@
 		E553D7FA26812B8600853A82 /* MiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniCardView.swift; sourceTree = "<group>"; };
 		E5766BE126825E400072F9C7 /* SortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortView.swift; sourceTree = "<group>"; };
 		E5766BE326826C750072F9C7 /* CategoryOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryOptionView.swift; sourceTree = "<group>"; };
+		E579C044268D3A1900B5516C /* AudioHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHelper.swift; sourceTree = "<group>"; };
+		E579C047268D412100B5516C /* answerWin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = answerWin.wav; sourceTree = "<group>"; };
+		E579C048268D412100B5516C /* answerLose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = answerLose.wav; sourceTree = "<group>"; };
+		E579C04B268D412200B5516C /* button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button.wav; sourceTree = "<group>"; };
+		E597B064268E45B500FACB5B /* sort.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sort.wav; sourceTree = "<group>"; };
+		E597B06A268E479C00FACB5B /* countdown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = countdown.wav; sourceTree = "<group>"; };
 		E5B7F1EC267BC0E30077086C /* PetTrivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTrivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B7F1EF267BC0E30077086C /* PetTriviaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTriviaApp.swift; sourceTree = "<group>"; };
 		E5B7F1F3267BC0E50077086C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -189,6 +201,27 @@
 			path = SortView;
 			sourceTree = "<group>";
 		};
+		E579C043268D39E800B5516C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E579C044268D3A1900B5516C /* AudioHelper.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		E579C046268D40E500B5516C /* Audios */ = {
+			isa = PBXGroup;
+			children = (
+				E597B06A268E479C00FACB5B /* countdown.wav */,
+				E597B064268E45B500FACB5B /* sort.wav */,
+				E579C048268D412100B5516C /* answerLose.wav */,
+				E579C047268D412100B5516C /* answerWin.wav */,
+				E579C04B268D412200B5516C /* button.wav */,
+				1140E0DD26881DF5005649E9 /* dogBarking.wav */,
+			);
+			path = Audios;
+			sourceTree = "<group>";
+		};
 		E5B7F1E3267BC0E30077086C = {
 			isa = PBXGroup;
 			children = (
@@ -209,7 +242,8 @@
 		E5B7F1EE267BC0E30077086C /* PetTrivia */ = {
 			isa = PBXGroup;
 			children = (
-				1140E0DD26881DF5005649E9 /* dogBarking.wav */,
+				E579C046268D40E500B5516C /* Audios */,
+				E579C043268D39E800B5516C /* Shared */,
 				5B49D9F2268514FC00D620B1 /* Controller */,
 				5B3A60E3268262E900748B09 /* Model */,
 				E5B7F205267BC4140077086C /* View */,
@@ -304,8 +338,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5B7F1F7267BC0E50077086C /* Preview Assets.xcassets in Resources */,
+				E579C050268D412200B5516C /* button.wav in Resources */,
+				E597B06B268E479C00FACB5B /* countdown.wav in Resources */,
 				E5B7F1F4267BC0E50077086C /* Assets.xcassets in Resources */,
+				E597B065268E45B500FACB5B /* sort.wav in Resources */,
+				E579C04D268D412200B5516C /* answerLose.wav in Resources */,
 				1140E0DE26881DF5005649E9 /* dogBarking.wav in Resources */,
+				E579C04C268D412200B5516C /* answerWin.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +382,7 @@
 				1140E0D826877832005649E9 /* WikiPetView.swift in Sources */,
 				5B8803322681071F003A45FA /* ProgressionView.swift in Sources */,
 				5B3A60E6268262E900748B09 /* QuestionCard.swift in Sources */,
+				E579C045268D3A1900B5516C /* AudioHelper.swift in Sources */,
 				5B6E8ED3267D3A530079A195 /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

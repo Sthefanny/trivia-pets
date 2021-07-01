@@ -30,6 +30,7 @@ struct PreGameView: View {
             Spacer()
             
             Button(action: {
+                AudioHelper.playSound(audioName: "button.wav")
                 isScreenActive.toggle()
             }){
                 Text("Iniciar Jogo")
