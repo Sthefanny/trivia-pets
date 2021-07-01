@@ -27,6 +27,7 @@ struct MyPetView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }
+            .padding(50)
             
             HStack{
                 Button(action: {isHatButtonSelected = false}, label: {
@@ -36,6 +37,7 @@ struct MyPetView: View {
                     Text("chapeuzitos")
                 })
             }
+            
             Spacer()
             
             if isHatButtonSelected {
