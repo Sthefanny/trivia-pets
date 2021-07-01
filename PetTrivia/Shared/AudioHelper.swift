@@ -24,4 +24,8 @@ class AudioHelper {
             print(error.localizedDescription)
         }
     }
+    
+    public static func stopSound() {
+        player?.stop()
+    }
 }

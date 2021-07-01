@@ -70,6 +70,7 @@ struct OptionView: View {
             ForEach(question.options) { option in
                 
                 Button(action: {
+                    AudioHelper.playSound(audioName: "button.wav")
                     selectedOptions.append(find(option, question.options))
                     disableButton = true
                     isCorrect = revealAnswer(option: option, question: question)
