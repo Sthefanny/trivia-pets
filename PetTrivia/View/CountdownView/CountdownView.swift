@@ -27,9 +27,6 @@ struct PulsatingView: View {
     var body: some View {
             VStack {
                 ZStack {
-                    NavigationLink(destination: GameView(currentCategory: QuestionCategory(rawValue: selectedCategory.text)!)
-                                    .navigationBarHidden(true)
-                                    .navigationBarBackButtonHidden(true), isActive: $isScreenActive){}
                     Circle().fill(circleColor.opacity(0.3)).frame(width: 200, height: 200).scaleEffect(self.animate ? 1 : 0)
                     Circle().fill(circleColor.opacity(0.9)).frame(width: 148, height: 148).scaleEffect(self.animate ? 1 : 0)
                     Text("\(timeRemaining)")
@@ -38,6 +35,9 @@ struct PulsatingView: View {
                         .foregroundColor(Color("BlueTextColor"))
                         .scaleEffect(self.animate ? 1 : 0)
                 }
+                .fullScreenCover(isPresented: $isScreenActive, content: {
+                    GameView(currentCategory: QuestionCategory(rawValue: selectedCategory.text)!)
+                })
                 .onAppear {
                     DispatchQueue.main.async {
                         self.animate = true
@@ -64,13 +64,11 @@ struct CountdownView: View {
     private var model = PulsatingViewModel()
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                Image("CountdownBg").resizable().edgesIgnoringSafeArea(.all)
-                HStack {
-                    GeometryReader { (geometry) in
-                        self.makeView(geometry)
-                    }
+        ZStack {
+            Image("CountdownBg").resizable().edgesIgnoringSafeArea(.all)
+            HStack {
+                GeometryReader { (geometry) in
+                    self.makeView(geometry)
                 }
             }
         }

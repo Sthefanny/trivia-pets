@@ -12,17 +12,25 @@ struct TimerView: View {
     @Binding var disabledButton: Bool
     @Binding var selectedOptions: [Int]
     @Binding var currentPosition: Int
+    @Binding var screenChange: Bool
+    @Binding var backActive: Bool
+    @Binding var screenState: ScreenState
+  
     @State private var isActive = true
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     var body: some View {
         ZStack {
-            Group {
+            Button(action: {
+                screenState = .back
+                screenChange.toggle()
+            }) {
                 Circle()
                     .strokeBorder(Color("LightStroke"))
                     .frame(width: 55, height: 55)
                     .overlay(
                         Image(systemName: "arrow.backward")
                             .frame(width: 18.7,height: 18)
+                            .foregroundColor(Color("LightBlack"))
                     )
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -55,6 +63,6 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView(timeRemaining: .constant(60), disabledButton: .constant(false), selectedOptions: .constant([]), currentPosition: .constant(1))
+        TimerView(timeRemaining: .constant(60), disabledButton: .constant(false), selectedOptions: .constant([]), currentPosition: .constant(1), screenChange: .constant(true), backActive: .constant(true), screenState: .constant(.back))
     }
 }
