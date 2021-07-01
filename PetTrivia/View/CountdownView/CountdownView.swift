@@ -27,13 +27,13 @@ struct PulsatingView: View {
     var body: some View {
             VStack {
                 ZStack {
-                    Circle().fill(circleColor.opacity(0.3)).frame(width: 200, height: 200).scaleEffect(self.animate ? 1 : 0)
-                    Circle().fill(circleColor.opacity(0.9)).frame(width: 148, height: 148).scaleEffect(self.animate ? 1 : 0)
+                    Circle().fill(circleColor.opacity(0.3)).frame(width: 200, height: 200).scaleEffect(self.animate ? 1 : 0.5)
+                    Circle().fill(circleColor.opacity(0.9)).frame(width: 148, height: 148).scaleEffect(self.animate ? 1 : 0.5)
                     Text("\(timeRemaining)")
                         .font(Font.custom("HelveticaNeue", size: 96))
                         .fontWeight(.medium)
                         .foregroundColor(Color("BlueTextColor"))
-                        .scaleEffect(self.animate ? 1 : 0.1)
+                        .scaleEffect(self.animate ? 1 : 0.5)
                 }
                 .fullScreenCover(isPresented: $isScreenActive, content: {
                     GameView(currentCategory: QuestionCategory(rawValue: selectedCategory.text)!)
