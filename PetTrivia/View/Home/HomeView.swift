@@ -14,14 +14,36 @@ struct HomeView: View {
     @State var player: AVAudioPlayer?
     @State var isAnimatingDog = false
     
+    @EnvironmentObject var userDefaultsWrapper: UserDefaultsWrapper
+    
     let showWiki: () -> Void
     
     let showPreGame: () -> Void
+    
+    
+    
+    func setInitialData() {
+
+        
+        let possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
+        
+        if possibleCategories == nil {
+            UserDefaultsWrapper.setPossibleCategories(categories: [
+                Category(id: 3, text: QuestionCategory.environmentalEnrichment.rawValue),
+                Category(id: 2, text: QuestionCategory.allowedFood.rawValue),
+                Category(id: 1, text: QuestionCategory.naturalDiet.rawValue),
+                Category(id: 0, text: QuestionCategory.allOptions.rawValue)
+            ])
+        }
+    }
     
     var body: some View {
         ZStack {
             Color("BackgroundColor").edgesIgnoringSafeArea(.all)
                 self.makeView()
+        }
+        .onAppear {
+            self.setInitialData()
         }
     }
     
@@ -40,24 +62,25 @@ struct HomeView: View {
         }
     }
     
-    var animatedDog: some View {
-        ImageAnimated(
-            imageSize: UIImage(named: "TitleImage")!.size, imageNames: ["TitleImage", "TitleImage2", "TitleImage3"])
-    }
     
     func makeView() -> some View {
 
             return VStack(alignment: .center) {
                 Spacer()
-                Button(action: {
+                VStack{
+                    Image("petizLogoHorizontal")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxHeight: 50)
+                    Image("\(userDefaultsWrapper.dog.dogName)_\(userDefaultsWrapper.dog.dogHat)Hat")
+                        .resizable()
+                        .padding(.top, -20)
+                    
+                }
+                .aspectRatio(contentMode: .fit)
+                .onTapGesture(count: 2, perform: {
                     isAnimatingDog = true
                     playSound()
-                }, label: {
-                    Group{
-                        Image("TitleImage")
-                            .resizable()
-                    }
-                    .aspectRatio(contentMode: .fit)
                 })
                 Button(action: {
                     UserDefaultsWrapper.clearData()
@@ -93,11 +116,13 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView {
-        
+        HomeView (){
+            
+            
         } showPreGame: {
             
         }
+    .environmentObject(UserDefaultsWrapper())
 
     }
 }

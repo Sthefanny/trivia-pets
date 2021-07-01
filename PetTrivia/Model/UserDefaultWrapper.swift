@@ -12,13 +12,31 @@ struct UserInfo: Codable {
     let guessedRight: [Int]
 }
 
-class UserDefaultsWrapper {
-    static func setLastSortedCategory(sorted: Int) {
-        UserDefaults.standard.set(sorted, forKey: "lastSortedCategory")
+struct Dog: Codable {
+    var dogName: String
+    var dogHat: String
+}
+
+class UserDefaultsWrapper: ObservableObject {
+    
+    @Published var dog: Dog
+    
+    init () {
+        dog = UserDefaultsWrapper.fetchDog() ?? (Dog(dogName: "pantufa", dogHat: "strawberry"))
     }
     
-    static func fetchLastSortedCategory() -> Int? {
-        return UserDefaults.standard.integer(forKey: "lastSortedCategory")
+    static func setPossibleCategories(categories: [Category]?) {
+        let data = try? JSONEncoder().encode(categories)
+        UserDefaults.standard.set(data, forKey: "possibleCategories")
+    }
+    
+    static func fetchPossibleCategories() -> [Category]? {
+        guard let data = UserDefaults.standard.data(forKey: "possibleCategories") else {
+            return nil
+        }
+        
+        let categories = try? JSONDecoder().decode([Category].self, from: data)
+        return categories
     }
     
     static func setUserInfo(userInfo: UserInfo) {
@@ -33,6 +51,20 @@ class UserDefaultsWrapper {
         
         let userInfo = try? JSONDecoder().decode(UserInfo.self, from: data)
         return userInfo
+    }
+    
+    func setDog(Dog: Dog) {
+        self.dog = Dog
+        let data = try? JSONEncoder().encode(Dog)
+        UserDefaults.standard.set(data, forKey: "customDog")
+    }
+    
+    static func fetchDog() -> Dog? {
+        guard let data = UserDefaults.standard.data(forKey: "customDog") else {
+            return nil
+        }
+        let customDog = try? JSONDecoder().decode(Dog.self, from: data)
+        return customDog
     }
     
     static func clearData(){

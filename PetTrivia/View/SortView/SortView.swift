@@ -9,8 +9,8 @@ import SwiftUI
 
 var selectedCategory: Category!
 
-struct Category: Identifiable {
-    let id: Int
+struct Category: Identifiable, Codable {
+    var id: Int
     let text: String
 }
 
@@ -76,7 +76,9 @@ struct SortView: View {
                         
                         VStack {
                             ForEach(categories) { category in
-                                CategoryOptionView(viewModel: model, id: category.id, text: category.text)
+                                let possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
+                                let isPossible = possibleCategories?.first(where: {$0.id == category.id})
+                                CategoryOptionView(viewModel: model, id: category.id, text: category.text, isPossible: (isPossible != nil))
                             }
                         }
                         .onAppear {
@@ -95,7 +97,7 @@ struct SortView: View {
                                     if (self.timeRemaining == 0) {
                                         if (self.stopCounter > self.stop) {
                                             self.model.selectedId = getSortedCategory()
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                                 selectedCategory = categories.first(where: { $0.id == self.model.selectedId! })
                                                 self.isScreenActive = true
                                             }
@@ -114,17 +116,15 @@ struct SortView: View {
         }
     }
     
-    func getSortedCategory() -> Int {
-        var sorted = Int.random(in: 0...3)
-        let lastSorted = UserDefaultsWrapper.fetchLastSortedCategory()
+    func getSortedCategory() -> Int? {
+        var possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
+        let sorted = possibleCategories?.randomElement()
         
-        while sorted == lastSorted {
-            sorted = Int.random(in: 0...3)
-        }
-        
-        UserDefaultsWrapper.setLastSortedCategory(sorted: sorted)
-        
-        return sorted
+        possibleCategories?.removeAll(where: {$0.id == sorted?.id})
+
+        UserDefaultsWrapper.setPossibleCategories(categories: possibleCategories ?? nil)
+
+        return sorted?.id
     }
 }
 
