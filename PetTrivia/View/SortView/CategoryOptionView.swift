@@ -45,6 +45,11 @@ struct CategoryOptionView: View {
                     .padding(.horizontal)
                     .padding(.vertical, 10)
                 }
+//                .onChange(of: viewModel.selectedId) { selectedId in
+//                    if selectedId == id {
+//                        AudioHelper.playSound(audioName: "sort.wav")
+//                    }
+//                }
             }
     }
 }

@@ -25,6 +25,7 @@ struct SortView: View {
     
     @State private var isScreenActive = false
     @State private var currentSelectedCategory: Category!
+    @State private var isFirst = true
     
     private var model = CategoryOptionViewModel()
     
@@ -90,6 +91,10 @@ struct SortView: View {
                         }
                         .onReceive(timer) { time in
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                                if (isFirst) {
+                                    AudioHelper.playSound(audioName: "sort.wav")
+                                    isFirst.toggle()
+                                }
                                 if self.timeRemaining > 0 {
                                     self.stopCounter += 1
                                     
