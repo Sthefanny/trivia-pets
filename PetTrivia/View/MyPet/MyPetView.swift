@@ -51,7 +51,7 @@ struct MyPetView: View {
             // MARK: nagivation dog vs hats
             
             HStack{
-                Picker(selection: $buttonSelected, label: Text("What is your favorite color?")) {
+                Picker(selection: $buttonSelected, label: Text("What do you wanna select?")) {
                     Text("Doguitos").tag(ButtonSelected.doguitos)
                     Text("Chapeuzitos").tag(ButtonSelected.chapeuzitos)
                         
@@ -88,6 +88,7 @@ struct MyPetView: View {
                         .frame(width: 140)
  
                     }
+                 
                     Spacer()
                     HStack{
                         Button(action: {dog.dogHat = "dino"}, label: {

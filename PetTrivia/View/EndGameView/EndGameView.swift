@@ -38,10 +38,10 @@ struct EndGameView: View {
                 EndGameView.navigate = 1
                 isScreenActive.toggle()
             }) {
-                Text("WikiPet")
+                Text("Ir para WikiPet")
                     .bold()
                     .foregroundColor(Color("BlueCardTextColor"))
-                    .frame(width: UIScreen.main.bounds.width * 0.9, height: 70)
+                    .frame(width: UIScreen.main.bounds.width * 0.85, height: 60)
                     .background(Color("YellowCircleColor"))
                     .cornerRadius(20)
                     .overlay(
