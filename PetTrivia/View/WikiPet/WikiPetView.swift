@@ -12,31 +12,26 @@ struct WikiPetView: View {
   //  @State var correctAnswers: [QuestionCard]
     
     func loadCorrectAnswers(_ category: QuestionCategory) -> Int {
-        let allQuestions = QuestionBank.instance.questionList
-        let rightIDs = UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? []
-        let rightQuestions = allQuestions.filter {
-            rightIDs.contains($0.questionId) &&
-                $0.category == category
-        }
-        
-       
-        return (rightQuestions.count)
+        return QuestionBank.instance.loadCorrectAnswers(category).count
     }
     
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack {
-                    Image("wikipetTitleImage")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .padding()
-                    Spacer()
-                    Text("WikiPet")
-                        .font(Font.custom("HelveticaNeue", size: 40))
-                        .fontWeight(.medium)
-                        .foregroundColor(Color("BlueTextColor"))
-
+                    HStack {
+                        Image("wikipetTitleImage")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding()
+                            .frame(maxHeight: 150)
+                        Text("WikiPet")
+                            .font(Font.custom("HelveticaNeue", size: 40))
+                            .fontWeight(.medium)
+                            .foregroundColor(Color("BlueTextColor"))
+                    }
+                   
+                    
                     Spacer()
               
                     NavigationLink(
@@ -44,7 +39,7 @@ struct WikiPetView: View {
                             category: "Alimentação Natural",
                             categoryImageName: "steakCategoryImage",
                             question: "O que é alimentação natural para cães?",
-                            categoryQuestions: QuestionBank.instance.questionFilter(category: .naturalDiet, guessedRight: UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? [])
+                            categoryQuestions: QuestionBank.instance.loadCorrectAnswers(.naturalDiet)
                         ),
                         label: {
                             WikiPetCardView(categoryImageName: "steakImage", categoryTitle: QuestionCategory.naturalDiet.rawValue, bgColorName: "YellowCardColor", progress: loadCorrectAnswers(.naturalDiet))
@@ -52,14 +47,14 @@ struct WikiPetView: View {
                         .padding(.bottom)
                     
                     NavigationLink(
-                        destination: WikiPetCategoryView(category: "Comidas Permitidas", categoryImageName: "bananaCategoryImage", question: "O que é alimentação natural para cães?", categoryQuestions:  QuestionBank.instance.questionFilter(category: .allowedFood, guessedRight: UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? [])),
+                        destination: WikiPetCategoryView(category: "Comidas Permitidas", categoryImageName: "bananaCategoryImage", question: "O que é alimentação natural para cães?", categoryQuestions:  QuestionBank.instance.loadCorrectAnswers(.allowedFood)),
                         label: {
                             WikiPetCardView(categoryImageName: "bananaImage", categoryTitle: QuestionCategory.allowedFood.rawValue, bgColorName: "YellowCardColor", progress: loadCorrectAnswers(.allowedFood))
                         })
                         .padding(.bottom)
                     
                     NavigationLink(
-                        destination: WikiPetCategoryView(category: "Enriquecimento Ambiental", categoryImageName: "lavanderCategoryImage", question: "O que é alimentação natural para cães?", categoryQuestions:  QuestionBank.instance.questionFilter(category: .environmentalEnrichment, guessedRight: UserDefaultsWrapper.fetchUserInfo()?.guessedRight ?? [])),
+                        destination: WikiPetCategoryView(category: "Enriquecimento Ambiental", categoryImageName: "lavanderCategoryImage", question: "O que é alimentação natural para cães?", categoryQuestions: QuestionBank.instance.loadCorrectAnswers(.environmentalEnrichment)),
                         label: {
                             WikiPetCardView(categoryImageName: "lavanderImage", categoryTitle: QuestionCategory.environmentalEnrichment.rawValue, bgColorName: "YellowCardColor", progress: loadCorrectAnswers(.environmentalEnrichment))
 
