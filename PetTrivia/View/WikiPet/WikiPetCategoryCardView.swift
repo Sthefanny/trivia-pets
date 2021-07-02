@@ -29,10 +29,11 @@ struct WikiPetCategoryCardView: View {
                     Text(note)
                         .font(Font.custom("HelveticaNeue", size: 17))
                         .foregroundColor(Color("BlueCardTextColor"))
-                }               
+                }
                
             }
             .padding()
+            .padding(.bottom, 20)
                 
             .opacity(1)
             Spacer()
