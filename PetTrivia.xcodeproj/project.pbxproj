@@ -349,6 +349,7 @@
 				E597B04B268E2C2600FACB5B /* sortFinal.wav in Resources */,
 				E597B04D268E2C2600FACB5B /* countdownFinal.wav in Resources */,
 				E5B7F1F4267BC0E50077086C /* Assets.xcassets in Resources */,
+				E597B065268E45B500FACB5B /* sort.wav in Resources */,
 				E579C04D268D412200B5516C /* answerLose.wav in Resources */,
 				1140E0DE26881DF5005649E9 /* dogBarking.wav in Resources */,
 				111D277D268E33120002D07A /* countdown.wav in Resources */,

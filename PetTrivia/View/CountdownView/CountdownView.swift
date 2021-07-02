@@ -17,7 +17,8 @@ struct PulsatingView: View {
     
     @State var animate = false
     @State private var timeRemaining = 3
-    
+    @State private var countdownText = 3
+
     @State private var isScreenActive = false
     
     let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
@@ -38,10 +39,12 @@ struct PulsatingView: View {
                         .foregroundColor(Color("BlueTextColor"))
                         .scaleEffect(self.animate ? 1 : 0.5)
                 }
+                .fullScreenCover(isPresented: $isScreenActive, content: {
+                    GameView(currentCategory: QuestionCategory(rawValue: selectedCategory.text)!)
+                })
                 .onAppear {
                     DispatchQueue.main.async {
                         self.animate = true
-                        AudioHelper.playSound(audioName: "countdown.wav")
                     }
                 }
                 .animation(animate ? Animation.easeInOut(duration: 1).repeatCount(5, autoreverses: true).delay(0.1) : .default)
@@ -49,13 +52,19 @@ struct PulsatingView: View {
             .onReceive(timer) { time in
                 if self.timeRemaining > 0 {
                     self.timeRemaining -= 1
+                    if countdownText > 1 {
+                        countdownText -= 1
+                    }
                     if self.timeRemaining == 1 {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.95, execute: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.8, execute: {
                             self.isScreenActive = true
                         })
                     }
                 }
-        }
+            }
+            .onAppear {
+                AudioHelper.playSound(audioName: "countdown.wav")
+            }
     }
 }
 
@@ -65,13 +74,11 @@ struct CountdownView: View {
     private var model = PulsatingViewModel()
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                Image("CountdownBg").resizable().edgesIgnoringSafeArea(.all)
-                HStack {
-                    GeometryReader { (geometry) in
-                        self.makeView(geometry)
-                    }
+        ZStack {
+            Image("CountdownBg").resizable().edgesIgnoringSafeArea(.all)
+            HStack {
+                GeometryReader { (geometry) in
+                    self.makeView(geometry)
                 }
             }
         }

@@ -25,26 +25,24 @@ struct SortView: View {
     
     @State private var isScreenActive = false
     @State private var currentSelectedCategory: Category!
-    @State private var isLast = false
+    @State private var isFirst = true
 
     private var model = CategoryOptionViewModel()
     
     var body: some View {
-        NavigationView {
-            HStack {
-                NavigationLink(destination: CountdownView()
-                                .navigationBarHidden(true)
-                                .navigationBarBackButtonHidden(true), isActive: $isScreenActive){}
-                GeometryReader { (geometry) in
-                    self.makeView(geometry)
-                }
+        HStack {
+            GeometryReader { (geometry) in
+                self.makeView(geometry)
             }
-            .background(
-                Image("SortBg")
-                    .resizable()
-                    .edgesIgnoringSafeArea(.all)
-            )
         }
+        .fullScreenCover(isPresented: $isScreenActive, content: {
+            CountdownView()
+        })
+        .background(
+            Image("SortBg")
+                .resizable()
+                .edgesIgnoringSafeArea(.all)
+        )
     }
     
     func makeView(_ geometry: GeometryProxy) -> some View {
@@ -81,7 +79,7 @@ struct SortView: View {
                             ForEach(categories) { category in
                                 let possibleCategories = UserDefaultsWrapper.fetchPossibleCategories()
                                 let isPossible = possibleCategories?.first(where: {$0.id == category.id})
-                                CategoryOptionView(viewModel: model, id: category.id, text: category.text, isPossible: (isPossible != nil), isLast: isLast)
+                                CategoryOptionView(viewModel: model, id: category.id, text: category.text, isPossible: (isPossible != nil))
                             }
                         }
                         .onAppear {
@@ -104,7 +102,6 @@ struct SortView: View {
                                     
                                     if (self.timeRemaining == 0) {
                                         if (self.stopCounter > self.stop) {
-                                            self.isLast.toggle()
                                             self.model.selectedId = getSortedCategory()
                                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                                 selectedCategory = categories.first(where: { $0.id == self.model.selectedId! })
@@ -122,6 +119,14 @@ struct SortView: View {
                 }
             .padding(.vertical, 20)
             .padding(.horizontal, 30)
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                    if self.isFirst {
+                        AudioHelper.playSound(audioName: "sort.wav")
+                        self.isFirst.toggle()
+                    }
+                }
+            }
         }
     }
     
