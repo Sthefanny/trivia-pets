@@ -39,8 +39,6 @@
 		E579C04C268D412200B5516C /* answerWin.wav in Resources */ = {isa = PBXBuildFile; fileRef = E579C047268D412100B5516C /* answerWin.wav */; };
 		E579C04D268D412200B5516C /* answerLose.wav in Resources */ = {isa = PBXBuildFile; fileRef = E579C048268D412100B5516C /* answerLose.wav */; };
 		E579C050268D412200B5516C /* button.wav in Resources */ = {isa = PBXBuildFile; fileRef = E579C04B268D412200B5516C /* button.wav */; };
-		E597B04B268E2C2600FACB5B /* sortFinal.wav in Resources */ = {isa = PBXBuildFile; fileRef = E597B047268E2C2600FACB5B /* sortFinal.wav */; };
-		E597B04D268E2C2600FACB5B /* countdownFinal.wav in Resources */ = {isa = PBXBuildFile; fileRef = E597B049268E2C2600FACB5B /* countdownFinal.wav */; };
 		E5B7F1F0267BC0E30077086C /* PetTriviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B7F1EF267BC0E30077086C /* PetTriviaApp.swift */; };
 		E5B7F1F4267BC0E50077086C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B7F1F3267BC0E50077086C /* Assets.xcassets */; };
 		E5B7F1F7267BC0E50077086C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B7F1F6267BC0E50077086C /* Preview Assets.xcassets */; };
@@ -81,8 +79,6 @@
 		E579C047268D412100B5516C /* answerWin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = answerWin.wav; sourceTree = "<group>"; };
 		E579C048268D412100B5516C /* answerLose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = answerLose.wav; sourceTree = "<group>"; };
 		E579C04B268D412200B5516C /* button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button.wav; sourceTree = "<group>"; };
-		E597B047268E2C2600FACB5B /* sortFinal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sortFinal.wav; sourceTree = "<group>"; };
-		E597B049268E2C2600FACB5B /* countdownFinal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = countdownFinal.wav; sourceTree = "<group>"; };
 		E5B7F1EC267BC0E30077086C /* PetTrivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetTrivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B7F1EF267BC0E30077086C /* PetTriviaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetTriviaApp.swift; sourceTree = "<group>"; };
 		E5B7F1F3267BC0E50077086C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,8 +214,6 @@
 			children = (
 				111D277B268E33120002D07A /* countdown.wav */,
 				111D277C268E33120002D07A /* sort.wav */,
-				E597B049268E2C2600FACB5B /* countdownFinal.wav */,
-				E597B047268E2C2600FACB5B /* sortFinal.wav */,
 				E579C048268D412100B5516C /* answerLose.wav */,
 				E579C047268D412100B5516C /* answerWin.wav */,
 				E579C04B268D412200B5516C /* button.wav */,
@@ -346,10 +340,7 @@
 				111D277E268E33120002D07A /* sort.wav in Resources */,
 				E5B7F1F7267BC0E50077086C /* Preview Assets.xcassets in Resources */,
 				E579C050268D412200B5516C /* button.wav in Resources */,
-				E597B04B268E2C2600FACB5B /* sortFinal.wav in Resources */,
-				E597B04D268E2C2600FACB5B /* countdownFinal.wav in Resources */,
 				E5B7F1F4267BC0E50077086C /* Assets.xcassets in Resources */,
-				E597B065268E45B500FACB5B /* sort.wav in Resources */,
 				E579C04D268D412200B5516C /* answerLose.wav in Resources */,
 				1140E0DE26881DF5005649E9 /* dogBarking.wav in Resources */,
 				111D277D268E33120002D07A /* countdown.wav in Resources */,

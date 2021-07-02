@@ -36,6 +36,7 @@ struct EndGameView: View {
                 .multilineTextAlignment(.center)
             Button(action: {
                 EndGameView.navigate = 1
+                AudioHelper.playSound(audioName: "button.wav")
                 isScreenActive.toggle()
             }) {
                 Text("Ir para WikiPet")
@@ -54,6 +55,7 @@ struct EndGameView: View {
             
             Button(action: {
                 EndGameView.navigate = 2
+                AudioHelper.playSound(audioName: "button.wav")
                 isScreenActive.toggle()
             }) {
                 Text("Jogar Novamente")
@@ -69,6 +71,7 @@ struct EndGameView: View {
             .padding(.bottom, 4)
             Button(action: {
                 EndGameView.navigate = 3
+                AudioHelper.playSound(audioName: "button.wav")
                 isScreenActive.toggle()
             }) {
                 Text("Menu Principal")
